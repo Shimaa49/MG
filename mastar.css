@@ -1,0 +1,574 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+      font-family: "cairo", sans-serif;
+}
+body{
+  overflow-x: hidden !important;
+  font-family: "cairo";
+}
+html{
+  scroll-padding-top: 50px;
+  box-sizing: border-box;
+}
+
+
+.header-projects {
+  background-image: url(image/projrct-header.png);
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  padding-top: 30px;
+   /* position: relative; */
+}
+
+
+/* بوكس تغليف علشان المسافات من بره */
+.services2-wrapper {
+  padding: 40px 20px; /* مسافة من فوق وتحت ويمين وشمال */
+}
+
+.services2-container {
+  max-width:1300.15380859375px;  /* أكبر زي الصورة */
+  margin: 0 auto;
+  background: #fff;
+  border: 1.73px solid #F3F4F7;
+  border-radius: 40px;
+  padding: 16px 16px; /* مسافة داخلية أكبر */
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;  /* مسافات بين البوكسات */
+  direction: rtl;
+}
+
+
+/* كل بوكس داخلي */
+.service-box2 {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+/* الصورة */
+.service-box2 img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  border: 2px solid  #F3F4F7; ;
+  border-radius: 20px;
+  background-color: white;
+}
+
+/* النص */
+.service-box2 p {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+ color: rgba(98, 100, 103, 1);
+ white-space: nowrap;
+ 
+}
+.service-box2 {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+}
+
+
+/* الهوفر */
+.service-box2:hover {
+  background: rgba(0,0,0,0.07);
+  color: rgba(134, 37, 45, 1);
+}
+.service-box2 p:hover {
+
+  color: rgba(134, 37, 45, 1);
+}
+
+
+.images-layout {
+  position: relative;
+  width: 480px;   /* نفس تقريبًا اللي في الصورة */
+  height: 600px;
+  margin: 0 auto;
+}
+
+/* الشكل العام لكل الصور */
+.images-layout .img {
+  position: absolute;
+  border-radius: 18px;
+  object-fit: cover;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+/* ============ الشمال ============ */
+
+/* شمال فوق */
+.img-left-top {
+  width: 160px;
+  height: 200px;
+  left: 0;
+  top: 70px;
+}
+
+/* شمال تحت */
+.img-left-bottom {
+  width: 170px;
+  height: 200px;
+  left: 20px;
+  bottom: 40px;
+}
+
+
+/* ============ النص ============ */
+.img-center {
+  width: 250px;
+  height: 340px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+}
+
+
+/* ============ اليمين ============ */
+
+/* يمين فوق الكبيرة */
+.img-right-big {
+  width: 180px;
+  height: 220px;
+  right: 0;
+  top: 0;
+}
+
+/* يمين فوق الصغيرة جنب الكبيرة */
+.img-right-small {
+  width: 150px;
+  height: 180px;
+  right: 10px;
+  top: 240px;
+}
+
+/* يمين تحت */
+.img-right-bottom {
+  width: 170px;
+  height: 190px;
+  right: 20px;
+  bottom: 20px;
+}
+
+.bg-box {
+  position: absolute;
+  width: 320px;
+  height: 420px;
+  background: rgba(0, 0, 0, 0.05); /* الرمادي الفاتح الشفاف */
+  border-radius: 20px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%); 
+  z-index: 1;  /* خلف الصور */
+}
+
+
+
+
+
+
+
+/* السكشن كله */
+.projects-section {
+  padding: 60px 0 40px;
+
+   /* تقدري تخليها #fff لو حابة */
+
+
+}
+
+/* الكونتينر الداخلي */
+.projects-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  justify-content: space-between;
+  direction: ltr;
+}
+
+/* جزء النص */
+.projects-text {
+  flex: 1.2;
+
+
+}
+
+.projects-title {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  direction: rtl;
+  font-family: "cairo";
+  line-height: 160%;
+
+}
+
+.projects-subtitle {
+  font-size: 25px;
+  color: rgba(98, 100, 103, 1);
+  margin-bottom: 18px;
+  direction: rtl;
+  font-weight: 500;
+
+
+}
+
+.projects-heading {
+  font-size: 36px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  direction: rtl;
+  line-height: 160%;
+
+}
+
+.projects-list {
+
+  padding: 0;
+  margin: 0;
+  direction: rtl;
+
+}
+
+.projects-list li {
+  font-size: 25px;
+  color: rgba(98, 100, 103, 1);
+  line-height: 160%;
+  margin-bottom: 4px;
+}
+
+/* جزء الصور */
+.projects-images {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+/* نفس اللي عملناه قبل كده للصور */
+.images-layout {
+  position: relative;
+  width: 480px;
+  height: 600px;
+}
+
+/* الخلفية الشفافة */
+.bg-box {
+  position: absolute;
+  width: 320px;
+  height: 420px;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 20px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.images-layout .img {
+  position: absolute;
+  z-index: 2;
+  border-radius: 18px;
+  object-fit: cover;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+/* أماكن الصور (عدلي المقاسات براحتك) */
+.img-left-top {
+  width: 160px;
+  height: 200px;
+  left: 0;
+  top: 70px;
+}
+
+.img-left-bottom {
+  width: 170px;
+  height: 200px;
+  left: 20px;
+  bottom: 40px;
+}
+
+.img-center {
+  width: 250px;
+  height: 340px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.img-right-big {
+  width: 180px;
+  height: 220px;
+  right: 0;
+  top: 0;
+}
+
+.img-right-small {
+  width: 150px;
+  height: 180px;
+  right: 10px;
+  top: 240px;
+}
+
+.img-right-bottom {
+  width: 170px;
+  height: 190px;
+  right: 20px;
+  bottom: 20px;
+}
+
+/* الـ Slider اللي تحت */
+.projects-slider {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.slider-dot {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid #c9c9c9;
+  background: transparent;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.slider-dot.active {
+  background: #b42424;      /* الأحمر الغامق */
+  color: #fff;
+  border-color: #b42424;
+}
+
+.slider-arrow {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid #c9c9c9;
+  background: transparent;
+  cursor: pointer;
+  font-size: 15px;
+  line-height: 1;
+}
+
+
+.maintenance-section{
+  padding: 60px 0;
+  direction: rtl;
+}
+
+.content-box{
+  border: 2px 1px #bbb;
+  padding: 30px;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.title{
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: rgba(37, 37, 39, 1)
+}
+
+.desc{
+  font-size: 16px;
+  color: #444;
+  margin-bottom: 20px;
+}
+
+.sub-title{
+  font-size: 20px;
+  font-weight: 600;
+font-weight: 700;
+  margin-bottom: 15px;
+  color: rgba(37, 37, 39, 1)
+}
+
+.projects-list{
+  margin-bottom: 30px;
+  padding-right: 20px;
+}
+
+.projects-list li{
+  margin-bottom: 8px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #333;
+}
+
+/* الصور */
+.images-row{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.images-row img{
+  width: 19%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+
+.ops-box{
+
+ 
+  background: #fff;
+}
+
+/* ================= Slider ================= */
+
+.ops-slider{
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.ops-track{
+  display: flex;
+  transition: transform .6s ease;
+}
+
+.ops-slide{
+  min-width: 100%;
+  display: flex;
+  gap: 10px;
+}
+
+.ops-slide img{
+  width: 25%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Controls */
+.ops-controls{
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.dot{
+  border: none;
+  background: transparent;
+  font-weight: bold;
+  color: #777;
+  font-size: 15px;
+}
+
+.dot.active{
+  color: #c62828;
+}
+
+.arrow{
+  padding: 4px 12px;
+  background: #eee;
+  border: none;
+  font-size: 18px;
+  border-radius: 6px;
+}
+
+
+.ops-box{
+  /* border: 2px dotted #bfbfbf; */
+  border-radius: 8px;
+  background: #fff;
+  direction: rtl;
+}
+
+.ops-list li{
+  margin-bottom: 6px;
+  font-size: 20px;
+  color:rgba(98, 100, 103, 1);
+  line-height: 160%;
+  direction: rtl;
+}
+
+/* ارتفاع الصور زي التصميم */
+.ops-images img{
+  height: 500px;
+  object-fit: cover;
+  width: 100%;
+  border-radius: 8px;
+}
+.text-muted p{
+    color: rgba(37, 37, 39, 1);
+     
+}
+.text-muted h5{
+    color: rgba(37, 37, 39, 1);
+}
+
+.g-wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 25px;
+}
+
+.g-col{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.g-row{
+  display: flex;
+  gap: 12px;
+}
+
+.g-img{
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid #ddd;
+  display: block;
+  object-fit: cover;
+  transition: 0.3s;
+}
+
+/* الأحجام */
+.g-small{
+  width: 150px;
+  height: 150px;
+}
+
+.g-medium{
+  width: 200px;
+  height: 220px;
+}
+
+.g-large{
+  width: 230px;
+  height: 300px;
+}
+
+/* تأثير */
+.g-img:hover{
+  transform: scale(0.97);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.18);
+}
