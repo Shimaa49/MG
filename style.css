@@ -31,7 +31,7 @@ header{
   background-image: url(./image/header.png);
   background-position: center;
   background-size: cover;
-  min-height:100vh;
+  min-height:110vh;
   padding-top: 20px;
  padding-bottom: 230px;       /* مساحة للفيديو من تحت */
   position: relative;
