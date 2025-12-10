@@ -100,7 +100,7 @@ direction: rtl;
   font-weight: 600;
 }
 
-.nav-link.active{
+.nav-link:hover{
   background: #fff;
   color: #89252D;
 }
@@ -240,7 +240,8 @@ font-weight: 500;
     bottom: 0;           /* بطلعيه لفوق شوية */
     width: 90%;
     max-width: 90%;
-    margin-top: 24px;
+    margin-top: 10px;
+    
   }
 
   .home-video-wrapper iframe,
@@ -249,7 +250,7 @@ font-weight: 500;
   }
 
   .stats-section{
-    padding-top: 120px;   /* علشان ما يركبوش على الفيديو */
+    padding-top: px;   /* علشان ما يركبوش على الفيديو */
   }
 
   /* السكشن بتاع الأرقام */
