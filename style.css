@@ -2103,3 +2103,24 @@ footer ul li a:hover {
   padding-top: 30px;
    position: relative;
 }
+
+
+
+
+/* من 1206px لحد 1400px — خلي الهيدر والبلوك ممتدين 100% */
+@media (min-width: 1206px) and (max-width: 1400px) {
+  
+  .container {
+    max-width: 100% !important;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  header,
+  .header-hero,
+  .top-section,
+  .MG-info,
+  .hero-content {
+    max-width: 100% !important;
+  }
+}
