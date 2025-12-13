@@ -1,131 +1,164 @@
 /* ====== GENERAL ====== */
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-  font-family: "Cairo", sans-serif;
-}
+/* =========================
+   BASE
+   ========================= */
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth;font-family:"Cairo",sans-serif;}
+body{overflow-x:hidden !important;}
+html{scroll-padding-top:50px;}
+.arrows{font-size:20px;font-weight:700;padding:10px;}
 
-body{
-  overflow-x: hidden !important;
-}
-
-html{
-  scroll-padding-top: 50px;
-}
-
-.arrows {
-  font-size: 20px;   /* كبّري او صغّري */
-  font-weight: bold;
- padding: 10px;
-
-}
-
-
-
-
-
-/* ====== HEADER ====== */
+/* =========================
+   HEADER (Desktop default)
+   ========================= */
 header{
-  background-image: url(./image/header.png);
-  background-position: center;
-  background-size: cover;
+  background-image:url(./image/header.png);
+  background-position:center;
+  background-size:cover;
   min-height:110vh;
-  padding-top: 20px;
- padding-bottom: 230px;       /* مساحة للفيديو من تحت */
-  position: relative;
+  padding-top:20px;
+  padding-bottom:560px; /* مساحة ثابتة للفيديو تحت */
+  position:relative;
 }
 
-/* الكبسولة */
+/* top bar */
 .header-bar{
-  padding: 10px 25px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  direction: rtl;
+  padding:15px 80px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  direction:rtl;
+  gap:40px;
+  flex-wrap:nowrap;
 }
 
-.logo img,
-.vision img{
-  width: 125px;
-  object-fit: cover;
+.logo,.vision{
+  flex:0 0 140px;
+  display:flex;
+  align-items:center;
+}
+.logo{justify-content:flex-end;}
+.vision{justify-content:flex-start;}
+
+.logo img,.vision img{
+  max-width:100%;
+  height:84px;
+  object-fit:contain;
+  display:block;
 }
 
-/* الناف بار */
+/* NAV (desktop capsule) */
 .top-nav{
-  border-radius: 10px;
-  border: 1px solid #fff;
-  backdrop-filter: blur(8px);
-  padding: 8px 10px;
+  flex:1;
+  display:flex;
+  justify-content:center;
+  margin:0;
+  padding:0 20px;
+  background:transparent;
+  backdrop-filter:none;
 }
 
 .top-nav ul{
-  list-style: none;
-  display: flex;
-  align-items: center;
-  gap: 4px;
+  display:flex;
+  align-items:stretch;
+  list-style:none;
+  margin:0;
+
+  border-radius:16px;
+  border:1px solid rgba(255,255,255,0.2);
+  background:rgba(255,255,255,0.20);
+  backdrop-filter:blur(8px);
+  overflow:hidden;
+  max-width:100%;
+  flex-wrap:nowrap;
+   padding: 0;
 }
 
-.nav-link{
-  text-decoration: none;
-  color: #fff;
-  padding: 8px 14px;
-  border-radius: 12px;
-  font-weight: 600;
-  font-size: 14px;
-  border: none;
-  background: transparent;
-  cursor: pointer;
+.top-nav ul li{
+
+  display:flex;
+  align-items:center;
+  color:rgba(253,253,253,1);
+  font-weight:700;
+  font-size:16px;
+  background:transparent;
+  border:0;
+  line-height:160%;
+  text-decoration:none;
+  cursor:pointer;
+   padding:22px 16px;
+}
+.nav-link:hover{
+  background-color: rgba(253, 253, 253, 1);
+   border-radius: 20px;
+   color: rgba(156, 40, 45, 1);
+   padding: 10px 16px;
+
+
+}
+.top-nav ul .nav-divider{
+  width:1px;
+  height:79px; 
+  background:rgba(255,255,255,0.2);
+  /* align-self:stretch; */
+  padding: 0;
+  margin: 0;
 }
 
-.nav-link:hover,
-.nav-link.active{
-  background: #fff;
-  color: #89252D;
-}
+.menu-btn, .menu-close{display:none;} /* يظهروا في الموبايل */
 
-.video-link{
-  border-left: 1px solid rgba(255,255,255,0.3);
-  padding-left: 16px;
-}
-
-/* الهيرو نص */
+/* HERO */
 .MG-info{
-  margin-top: 10px;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  text-align: center;
+  margin-top:10px;
+  color:#fff;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:10px;
+  text-align:center;
+  padding:0 16px;
 }
 
 .info-box{
-  padding: 8px 16px;
-  border-radius: 16px;
-  border: 1px solid #fff;
-  backdrop-filter: blur(8px);
+  padding:10px 12px;
+  border-radius:16px;
+  border:1px solid rgba(255,255,255,0.2);
+  backdrop-filter:blur(8px);
+  background-color:rgba(255,255,255,0.2);
+  display:flex;
+  direction:rtl;
+  align-items:center;
+  gap:10px;
 }
 
 .info-box h2{
-  font-size: 16px;
-  font-weight: bold;
+  font-size:16px;
+  font-weight:500;
+  line-height:150%;
 }
 
+.image-trend{
+  background:linear-gradient(90deg,rgba(134,37,45,1),rgba(156,40,45,1),rgba(219,34,41,1));
+  border-radius:50%;
+  padding:8px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex:0 0 auto;
+}
+
+.image-trend img{width:18px;height:18px;display:block;}
+
 .MG-p h1{
-  font-size: 32px;
-  font-weight: bold;
-  line-height: 160%;
-  margin: 0;
+  font-size:32px;
+  font-weight:800;
+  line-height:160%;
 }
 
 .MG-info h3{
-  font-size: 30px;
-  font-weight: 500;
-  line-height: 160%;
-  margin: 0;
+  font-size:30px;
+  font-weight:500;
+  line-height:160%;
+  max-width:652px;
 }
 
 .MG-btn{
@@ -161,182 +194,429 @@ font-weight: 700;
   );
   color: #fff;
 }
-
+/* VIDEO */
 .home-video-wrapper{
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 50%;
-  max-width: 1000px;
-  border-radius: 5px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
-  background: #000;
-  bottom: -70px;
-  z-index: 2;
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  width:50%;
+  max-width:1300px;
+  border-radius:14px;
+  overflow:hidden;
+  box-shadow:0 10px 30px rgba(0,0,0,0.35);
+  bottom:-5px;
+  z-index:2;
+  height: 490px;
 }
 
-
-
-
-
-
-
 .home-video-wrapper iframe{
-  width: 100%;
-  height: 400px;
-  border: none;
-  display: block;
+  width:100%;
+
+  border:20px solid rgba(255,255,255,0.1);
+  display:block;
+    height: 490px;
+}
+/* Overlay */
+.nav-overlay{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  opacity: 0;
+  pointer-events: none; /* ❗ لا تتفاعل */
+  transition: opacity .25s ease;
+  z-index: 1000;
+}
+
+body.menu-open .nav-overlay{
+  opacity: 1;
+  pointer-events: auto; /* تتفاعل بس وقت الفتح */
 }
 
 
 /* =========================
-   Responsive - Staff Header
+   <= 1200px (Laptop صغير)
    ========================= */
-
-/* Tablets */
-@media (max-width: 992px) {
-  .header {
-    padding-bottom: 30px;
-  }
-
+@media (max-width: 1200px) {
   .header-bar {
-    padding: 10px 16px;
-    gap: 12px;
-    flex-wrap: wrap;                 /* يسمح ينزل سطر لو محتاج */
-    justify-content: center;         /* يخليهم في النص */
+    padding: 14px 40px;
+    gap: 24px;
   }
 
-  .logof img,
-  .vision img {
-    width: 110px;
+  .home-video-wrapper {
+    width: 60%;
+    height: 490px;
+    bottom: -5px;
+  }
+.home-video-wrapper iframe{
+  height: 490px;
+}
+  header {
+    padding-bottom: 560px;
+  }
+  .nav-link{
+      padding:12px 10px;
   }
 
-  .top-nav {
-    width: 100%;                     /* الناف تاخد سطر لوحدها */
-    padding: 8px 10px;
-  }
+}
 
-  .top-nav ul {
+/* =========================
+   <= 1024px (Tablet + Mobile Drawer)
+   ========================= */
+@media (max-width: 767px) {
+
+  /* زر المنيو */
+  .menu-btn {
+    display: inline-flex;
+    align-items: center;
     justify-content: center;
-    flex-wrap: wrap;                 /* لو الروابط كتير */
-    gap: 6px;
-    padding: 0;
-    margin: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,.25);
+    background: rgba(255,255,255,.12);
+    color: #fff;
+    cursor: pointer;
   }
 
-  .nav-link {
-    font-size: 13px;
-    padding: 8px 12px;
+  
+   .vision {
+    display: flex;
+  } 
+
+  /* Drawer */
+  .top-nav {
+    position: fixed;
+    top: 0;
+    inset-inline-end: 0;
+    width: min(360px, 88vw);
+    height: 100dvh;
+    padding: 16px;
+   
+    backdrop-filter: blur(8px);
+background-color: red;
+    transform: translateX(110%);
+    visibility: hidden;
+    pointer-events: none;
+    transition: transform .25s ease, visibility .25s ease;
+    z-index: 1001;
+ backdrop-filter: blur(14px);
+    display: block;
+  }
+
+  body.menu-open .top-nav {
+    transform: translateX(0);
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  /* Drawer head */
+  .drawer-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    margin-bottom: 14px;
+    border-bottom: 1px solid rgba(255,255,255,.1);
+
+     backdrop-filter: blur(14px);
+    
+    
+
+
+  }
+
+  .drawer-title {
+    color: #fff;
+    font-weight: 700;
+    font-size: 16px;
+  }
+
+  .menu-close {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,.18);
+    background: rgba(255,255,255,.1);
+    color: #fff;
+    cursor: pointer;
+  }
+
+  /* القائمة */
+  .top-nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 0;
+    background: transparent;
+    backdrop-filter: none;
+  }
+
+  .nav-divider {
+    display: none;
+  }
+
+  .video-link {
+    border-left: 0;
+    padding-left: 0;
+  }
+
+  .top-nav .nav-link {
+    width: 100%;
+    padding: 14px;
+    border-radius: 14px;
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.1);
+    justify-content: flex-start;
+    font-size: 15px;
+  }
+
+  .top-nav .nav-link.active {
+    background: rgba(255,255,255,.14);
+  }
+
+  /* أزرار الهيرو */
+  .MG-btn {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn-1,
+  .btn-2 {
+    width: 100%;
+  }
+
+  /* فيديو */
+  header {
+    padding-bottom: 480px;
+  }
+
+  .home-video-wrapper {
+    width: 92%;
+    bottom: -100px;
+    height: 260px;
+  }
+
+  .home-video-wrapper iframe {
+    height: 260px;
+    border-width: 14px;
   }
 }
 
-/* Mobiles */
-@media (max-width: 768px) {
-.header-bar {
-    padding-bottom: 24px;
+/* =========================
+   <= 420px (موبايل صغير)
+   ========================= */
+@media (max-width: 420px) {
+  .MG-p h1 {
+    font-size: 22px;
   }
 
-  .header-bar {
-    padding: 10px 12px;
-    gap: 10px;
-    flex-direction: column;          /* اللوجوهات فوق والناف تحت */
+  .MG-info h3 {
+    font-size: 16px;
+    max-width: 95%;
+  }
+
+  header {
+    padding-bottom: 500px;
+  }
+
+  .home-video-wrapper iframe {
+    height: 230px;
+    border-width: 12px;
+  }
+}
+
+/* =========================
+   Mobile Video Fix
+   ========================= */
+@media (max-width: 767px){
+
+  /* الهيدر يرجع طبيعي */
+  header{
+    min-height: auto;
+    padding-bottom: 40px;
+  }
+
+  /* الفيديو يبقى عنصر عادي */
+  .home-video-wrapper{
+    position: static;        /* 👈 أهم سطر */
+    transform: none;
+    width: 92%;
+    max-width: 92%;
+    margin: 20px auto 0;     /* مسافة من الزرار */
+    height: auto;
+  }
+
+  .home-video-wrapper iframe{
+    width: 100%;
+    height: 240px;
+    border-width: 12px;
+    border-radius: 14px;
+  }
+}
+@media (max-width: 420px){
+  .home-video-wrapper iframe{
+    height: 210px;
+  }
+}
+
+/* =========================
+   Mobile + Tablet => Drawer (<=1024px)
+   ========================= */
+@media (max-width: 1024px){
+
+  /* زرار المنيو يظهر */
+  .menu-btn{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Vision برا لو بتلخبطيه في التابلت */
+  .vision{ display:flex; }
+
+  /* الـ NAV يبقى Drawer */
+  .top-nav{
+    position: fixed;
+    top: 0;
+    inset-inline-end: 0;
+    width: min(360px, 88vw);
+    height: 100dvh;
+    padding: 16px;
+    background:rgba(255, 255, 255, 0.1);
+ 
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    transform: translateX(110%);
+    visibility: hidden;
+    pointer-events: none;
+
+    transition: transform .25s ease, visibility .25s ease;
+    z-index: 1001;
+  }
+
+  body.menu-open .top-nav{
+    transform: translateX(0);
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  /* Overlay */
+  .nav-overlay{
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .25s ease;
+  }
+  body.menu-open .nav-overlay{
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* قائمة الدروار */
+  .top-nav ul{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    border: 0;
+    background: transparent;
+    backdrop-filter: none;
+    border-radius: 0;
+    overflow: visible;
+  }
+
+  /* خلي الفاصل يبان جوه الدروار */
+  .nav-divider{
+    display: none;
+    
+    margin:  0;
+  } 
+
+  /* شكل اللينكات */
+  .top-nav .nav-link,
+  .top-nav ul li{
+    padding: 14px 14px;
+    /* border-radius: 14px; */
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.10);
+    justify-content: flex-start;
+  }
+}
+
+/* ✅ Mobile + Tablet Drawer Controls */
+@media (max-width: 1024px){
+
+  .menu-btn{
+    display: inline-flex;
+    align-items: end;
+    justify-content: end;
+  }
+
+  .menu-close{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,.18);
+    background: rgba(255,255,255,.12);
+    color: #fff;
+    cursor: pointer;
+  }
+}
+/* إخفاء الـ nav divider في الموبايل والتابلت */
+@media (max-width: 1024px){
+  .nav-divider{
+    display: none !important;
+  }
+}
+/* Tablet + Mobile: ظبط مكان زر المنيو (الـ list) */
+@media (max-width: 1024px){
+
+  .header-bar{
+    padding: 12px 16px;
+    gap: 12px;
+    flex-wrap: nowrap;
     align-items: center;
   }
 
-  .logo img,
-  .vision-staff img {
-    width: 95px;
+  /* خلي العناصر بترتيب واضح */
+  .vision{ order: 1; }
+  .menu-btn{ order: 2; }
+  .logo{  order: 1; }
+
+  /* زر المنيو */
+  .menu-btn{
+    display:flex;      /* مهم */
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,.25);
+    background: rgba(255,255,255,.12);
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+
+    margin-inline-start: 8px;  /* مسافة عن اللي قبله */
+    flex: 0 0 auto;            /* ما يتضغطش */
   }
 
-  .top-nav {
-    width: 100%;
-    border-radius: 14px;
-    padding: 10px 10px;
-    overflow-x: auto;                /* أهم حاجة: سكرول أفقي */
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .top-nav ul {
-    flex-wrap: nowrap;               /* يمنع التكسير */
-    justify-content: flex-start;
-    gap: 8px;
-    min-width: max-content;          /* يخلي العناصر جنب بعض */
-    padding: 0;
-    margin: 0;
-  }
-
-  .nav-link {
-    white-space: nowrap;             /* النص ماينزلش تحت */
-    font-size: 13px;
-    padding: 9px 12px;
-    border-radius: 14px;
-  }
-
-  /* اختيارية: نخفي شكل السكرول */
-  .top-nav-staff::-webkit-scrollbar {
-    height: 0;
+  /* اللوجوهات ما تكبرش قوي */
+  .logo img, .vision img{
+    height: 56px;
   }
 }
-
-/* Very small phones */
-@media (max-width: 420px) {
-  .logo img,
-  .vision img {
-    width: 85px;
-  }
-
-  .nav-link {
-    font-size: 12px;
-    padding: 8px 10px;
-  }
-}
-
-
-
-/* موبايل – نخليهم تحت بعض */
-@media (max-width: 991px){
-  .stats-section{
-    padding: 60px 0 60px;
-  }
-  .stats-grid{
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-  .center-image-wrap{
-    order: 2;
-    margin: 8px auto 18px;
-  }
-  .center-image{
-    width: 220px;
-    max-width: 80%;
-  }
-  .stat-card{
-    width: 100%;
-    max-width: 280px;
-    margin-inline: auto;
-  }
-  .left.top,
-  .right.top{
-    transform: translateY(0);
-  }
-}
-
-
-
-
-
-
-
-
 /* ====== STATS SECTION ====== */
 .stats-section{
   background: #fff;
-  padding: 160px 0 100px;    /* لازم تكون قريبة من قيمة bottom في الفيديو */
+  padding: 200px 0 500px;    /* لازم تكون قريبة من قيمة bottom في الفيديو */
   position: relative;
   z-index: 1;
-  margin-top: -120px;
+  margin-top: -130px;
   padding-top: 200px;
   padding-bottom: 80px;
 }
@@ -460,254 +740,387 @@ transform: translateY(50px);
 }
 
 /* ====== RESPONSIVE ====== */
-@media (max-width:768px){
 
-  header{
-    min-height: auto;
-    padding-bottom: 40px;
-  }
+/* =========  RESPONSIVE STATS SECTION (Keep same layout)  ========= */
 
-  .header-bar{
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
-    text-align: center;
-  }
+/* =========================
+   RESPONSIVE STATS (KEEP SAME LAYOUT)
+   ========================= */
 
-  .top-nav{
-    order: 3;
-  }
-
-  .top-nav ul{
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .logo img,
-  .vision img{
-    width: 110px;
-  }
-
-  .MG-p h1{
-    font-size: 26px;
-  }
-
-  .MG-info h3{
-    font-size: 16px;
-  }
-
-  /* الفيديو يبقى تحت عادي في الموبايل */
-  .home-video-wrapper{
-    position: static;
-    transform: none;
-    width: 90%;
-    max-width: 90%;
-    margin: 16px auto 0; 
-  }
-
-  .home-video-wrapper iframe{
-    height: 260px;
-  }
-
-  .stats-section{
-    padding: 40px 0 60px;
-  }
-
-  /* الكروت تحت بعض */
-  .stats-grid{
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-
-  .center-image-wrap{
-    order: 2;
-    margin: 10px auto 20px;
-  }
-
-  .center-image{
-    width: 220px;
-    max-width: 80%;
-  }
-
-  .stat-card{
-    width: 100%;
-  }
-}
-
-@media (max-width: 576px){
-
-  .header-bar{
-    padding: 8px 12px;
-  }
-
-  .nav-link{
-    padding: 6px 10px;
-    font-size: 12px;
-  }
-
-  .info-box h2{
-    font-size: 14px;
-  }
-
-  .MG-p h1{
-    font-size: 22px;
-  }
-
-  .MG-info h3{
-    font-size: 14px;
-  }
-
-  .MG-btn{
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .btn-1,
-  .btn-2{
-    width: 100%;
-  }
-
-  .home-video-wrapper{
-    width: 100%;
-    border-radius: 0;
-  }
-
-  .home-video-wrapper iframe{
-    height: 220px;
-  }
-
-  .stat-card .text h4{
-    font-size: 18px;
-  }
-
-  .stat-card .text p{
-    font-size: 13px;
-  }
-}
-
-
-/* =========  ريسبونسيف STATS SECTION  ========= */
-
-/* شاشات أقل من اللابتوب شوية */
+/* ✅ <= 1200px (Laptop صغير) */
 @media (max-width: 1200px){
 
   .stats-section{
-    padding: 140px 0 80px;
+    margin-top: 0 !important;     /* مهم لو عندك سالب */
+    padding-top: 180px;           /* مساحة للفيديو اللي فوق */
+    padding-bottom: 80px;
   }
 
-  .center-image{
-    width: 260px;
+  .stats-grid{
+    column-gap: 12px;
+    row-gap: 32px;
   }
+
+  .center-image{ width: 260px; }
 
   .stat-card{
-    max-width: 260px;
-    width: 260px;
+    width: 250px;
+    max-width: 250px;
+    min-height: 92px;
     padding: 8px 14px;
   }
 
-  .stat-card .text h4{
-    font-size: 22px;
-  }
+  .stat-card .icon{ width: 60px; height: 60px; }
+  .stat-card .icon img{ width: 32px; height: 32px; }
 
-  .stat-card .text p{
-    font-size: 12px;
-  }
+  .stat-card .text h4{ font-size: 22px; }
+  .stat-card .text p{ font-size: 12px; }
 
-  .stat-card .icon{
-    width: 60px;
-    height: 60px;
-  }
-
-  .stat-card .icon img{
-    width: 32px;
-    height: 32px;
-  }
+  .left.top, .right.top{ transform: translateY(40px); }
 }
 
-/* تابلت و شاشة متوسطة */
+
+/* ✅ <= 991px (Tablet) — نفس التوزيع بس أصغر */
 @media (max-width: 991px){
 
   .stats-section{
-    margin-top: 0;          /* بريحها شوية من فوق عشان الفيديو */
-    padding: 80px 0 60px;
+    margin-top: 0 !important;
+    padding-top: 190px;       /* مهم عشان الفيديو */
+    padding-bottom: 70px;
+    overflow: visible;        /* بلاش hidden هنا */
   }
 
-  /* نلغي الـ grid ونخلي الكروت تحت بعض */
   .stats-grid{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 16px;
+    column-gap: 10px;
+    row-gap: 26px;
   }
 
-  .center-image-wrap{
-    order: 2;
-    margin: 10px auto 20px;
-  }
-
-  .center-image{
-    width: 230px;
-    max-width: 80%;
-  }
-
-  /* نلغي الترجمة اللي كانت منزلة الكروت لفوق/تحت */
-  .left.top,
-  .right.top,
-  .left.bottom,
-  .right.bottom{
-    grid-column: auto;
-    grid-row: auto;
-    justify-self: stretch;
-    transform: translateY(0);
-  }
+  .center-image{ width: 210px; }
 
   .stat-card{
-    width: 100%;
-    max-width: 340px;
+    width: 210px;
+    max-width: 210px;
+    min-height: 84px;
+    padding: 8px 12px;
+    border-radius: 18px;
   }
 
-  .stat-card .icon{
-    margin-top: 0;
-  }
+  .stat-card .icon{ width: 54px; height: 54px; border-radius: 12px; }
+  .stat-card .icon img{ width: 28px; height: 28px; }
+
+  .stat-card .text h4{ font-size: 18px; }
+  .stat-card .text p{ font-size: 11px; }
+
+  .left.top, .right.top{ transform: translateY(28px); }
 }
 
-/* موبايل صغير */
+
+/* ✅ <= 576px (Mobile) — نفس التوزيع (3 أعمدة) */
 @media (max-width: 576px){
 
   .stats-section{
-    padding: 60px 0 50px;
+    margin-top: 0 !important;
+    padding-top: 170px;   /* حسب ارتفاع الفيديو عندك في الموبايل */
+    padding-bottom: 60px;
   }
 
-  .center-image{
-    width: 200px;
+  .stats-grid{
+    column-gap: 8px;
+    row-gap: 18px;
   }
+
+  .center-image{ width: 90px; } /* اللوجو في النص يصغر قوي */
 
   .stat-card{
-    max-width: 100%;
+    width: 150px;
+    max-width: 150px;
+    min-height: 70px;
+    padding: 6px 10px;
     border-radius: 16px;
-    padding: 8px 12px;
+    gap: 8px;
   }
 
+  .stat-card .icon{ width: 44px; height: 44px; border-radius: 10px; }
+  .stat-card .icon img{ width: 22px; height: 22px; }
+
+  .stat-card .text h4{ font-size: 14px; }
+  .stat-card .text p{ font-size: 10px; }
+
+  .left.top, .right.top{ transform: translateY(18px); }
+}
+
+
+/* ✅ <= 420px (موبايلات صغيرة جدًا) */
+@media (max-width: 420px){
+
+  .center-image{ width: 80px; }
+
+  .stat-card{
+    width: 132px;
+    max-width: 132px;
+    min-height: 66px;
+  }
+
+  .stat-card .text h4{ font-size: 13px; }
+  .stat-card .text p{ font-size: 10px; }
+}
+
+@media (max-width: 576px){
+
+  /* تصغير البوكسات */
+  .stat-card{
+    width: 210px;
+    max-width: 210px;
+    padding: 6px 10px;
+    gap: 8px;
+    border-radius: 14px;
+  }
+
+  /* تصغير الأيقونة */
   .stat-card .icon{
-    width: 50px;
-    height: 50px;
+    width: 44px;
+    height: 44px;
   }
 
   .stat-card .icon img{
-    width: 26px;
-    height: 26px;
+    width: 22px;
+    height: 22px;
   }
 
+  /* تصغير الخط */
   .stat-card .text h4{
-    font-size: 18px;
+    font-size: 15px;
+    line-height: 1.3;
   }
 
   .stat-card .text p{
-    font-size: 12px;
+    font-size: 11px;
+    line-height: 1.4;
+  }
+
+  /* تصغير الصورة اللي في النص */
+  .center-image{
+    width: 90px;
   }
 }
 
+/* ✅ Fix clipping + keep same layout on Tablet/Mobile */
+
+/* مبدئيًا: امنعي القص وادي مساحة جانبية */
+@media (max-width: 991px){
+  .stats-section{
+    padding-left: 14px;
+    padding-right: 14px;
+    overflow-x: clip; /* بدل hidden */
+  }
+
+  /* نخلي اللفافة تتمركز */
+  .stats-scale{
+    width: 100%;
+    max-width: 520px;     /* مهم عشان ما تكبرش زيادة */
+    margin: 0 auto;
+  }
+
+  /* نفس الجريد بس بمسافات أهدى */
+  .stats-grid{
+    column-gap: clamp(8px, 2vw, 14px);
+    row-gap: clamp(18px, 3vw, 34px);
+  }
+
+  /* تصغير مرن للكروت */
+  .stat-card{
+    width: clamp(190px, 32vw, 250px);
+    max-width: none;
+    padding: 8px 12px;
+    gap: 10px;
+  }
+
+  .stat-card .icon{
+    width: 56px;
+    height: 56px;
+  }
+  .stat-card .icon img{
+    width: 30px;
+    height: 30px;
+  }
+
+  .stat-card .text h4{
+    font-size: clamp(16px, 2vw, 20px);
+    line-height: 1.25;
+  }
+  .stat-card .text p{
+    font-size: clamp(11px, 1.6vw, 12px);
+    line-height: 1.35;
+  }
+
+  /* تصغير مرن لصورة النص */
+  .center-image{
+    width: clamp(160px, 22vw, 220px);
+  }
+}
+
+/* 📱 Mobile */
+@media (max-width: 576px){
+  .stats-section{
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .stats-scale{
+    max-width: 390px;
+  }
+
+  .stats-grid{
+    column-gap: 10px;
+    row-gap: 22px;
+  }
+
+  /* هنا أهم جزء عشان مايتاكلش */
+  .stat-card{
+    width: clamp(150px, 40vw, 185px); /* يقلل العرض تلقائي */
+    padding: 6px 10px;
+    border-radius: 14px;
+  }
+
+  .stat-card .icon{
+    width: 44px;
+    height: 44px;
+  }
+  .stat-card .icon img{
+    width: 22px;
+    height: 22px;
+  }
+
+  .stat-card .text h4{
+    font-size: 14px;
+  }
+  .stat-card .text p{
+    font-size: 10.5px;
+  }
+
+  .center-image{
+    width: 95px;
+  }
+}
+
+/* ✅ STATS: منع القص + نفس التوزيعة (يمين/شمال + صورة في النص) */
+
+@media (max-width: 991px){
+
+  .stats-section{
+    padding-inline: 14px;
+    overflow-x: visible; /* متقصيش */
+  }
+
+  /* خلي الجريد نفسه أصغر ومتمركز */
+  .stats-grid{
+    width: min(100%, 560px);
+    margin-inline: auto;
+
+    /* أهم سطر: أعمدة الشمال/اليمين لها عرض قريب من الكروت */
+    grid-template-columns: clamp(190px, 34vw, 250px) auto clamp(190px, 34vw, 250px);
+    column-gap: 10px;
+    row-gap: 22px;
+    align-items: center;
+  }
+
+  /* Override قوي لمقاسات الكروت */
+  .stats-grid .stat-card{
+    width: 100% !important;        /* ياخد عرض العمود */
+    max-width: none !important;    /* يلغي 280 */
+    min-height: auto;
+    padding: 8px 12px;
+    gap: 10px;
+    border-radius: 16px;
+  }
+
+  .stats-grid .stat-card .text h4{ font-size: 16px; line-height: 1.25; }
+  .stats-grid .stat-card .text p{ font-size: 11px; line-height: 1.35; }
+
+  .stats-grid .stat-card .icon{ width: 52px; height: 52px; }
+  .stats-grid .stat-card .icon img{ width: 26px; height: 26px; }
+
+  .stats-grid .center-image{ width: clamp(150px, 18vw, 180px); }
+}
+
+
+/* 📱 موبايل صغير */
+@media (max-width: 576px){
+
+  .stats-section{ padding-inline: 10px; }
+
+  .stats-grid{
+    width: 100%;
+    grid-template-columns: clamp(150px, 42vw, 180px) auto clamp(150px, 42vw, 180px);
+    column-gap: 8px;
+    row-gap: 18px;
+  }
+
+  .stats-grid .stat-card{
+    padding: 6px 10px;
+    border-radius: 14px;
+  }
+
+  .stats-grid .stat-card .text h4{ font-size: 13px; }
+  .stats-grid .stat-card .text p{ font-size: 10px; }
+
+  .stats-grid .stat-card .icon{ width: 44px; height: 44px; }
+  .stats-grid .stat-card .icon img{ width: 22px; height: 22px; }
+
+  .stats-grid .center-image{ width:110px; }
+}
+
+/* توحيد حجم كروت الـ stats */
+.stats-grid .stat-card{
+  height: 88px;              /* ثابته لكل الكروت */
+  align-items: center;
+}
+
+/* نخلي النص مايزودش الطول */
+.stats-grid .stat-card .text{
+  justify-content: center;
+}
+
+/* نخلي الوصف سطرين بالكتير */
+.stats-grid .stat-card .text p{
+  display: -webkit-box;
+   /* أقصى سطرين */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* موبايل أصغر */
+@media (max-width: 576px){
+  .stats-grid .stat-card{
+    height: 78px;
+  }
+
+  .stats-grid .stat-card .text h4{
+    font-size: 13px;
+  }
+
+  .stats-grid .stat-card .text p{
+    font-size: 10px;
+  }
+}
+/* مسافات بين الكروت */
+.stats-grid{
+  column-gap: 18px !important;
+  row-gap: 20px !important;
+}
+
+/* احتياطي: لو فيه أي margin/padding متداخل */
+.stats-grid .stat-card{
+  margin: 0 !important;
+}
+
+/* موبايل: نزود المسافة شوية (لو لسه لازق) */
+@media (max-width: 576px){
+  .stats-grid{
+    column-gap: 24px !important;
+    row-gap: 24px !important;
+  }
+}
 
 /* ====== SECTION ====== */
 #who{
@@ -2195,33 +2608,43 @@ footer ul li a:hover {
 
 
 
-/* /////////////////سابقه الاعمال//////////////// */
-.header-projects{
-   background-image: url(image/header.png);
-  background-position: center;
-  background-size: cover;
-  height: 100vh;
-  padding-top: 30px;
-   position: relative;
+
+
+
+@media (min-width: 768px) and (max-width: 1024px){
+
+  .header-bar{
+    padding: 12px 24px;
+    gap: 16px;
+  }
+
+  .logo,.vision{
+    flex: 0 0 110px;
+  }
+
+  .logo img,.vision img{
+    height: 64px;
+  }
+
+  .top-nav{
+    padding: 0 10px;
+  }
+
+  /* خليها “كبسولة” زي الديسكتوب بس أصغر */
+  .top-nav ul{
+    flex-wrap: nowrap;
+  }
+
+  .top-nav ul li > .nav-link{
+    padding: 14px 10px;
+    font-size: 13px;
+    white-space: nowrap;
+  }
+
+  .top-nav ul .nav-divider{
+    height: 46px;
+  }
 }
 
 
 
-
-/* من 1206px لحد 1400px — خلي الهيدر والبلوك ممتدين 100% */
-@media (min-width: 1206px) and (max-width: 1400px) {
-  
-  .container {
-    max-width: 100% !important;
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-
-  header,
-  .header-hero,
-  .top-section,
-  .MG-info,
-  .hero-content {
-    max-width: 100% !important;
-  }
-}

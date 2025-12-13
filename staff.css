@@ -117,52 +117,6 @@ a {
 }
 
 /* Mobiles */
-@media (max-width: 768px) {
-  .staff-header {
-    padding-bottom: 24px;
-  }
-
-  .header-bar-staff {
-    padding: 10px 12px;
-    gap: 10px;
-    flex-direction: column;          /* اللوجوهات فوق والناف تحت */
-    align-items: center;
-  }
-
-  .logo-staff img,
-  .vision-staff img {
-    width: 95px;
-  }
-
-  .top-nav-staff {
-    width: 100%;
-    border-radius: 14px;
-    padding: 10px 10px;
-    overflow-x: auto;                /* أهم حاجة: سكرول أفقي */
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .top-nav-staff ul {
-    flex-wrap: nowrap;               /* يمنع التكسير */
-    justify-content: flex-start;
-    gap: 8px;
-    min-width: max-content;          /* يخلي العناصر جنب بعض */
-    padding: 0;
-    margin: 0;
-  }
-
-  .nav-link {
-    white-space: nowrap;             /* النص ماينزلش تحت */
-    font-size: 13px;
-    padding: 9px 12px;
-    border-radius: 14px;
-  }
-
-  /* اختيارية: نخفي شكل السكرول */
-  .top-nav-staff::-webkit-scrollbar {
-    height: 0;
-  }
-}
 
 /* Very small phones */
 @media (max-width: 420px) {

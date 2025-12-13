@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MGt</title>
+    <title>MG</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Cairo:wght@200..1000&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Playwrite+VN:wght@100..400&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -13,76 +13,65 @@
 <body>
 
 
-<!-- ====== HEADER ====== -->
 <header>
-  <div class="container">
+  <div class="header-bar">
 
-    <!-- الكبسولة اللي فوق -->
-    <div class="header-bar">
-
-      <!-- لوجو على اليمين -->
-      <div class="logo">
-        <img src="./image/logo.png" alt="MG Logo">
-      </div>
-
-      <!-- الناف بار في النص -->
-      <nav class="top-nav">
-        <ul>
-          <li><a href="#" class="nav-link active">الرئيسية</a></li>
-          <li><a href="#who" class="nav-link">من نحن</a></li>
-          <li><a href="#companies" class="nav-link">الشركات</a></li>
-          <li><a href="projects.html" class="nav-link">سابقة الأعمال</a></li>
-          <li><a href="staff.html" class="nav-link">تأجير عمالة</a></li>
-          <li><a href="#partners" class="nav-link">شركاء النجاح</a></li>
-          <li><a href="#contact-us" class="nav-link">تواصل معنا</a></li>
-          <li>
-            <button type="button" class="nav-link video-link">
-              🎥 فيديو تعريفي
-            </button>
-          </li>
-        </ul>
-      </nav>
-
-      <!-- Vision 2030 على الشمال -->
-      <div class="vision">
-        <img src="./image/vision.png" alt="Vision 2030">
-      </div>
-
+    <div class="logo">
+      <img src="./image/logo.png" alt="MG Logo">
+      <button class="menu-btn" aria-label="Open menu">☰</button>
     </div>
 
-    <!-- النص اللي في الهيرو -->
-    <div class="MG-info text-center">
-      <div class="info-box">
-        <h2>نجاحنا مبني على الخبرة، الجودة، والثقة.</h2>
-      </div>
+  <nav class="top-nav" aria-label="Main">
 
-      <div class="MG-p">
-        <h1>
-          مجموعة ممدوح جازي الوسوس<br>
-          Mamdouh G. Alwiswis Group
-        </h1>
-      </div>
+  <!-- هيدر الدروار -->
+  <div class="drawer-head">
+    
+    <button class="menu-close" aria-label="Close menu">✕</button>
+  </div>
 
-      <h3>
-       نقدّم خدمات احترافية في المقاولات العامة، الصيانة  والتشغيل، الحلول التقنية، والسياحه بما يتوافق مع رؤية المملكة 2030.
-      </h3>
+  <!-- اللينكات -->
+  <ul>
+    <li><a href="#" class="nav-link active">الرئيسية</a></li>
+    <li><a href="#who" class="nav-link">من نحن</a></li>
+    <li><a href="#companies" class="nav-link">الشركات</a></li>
+    <li><a href="projects.html" class="nav-link">سابقة الأعمال</a></li>
+    <li><a href="staff.html" class="nav-link">تأجير عمالة</a></li>
+    <li><a href="#partners" class="nav-link">شركاء النجاح</a></li>
+    <li><a href="#contact-us" class="nav-link">تواصل معنا</a></li>
 
-      <div class="MG-btn">
-        <button class="btn-1">تواصل معنا</button>
+    <!-- فاصل -->
+    <li class="nav-divider" aria-hidden="true"></li>
 
-         <button class="btn-2"> 
-          
-          <span class="arrows">←</span>
-          تأجير عمالة
-          
- </button>
+    <li>
+      <button type="button" class="nav-link video-link">🎥 فيديو تعريفي</button>
+    </li>
+  </ul>
+</nav>
 
-      </div>
+    <div class="vision">
+      <img src="./image/vision.png" alt="Vision 2030">
     </div>
 
   </div>
 
-  <!-- الفيديو اللي نصه في الهيدر ونصه في الأبيض -->
+  <div class="MG-info">
+    <div class="info-box">
+      <div class="image-trend"><img src="image/trend-up.png" alt=""></div>
+      <h2>نجاحنا مبني على الخبرة، الجودة، والثقة.</h2>
+    </div>
+
+    <div class="MG-p">
+      <h1>مجموعة ممدوح جازي الوسوس<br>Mamdouh G. Alwiswis Group</h1>
+    </div>
+
+    <h3>نقدّم خدمات احترافية في المقاولات العامة، الصيانة والتشغيل، الحلول التقنية، والسياحه بما يتوافق مع رؤية المملكة 2030.</h3>
+
+    <div class="MG-btn">
+      <button class="btn-1">تواصل معنا</button>
+      <button class="btn-2"><span class="arrows">←</span> تأجير عمالة</button>
+    </div>
+  </div>
+
   <div class="home-video-wrapper">
     <iframe
       src="https://www.youtube.com/embed/QsY8fnvMn6c?si=cEKbXL02-04P7rya"
@@ -94,13 +83,19 @@
   </div>
 </header>
 
+<!-- Overlay لازم يبقى برا الـ header -->
+<div class="nav-overlay" aria-hidden="true"></div>
+
+
+
+
 <!-- ====== STATS SECTION ====== -->
-<section class="stats-section">
-  <div class="container">
+ <section class="stats-section">
+
 
     <div class="stats-grid">
 
-      <!-- كارت 1 -->
+    
       <div class="stat-card left top">
         <div class="icon">
           <img src="./image/bag-icon.png" alt="">
@@ -111,7 +106,7 @@
         </div>
       </div>
 
-      <!-- كارت 2 -->
+      
       <div class="stat-card right top">
         <div class="icon">
           <img src="./image/exp-icon.png" alt="">
@@ -122,12 +117,11 @@
         </div>
       </div>
 
-      <!-- الصورة اللي في النص -->
       <div class="center-image-wrap">
         <img src="./image/state.png" class="center-image glow" alt="MG Center">
       </div>
-
-      <!-- كارت 3 -->
+ 
+     
       <div class="stat-card left bottom">
         <div class="icon">
           <img src="./image/degree-icon.png" alt="">
@@ -138,7 +132,7 @@
         </div>
       </div>
 
-      <!-- كارت 4 -->
+      
       <div class="stat-card right bottom">
         <div class="icon">
           <img src="./image/icon4.png" class="glow" alt="">
@@ -151,11 +145,11 @@
 
     </div>
 
-  </div>
-</section>
+
+</section> 
 
 <section id="who">
-  <div class="container">
+ <div class="container-fluid">
     <div class="who-box">
 
       <div class="row align-items-center">

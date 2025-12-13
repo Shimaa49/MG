@@ -1,4 +1,89 @@
-const counters = document.querySelectorAll('.counter');
+document.addEventListener("DOMContentLoaded", () => {
+  const body = document.body;
+
+  const menuBtn = document.querySelector(".menu-btn");
+  const nav = document.querySelector(".top-nav");
+
+  // لو مش موجودين، اخرج بهدوء
+  if (!menuBtn || !nav) return;
+
+  // أنشئ overlay لو مش موجود
+  let overlay = document.querySelector(".nav-overlay");
+  if (!overlay) {
+    overlay = document.createElement("div");
+    overlay.className = "nav-overlay";
+    document.body.appendChild(overlay);
+  }
+
+  // أنشئ زرار قفل داخل المينو لو مش موجود (اختياري)
+  let closeBtn = nav.querySelector(".menu-close");
+  if (!closeBtn) {
+    closeBtn = document.createElement("button");
+    closeBtn.type = "button";
+    closeBtn.className = "menu-close";
+    closeBtn.setAttribute("aria-label", "Close menu");
+    closeBtn.textContent = "×";
+    nav.prepend(closeBtn);
+  }
+
+  // Accessibility
+  menuBtn.setAttribute("aria-expanded", "false");
+  nav.setAttribute("aria-hidden", "true");
+
+  const openMenu = () => {
+    body.classList.add("menu-open");
+    menuBtn.setAttribute("aria-expanded", "true");
+    nav.setAttribute("aria-hidden", "false");
+
+    // منع سكرول الخلفية
+    body.style.overflow = "hidden";
+
+    // فوكس على أول لينك داخل المينو
+    const firstLink = nav.querySelector("a, button");
+    if (firstLink) firstLink.focus();
+  };
+
+  const closeMenu = () => {
+    body.classList.remove("menu-open");
+    menuBtn.setAttribute("aria-expanded", "false");
+    nav.setAttribute("aria-hidden", "true");
+
+    body.style.overflow = "";
+
+    // رجّع الفوكس لزرار المينو
+    menuBtn.focus();
+  };
+
+  const toggleMenu = () => {
+    body.classList.contains("menu-open") ? closeMenu() : openMenu();
+  };
+
+  // فتح/قفل بالزرار
+  menuBtn.addEventListener("click", toggleMenu);
+
+  // قفل بزرار X
+  closeBtn.addEventListener("click", closeMenu);
+
+  // قفل بالضغط على الخلفية (overlay)
+  overlay.addEventListener("click", closeMenu);
+
+  // قفل بزر ESC
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && body.classList.contains("menu-open")) {
+      closeMenu();
+    }
+  });
+
+  // لما اضغط على أي لينك جوه المينو اقفلها (مفيد في الموبايل)
+  nav.addEventListener("click", (e) => {
+    const clickedLink = e.target.closest("a");
+    if (!clickedLink) return;
+    closeMenu();
+  });
+});
+
+ 
+ const counters = document.querySelectorAll('.counter');
 
 // نعمل observer علشان يبدأ العد لما يظهر القسم في الشاشة
 const options = {
