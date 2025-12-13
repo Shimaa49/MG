@@ -190,6 +190,107 @@ font-weight: 700;
 }
 
 
+/* =========================
+   Responsive - Staff Header
+   ========================= */
+
+/* Tablets */
+@media (max-width: 992px) {
+  .header {
+    padding-bottom: 30px;
+  }
+
+  .header-bar {
+    padding: 10px 16px;
+    gap: 12px;
+    flex-wrap: wrap;                 /* يسمح ينزل سطر لو محتاج */
+    justify-content: center;         /* يخليهم في النص */
+  }
+
+  .logof img,
+  .vision img {
+    width: 110px;
+  }
+
+  .top-nav {
+    width: 100%;                     /* الناف تاخد سطر لوحدها */
+    padding: 8px 10px;
+  }
+
+  .top-nav ul {
+    justify-content: center;
+    flex-wrap: wrap;                 /* لو الروابط كتير */
+    gap: 6px;
+    padding: 0;
+    margin: 0;
+  }
+
+  .nav-link {
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+}
+
+/* Mobiles */
+@media (max-width: 768px) {
+.header-bar {
+    padding-bottom: 24px;
+  }
+
+  .header-bar {
+    padding: 10px 12px;
+    gap: 10px;
+    flex-direction: column;          /* اللوجوهات فوق والناف تحت */
+    align-items: center;
+  }
+
+  .logo img,
+  .vision-staff img {
+    width: 95px;
+  }
+
+  .top-nav {
+    width: 100%;
+    border-radius: 14px;
+    padding: 10px 10px;
+    overflow-x: auto;                /* أهم حاجة: سكرول أفقي */
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .top-nav ul {
+    flex-wrap: nowrap;               /* يمنع التكسير */
+    justify-content: flex-start;
+    gap: 8px;
+    min-width: max-content;          /* يخلي العناصر جنب بعض */
+    padding: 0;
+    margin: 0;
+  }
+
+  .nav-link {
+    white-space: nowrap;             /* النص ماينزلش تحت */
+    font-size: 13px;
+    padding: 9px 12px;
+    border-radius: 14px;
+  }
+
+  /* اختيارية: نخفي شكل السكرول */
+  .top-nav-staff::-webkit-scrollbar {
+    height: 0;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 420px) {
+  .logo img,
+  .vision img {
+    width: 85px;
+  }
+
+  .nav-link {
+    font-size: 12px;
+    padding: 8px 10px;
+  }
+}
 
 
 

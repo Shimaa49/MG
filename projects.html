@@ -32,7 +32,7 @@
           <li><a href="#who" class="nav-link">من نحن</a></li>
           <li><a href="#" class="nav-link">الشركات</a></li>
           <li><a href="#" class="nav-link">سابقة الأعمال</a></li>
-          <li><a href="#" class="nav-link">تأجير عمالة</a></li>
+          <li><a href="staff.html" class="nav-link">تأجير عمالة</a></li>
           <li><a href="#" class="nav-link">شركاء النجاح</a></li>
           <li><a href="#couct-us" class="nav-link">تواصل معنا</a></li>
           <li>
@@ -102,7 +102,7 @@
       <p>الصيانة والنظافة</p>
     </a>
 
-    <a href="#section3" class="service-box2">
+    <a href="#ops" class="service-box2">
       <img src="image/work.png" alt="" class="icon">
       <p>الصيانة والتشغيل</p>
     </a>
@@ -175,71 +175,211 @@
 
   <!-- الـ Slider اللي تحت -->
   <div class="projects-slider">
-    <button class="slider-arrow">&lt;</button>
-    
-    <button class="slider-dot">04</button>
-    <button class="slider-dot">03</button>
-    <button class="slider-dot">02</button>
-    <button class="slider-dot active">01</button>
+  <button class="slider-arrow" id="prev">&#8249;</button>
 
-    <button class="slider-arrow">&gt;</button>
-  </div>
+  <button class="slider-dot active" data-slide="1">01</button>
+  <button class="slider-dot" data-slide="2">02</button>
+  <button class="slider-dot" data-slide="3">03</button>
+  <button class="slider-dot" data-slide="4">04</button>
+
+  <button class="slider-arrow" id="next">&#8250;</button>
+</div>
+
 
 </section>
 
-
-
-<section class="ops-section py-5">
+<section class="cleaning-projects" id="clean">
   <div class="container">
 
-    <div class="row g-4 align-items-start">
+    <div class="clean-info">
+      <!-- العنوان -->
+      <div class="sectionnn-header">
+        <h2>سابقة الأعمال : الصيانة والنظافة</h2>
+        <p>
+          تقدم المجموعة خدمات نظافة كاملة للمدارس والمعاهد والمباني التعليمية في مختلف المناطق.
+        </p>
+      </div>
 
-      <!-- 🔵 الشمال: صف الصور (بدون سلايدر) -->
-      <div class="col-lg-6">
-        <div class="row g-2 ops-images">
+      <!-- نص المشاريع -->
+      <div class="projects-text">
+        <h3>المشاريع</h3>
+        <ul>
+          <li>عملية نظافة المباني بمدارس المجموعة الأولى – إدارة التعليم</li>
+          <li>عملية نظافة مدارس قطاع شرقي والغربي بمنطقة الحدود الشمالية</li>
+          <li>نظافة المدارس الحكومية لإدارة تعليم البنين بمحافظة حفر الباطن</li>
+          <li>نظافة المعاهد والإسكان الداخلي، ومراكز خدمات التربية الفكرية وصعوبات التعلم بمنطقة القصيم</li>
+        </ul>
+      </div>
+    </div>
 
-          <div class="col-4">
-            <img src="image/work1-bg.png" class="img-fluid rounded">
+    <!-- الصور (نفس ترتيب الفيجما: كبير - متوسط - صغير - متوسط - كبير) -->
+    <div class="projectss-gallery">
+      <div class="imgee-box1">
+        <img src="./image/clean4.png" alt="">
+      </div>
+
+      <div class="imgee-box2">
+        <img src="./image/clean6.png" alt="">
+      </div>
+
+      <div class="imgee-box3">
+        <img src="./image/clean5.png" alt="">
+      </div>
+
+      <div class="imgee-box4">
+        <img src="./image/clean3.png" alt="">
+      </div>
+
+      <div class="imgee-box6">
+        <img src="./image/clean2.png" alt="">
+      </div>
+
+      <div class="imgee-box6">
+        <img src="./image/clean1.png" alt="">
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+<!-- ========== سابقة الأعمال : الصيانة والتشغيل ========== -->
+<section class="ops-section" id="ops">
+  <div class="ops-wrapper">
+
+    <!-- ➊ العمود الشمال: السلايدر -->
+    <div class="ops-slider">
+
+      <div class="ops-window">
+        <div class="ops-track">
+
+          <!-- Slide 1 -->
+          <div class="ops-slide">
+            <div class="ops-images-row">
+              <img src="image/work1-bg.png" alt="">
+              <img src="image/work2-bg.png" alt="">
+              <img src="image/work4-bg.png" alt="">
+            </div>
           </div>
 
-          <div class="col-4">
-            <img src="image/work2-bg.png" class="img-fluid rounded">
+          <!-- Slide 2 -->
+          <div class="ops-slide">
+            <div class="ops-images-row">
+              <img src="image/work2-bg.png" alt="">
+              <img src="image/work4-bg.png" alt="">
+              <img src="image/work1-bg.png" alt="">
+            </div>
           </div>
 
-          <div class="col-4">
-            <img src="image/work4-bg.png" class="img-fluid rounded">
+          <!-- Slide 3 -->
+          <div class="ops-slide">
+            <div class="ops-images-row">
+              <img src="image/work4-bg.png" alt="">
+              <img src="image/work1-bg.png" alt="">
+              <img src="image/work2-bg.png" alt="">
+            </div>
           </div>
-
-         
 
         </div>
       </div>
 
-      <!-- 🔵 اليمين: النص -->
-      <div class="col-lg-6">
-        <div class="ops-box p-4">
+      <!-- الدواير + الأسهم -->
+      <div class="ops-controls">
+        <button class="ops-arrow ops-prev">&lt;</button>
 
-          <h3 class="fw-bold mb-2">سابقة الأعمال : الصيانة والتشغيل</h3>
+        <button class="ops-dot active" data-slide="0">01</button>
+        <button class="ops-dot" data-slide="1">02</button>
+        <button class="ops-dot" data-slide="2">03</button>
 
-          <p class="text-muted mb-3">
-            تشغيل وصيانة منشآت ضخمة في القطاع الحكومي والخاص بما يشمل المطارات والمصانع والفنادق.
+        <button class="ops-arrow ops-next">&gt;</button>
+      </div>
+
+    </div>
+
+    <!-- ➋ العمود اليمين: النص -->
+    <div class="ops-text">
+      <h3 class="ops-title">سابقة الأعمال : الصيانة والتشغيل</h3>
+
+      <p class="ops-desc">
+        تشغيل وصيانة منشآت ضخمة في القطاع الحكومي والخاص بما يشمل المطارات والمصانع والفنادق.
+      </p>
+
+      <h4 class="ops-subtitle">المشاريع</h4>
+
+      <ul class="ops-list">
+        <li>شركة الخطوط السعودية للتموين</li>
+        <li>مطار الملك عبد العزيز – جدة</li>
+        <li>مطار الملك خالد – الرياض</li>
+        <li>مطار الملك فهد – الدمام</li>
+        <li>مطار الأمير محمد بن عبد العزيز – المدينة المنورة</li>
+        <li>شركة العجمي للمشروعات</li>
+        <li>الشركة الوطنية للتنمية الزراعية (نادك)</li>
+        <li>مصانع الندة للمياه</li>
+        <li>شركة جبل عمر – فندق حياة ريجنسي مكة</li>
+        <li>الشركة السعودية للخدمات الأرضية</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== سابقة الأعمال - صيانة ونظافة وتشغيل ===== -->
+<!-- ========== سابقة الأعمال سكشن كامل ========== -->
+<section class="projects-all-section" id="section4">
+  <div class="container">
+
+    <div class="projects-all-box">
+      <!-- ===== الجزء العلوي (النص) ===== -->
+      <div class="projects-all-top">
+
+        <!-- عمود الشمال (سابقة الأعمال) -->
+        <div class="projects-all-left">
+          <p class="projects-all-desc">
+            تعاونت المجموعة مع أبرز الشركات المحلية والدولية لتقديم خدمات تشغيل ونظافة وصيانة متكاملة.
           </p>
 
-          <h5 class="fw-bold  mb-2">المشاريع</h5>
-
-          <ul class="list-unstyled ops-list">
-            <li>• شركة الخطوط السعودية للتموين</li>
-            <li>• مطار الملك عبد العزيز – جدة</li>
-            <li>• مطار الملك خالد – الرياض</li>
-            <li>• مطار الملك فهد – الدمام</li>
-            <li>• مطار الأمير محمد بن عبد العزيز – المدينة المنورة</li>
-            <li>• شركة العجمي للمشروعات</li>
-            <li>• الشركة الوطنية للتنمية الزراعية نادك</li>
-            <li>• مصانع الندة للمياه</li>
-            <li>• شركة جبل عمر – فندق حياة ريجنسي مكة</li>
-            <li>• الشركة السعودية للخدمات الأرضية</li>
+          <ul class="projects-all-list">
+            <li>شركة طارة المحدودة</li>
+            <li>مطعم بوميراني الإيطالي (المنطقة الشرقية)</li>
+            <li>مطعم مازاتي الإيطالي (المنطقة الشرقية)</li>
+            <li>قاعة الأندلس للاحتفالات (المنطقة الشرقية)</li>
+            <li>شركة متقن الزاد (الطائف)</li>
           </ul>
+        </div>
 
+        <!-- عمود اليمين (العنوان + المشاريع) -->
+        <div class="projects-all-right">
+          <h3 class="projects-all-title">سابقة الأعمال : صيانة ونظافة وتشغيل</h3>
+
+          <h4 class="projects-all-subtitle">المشاريع</h4>
+          <ul class="projects-all-list">
+            <li>شركة المجال سيرفس ماستر</li>
+            <li>شركة آل سيف القابضة</li>
+            <li>المطاعم الأهلية (هارديز – ماريرز – بيتزا هت – كنتاكي)</li>
+            <li>شركة الضيافة للتموين</li>
+            <li>مطاعم بيزا إن</li>
+            <li>HMF</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- ===== الجزء السفلي (جاليري صور بسيط) ===== -->
+      <div class="projects-all-gallery">
+        <div class="projects-all-grid">
+          <div class="projects-all-card"><img src="image/all1.png"  alt=""></div>
+          <div class="projects-all-card"><img src="image/all2.png"  alt=""></div>
+          <div class="projects-all-card"><img src="image/all3.png"  alt=""></div>
+          <div class="projects-all-card"><img src="image/all4.png"  alt=""></div>
+          <div class="projects-all-card"><img src="image/all5.png"  alt=""></div>
+          <div class="projects-all-card"><img src="image/all6.png"  alt=""></div>
+          <div class="projects-all-card"><img src="image/all7.png"  alt=""></div>
+          <div class="projects-all-card"><img src="image/all8.png"  alt=""></div>
+          <div class="projects-all-card"><img src="image/all9.png"  alt=""></div>
+          <div class="projects-all-card"><img src="image/all9.png" alt=""></div>
         </div>
       </div>
 
@@ -248,38 +388,64 @@
   </div>
 </section>
 
-<!--  
- <section class="g-section">
-  <div class="g-wrapper"> 
+<section class="projects-gallery">
+  <div class="container">
 
-    <!-- عمود شمال -->
-    <div class="g-col g-left">
-      <img src="image/all1.png" class="g-img g-small">
-      <img src="image/all2.png" class="g-img g-small">
+    <!-- العنوان -->
+    <div class="gallery-info text-center">
+      <h2>جميع صور مشاريعنا</h2>
+      <p>نقدم أفضل الحلول في مجالات التشغيل والصيانة والمقاولات.</p>
     </div>
 
-    <!-- عمود النص -->
-    <div class="g-col g-center">
-      <img src="image/all3.png" class="g-img g-large"> <!-- الكبيرة -->
-
-      <div class="g-row">
-        <img src="image/all4.png" class="g-img g-medium">
-        <img src="image/all5.png" class="g-img g-medium">
+    <!-- الصف الأول -->
+    <div class="row top-row align-items-center">
+   
+      <!-- الصورة الكبيرة -->
+      <div class="col-lg-4 col-md-5">
+        <div class="gallery-big">
+          <img src="image/gallary1.png" alt="">
+        </div>
       </div>
 
-      <img src="image/all6.png" class="g-img g-medium">
+      <!-- الصورة الصغيرة -->
+      <div class="col-lg-8 col-md-7">
+        <div class="gallery-small">
+          <img src="image/bg-gallary.png" alt="">
+        </div>
+      </div>
+
     </div>
 
-    <!-- عمود يمين -->
-    <div class="g-col g-right">
-      <img src="image/all7.png" class="g-img g-large"> <!-- الكبيرة -->
-      <img src="image/all8.png" class="g-img g-small">
-      <img src="image/all9.png" class="g-img g-small">
-      <img src="image/all10.png" class="g-img g-small">
+    <!-- الصف الثاني -->
+    <div class="row bottom-row mt-4">
+
+      <div class="col-lg-4 col-md-4">
+        <div class="gallery-box">
+          <img src="image/gallary2.png" alt="">
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-4">
+        <div class="gallery-box">
+          <img src="image/gallary4.png" alt="">
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-4">
+        <div class="gallery-box">
+          <img src="image/gallary3.png" alt="">
+        </div>
+      </div>
+
     </div>
 
   </div>
-</section>  -->
+</section>
+
+
+
+
+
 
 
 
@@ -519,7 +685,7 @@
 
 
        <script src="js/bootstrap.js"></script>
-    <script src="main.js"></script>
+    <script src="project.js"></script>
    
     
 </body>
