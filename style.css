@@ -14,7 +14,7 @@ header{
   background-image:url(./image/header.png);
   background-position:center;
   background-size:cover;
-  min-height:110vh;
+  min-height:80vh;
   padding-top:20px;
   padding-bottom:560px; /* مساحة ثابتة للفيديو تحت */
   position:relative;
@@ -108,7 +108,7 @@ header{
 
 /* HERO */
 .MG-info{
-  margin-top:10px;
+  margin-top:50px;
   color:#fff;
   display:flex;
   flex-direction:column;
@@ -204,7 +204,7 @@ font-weight: 700;
   border-radius:14px;
   overflow:hidden;
   box-shadow:0 10px 30px rgba(0,0,0,0.35);
-  bottom:-5px;
+  bottom:-110px;
   z-index:2;
   height: 490px;
 }
@@ -610,489 +610,173 @@ background-color: red;
     height: 56px;
   }
 }
-/* ====== STATS SECTION ====== */
+/* =========================
+   STATS (One clean version)
+   نفس الشكل على كل الشاشات + بدون scroll بالعرض
+   ========================= */
+
 .stats-section{
-  background: #fff;
-  padding: 200px 0 500px;    /* لازم تكون قريبة من قيمة bottom في الفيديو */
-  position: relative;
-  z-index: 1;
-  margin-top: -130px;
-  padding-top: 200px;
-  padding-bottom: 80px;
+  background:#fff;
+  position:relative;
+  z-index:1;
+
+  /* خليها بسيطة ومتتحكمش في الفيديو هنا */
+  margin-top: 30px;
+padding: 120px 0 50px;
+  overflow-x: clip; /* يمنع أي تمدد بالعرض */
 }
 
-/* الجريد */
+/* wrapper optional (stats-scale) */
+.stats-scale{
+  width: 100%;
+}
+
+/* الجريد نفسه */
 .stats-grid{
+  /* عشان يبقى في النص ومش يلمس الحواف */
+  width: min(100%, 900px);
+  margin: 0 auto;
+  padding-inline: 12px;
+
   display: grid;
-  grid-template-columns: minmax(0,1fr) auto minmax(0,1fr);
-  grid-template-rows: auto auto;
-  column-gap: 16px;
-  row-gap: 40px;
   align-items: center;
- 
+
+  /* نفس الشكل دايمًا: 3 أعمدة (شمال - وسط - يمين) */
+  grid-template-columns:
+    minmax(0, clamp(150px, 36vw, 280px))
+    auto
+    minmax(0, clamp(150px, 36vw, 280px));
+
+  column-gap: clamp(10px, 2.5vw, 22px);
+  row-gap: clamp(14px, 2.5vw, 28px);
 }
 
-/* الصورة في النص */
+/* مكان اللوجو */
 .center-image-wrap{
   grid-column: 2;
   grid-row: 1 / span 2;
-  display: flex;
-  justify-content: center;
-  margin-top: 10px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
 }
 
 .center-image{
-  width: 300px;
+  width: clamp(90px, 14vw, 300px);
 }
 
 /* أماكن الكروت */
 .left.top{
-  grid-column: 1;
-  grid-row: 1;
-  justify-self: end;
-transform: translateY(50px);
+  grid-column: 1; grid-row: 1; justify-self: end;
+  transform: translateY(clamp(0px, 2.5vw, 50px));
 }
-
 .left.bottom{
-  grid-column: 1;
-  grid-row: 2;
-  justify-self: end;
+  grid-column: 1; grid-row: 2; justify-self: end;
 }
-
 .right.top{
-  grid-column: 3;
-  grid-row: 1;
-  justify-self: start;
-transform: translateY(50px);
- 
+  grid-column: 3; grid-row: 1; justify-self: start;
+  transform: translateY(clamp(0px, 2.5vw, 50px));
+}
+.right.bottom{
+  grid-column: 3; grid-row: 2; justify-self: start;
 }
 
-.right.bottom{
-  grid-column: 3;
-  grid-row: 2;
-  justify-self: start;
-}
 /* شكل الكارت */
 .stat-card{
+  /* أهم سطرين لمنع الـ scroll */
+  width: 100%;
+  max-width: 100%;
+
   background: rgba(243, 244, 246, 0.96);
-  border-radius: 20px;
-  border: 1.7px solid rgba(225, 228, 233, 1);
-  padding: 10px 18px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 12px;
+  border-radius: 18px;
+  border: 1.5px solid rgba(225, 228, 233, 1);
   box-shadow: 0 10px 25px rgba(0,0,0,0.04);
+
+  display:flex;
+  align-items:center;
+  justify-content:flex-start;
   direction: rtl;
-  min-height:100px; 
-           /* الأربع كروت نفس الطول */
-           max-width: 280px;
-           width: 280px;
+
+  gap: clamp(8px, 1.6vw, 12px);
+  padding: clamp(8px, 1.6vw, 12px);
+
+  /* توحيد المقاسات */
+  min-height: clamp(66px, 9vw, 100px);
 }
 
+/* خلي كل الكروت قد بعض حتى لو النص أطول */
 .stat-card .text{
-  display: flex;
+  display:flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content:center;
+  min-width: 0; /* مهم عشان القص/اللف */
 }
 
 .stat-card .text h4{
-  color: #4d4d4d;
-  font-size: 25px;
-  font-weight: 700;
-  margin-bottom: 4px;
+  color:#4d4d4d;
+  font-weight:700;
+  font-size: clamp(13px, 2.2vw, 25px);
+  line-height: 1.2;
+  margin:0 0 4px;
 }
 
 .stat-card .text p{
-  color: #666;
-  font-size: 13px;
-  line-height: 150%;
+  color:#666;
+  font-size: clamp(10px, 1.8vw, 13px);
+  line-height: 1.35;
+  margin:0;
+
+  /* سطرين بس عشان كارت 11 شركة مايكبرش */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+/* توحيد ارتفاع كروت الـ stats */
+.stats-grid .stat-card{
+  height: 88px;            /* ثابته لكل الكروت */
+  align-items: center;
 }
 
 /* الأيقونة */
 .stat-card .icon{
-  width: 70px;
-  height: 70px;
+  flex: 0 0 auto;
+  width: clamp(44px, 6vw, 70px);
+  height: clamp(44px, 6vw, 70px);
   border-radius: 14px;
-  background: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  border: 1.73px solid rgba(225, 228, 233, 1);
+  background:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.10);
+  border: 1.5px solid rgba(225, 228, 233, 1);
 }
 
 .stat-card .icon img{
-  width: 40px;
-  height: 40px;
+  width: clamp(22px, 3.4vw, 40px);
+  height: clamp(22px, 3.4vw, 40px);
 }
 
-/* إضاءة الصورة اللي في النص */
-.glow{
-  position: relative;
-  animation: glowPulse 2.2s infinite ease-in-out;
-}
-
-@keyframes glowPulse{
-  0%{ filter: drop-shadow(0 0 0 rgba(185,40,45,0)); }
-  50%{ filter: drop-shadow(0 0 25px rgba(185,40,45,0.65)); }
-  100%{ filter: drop-shadow(0 0 0 rgba(185,40,45,0)); }
-}
-
-/* ====== RESPONSIVE ====== */
-
-/* =========  RESPONSIVE STATS SECTION (Keep same layout)  ========= */
-
-/* =========================
-   RESPONSIVE STATS (KEEP SAME LAYOUT)
-   ========================= */
-
-/* ✅ <= 1200px (Laptop صغير) */
-@media (max-width: 1200px){
-
-  .stats-section{
-    margin-top: 0 !important;     /* مهم لو عندك سالب */
-    padding-top: 180px;           /* مساحة للفيديو اللي فوق */
-    padding-bottom: 80px;
-  }
-
-  .stats-grid{
-    column-gap: 12px;
-    row-gap: 32px;
-  }
-
-  .center-image{ width: 260px; }
-
-  .stat-card{
-    width: 250px;
-    max-width: 250px;
-    min-height: 92px;
-    padding: 8px 14px;
-  }
-
-  .stat-card .icon{ width: 60px; height: 60px; }
-  .stat-card .icon img{ width: 32px; height: 32px; }
-
-  .stat-card .text h4{ font-size: 22px; }
-  .stat-card .text p{ font-size: 12px; }
-
-  .left.top, .right.top{ transform: translateY(40px); }
-}
-
-
-/* ✅ <= 991px (Tablet) — نفس التوزيع بس أصغر */
-@media (max-width: 991px){
-
-  .stats-section{
-    margin-top: 0 !important;
-    padding-top: 190px;       /* مهم عشان الفيديو */
-    padding-bottom: 70px;
-    overflow: visible;        /* بلاش hidden هنا */
-  }
-
-  .stats-grid{
-    column-gap: 10px;
-    row-gap: 26px;
-  }
-
-  .center-image{ width: 210px; }
-
-  .stat-card{
-    width: 210px;
-    max-width: 210px;
-    min-height: 84px;
-    padding: 8px 12px;
-    border-radius: 18px;
-  }
-
-  .stat-card .icon{ width: 54px; height: 54px; border-radius: 12px; }
-  .stat-card .icon img{ width: 28px; height: 28px; }
-
-  .stat-card .text h4{ font-size: 18px; }
-  .stat-card .text p{ font-size: 11px; }
-
-  .left.top, .right.top{ transform: translateY(28px); }
-}
-
-
-/* ✅ <= 576px (Mobile) — نفس التوزيع (3 أعمدة) */
-@media (max-width: 576px){
-
-  .stats-section{
-    margin-top: 0 !important;
-    padding-top: 170px;   /* حسب ارتفاع الفيديو عندك في الموبايل */
-    padding-bottom: 60px;
-  }
-
+/* لمسة صغيرة للموبايلات الضيقة قوي */
+@media (max-width: 360px){
   .stats-grid{
     column-gap: 8px;
-    row-gap: 18px;
   }
-
-  .center-image{ width: 90px; } /* اللوجو في النص يصغر قوي */
-
-  .stat-card{
-    width: 150px;
-    max-width: 150px;
-    min-height: 70px;
-    padding: 6px 10px;
-    border-radius: 16px;
-    gap: 8px;
-  }
-
-  .stat-card .icon{ width: 44px; height: 44px; border-radius: 10px; }
-  .stat-card .icon img{ width: 22px; height: 22px; }
-
-  .stat-card .text h4{ font-size: 14px; }
-  .stat-card .text p{ font-size: 10px; }
-
-  .left.top, .right.top{ transform: translateY(18px); }
-}
-
-
-/* ✅ <= 420px (موبايلات صغيرة جدًا) */
-@media (max-width: 420px){
-
-  .center-image{ width: 80px; }
-
-  .stat-card{
-    width: 132px;
-    max-width: 132px;
-    min-height: 66px;
-  }
-
-  .stat-card .text h4{ font-size: 13px; }
-  .stat-card .text p{ font-size: 10px; }
 }
 
 @media (max-width: 576px){
 
-  /* تصغير البوكسات */
-  .stat-card{
-    width: 210px;
-    max-width: 210px;
-    padding: 6px 10px;
-    gap: 8px;
-    border-radius: 14px;
+  .stats-grid .stat-card{
+    height: 78px;          /* أصغر شوية */
   }
 
-  /* تصغير الأيقونة */
-  .stat-card .icon{
+  .stats-grid .stat-card .icon{
     width: 44px;
     height: 44px;
   }
 
-  .stat-card .icon img{
+  .stats-grid .stat-card .icon img{
     width: 22px;
     height: 22px;
-  }
-
-  /* تصغير الخط */
-  .stat-card .text h4{
-    font-size: 15px;
-    line-height: 1.3;
-  }
-
-  .stat-card .text p{
-    font-size: 11px;
-    line-height: 1.4;
-  }
-
-  /* تصغير الصورة اللي في النص */
-  .center-image{
-    width: 90px;
-  }
-}
-
-/* ✅ Fix clipping + keep same layout on Tablet/Mobile */
-
-/* مبدئيًا: امنعي القص وادي مساحة جانبية */
-@media (max-width: 991px){
-  .stats-section{
-    padding-left: 14px;
-    padding-right: 14px;
-    overflow-x: clip; /* بدل hidden */
-  }
-
-  /* نخلي اللفافة تتمركز */
-  .stats-scale{
-    width: 100%;
-    max-width: 520px;     /* مهم عشان ما تكبرش زيادة */
-    margin: 0 auto;
-  }
-
-  /* نفس الجريد بس بمسافات أهدى */
-  .stats-grid{
-    column-gap: clamp(8px, 2vw, 14px);
-    row-gap: clamp(18px, 3vw, 34px);
-  }
-
-  /* تصغير مرن للكروت */
-  .stat-card{
-    width: clamp(190px, 32vw, 250px);
-    max-width: none;
-    padding: 8px 12px;
-    gap: 10px;
-  }
-
-  .stat-card .icon{
-    width: 56px;
-    height: 56px;
-  }
-  .stat-card .icon img{
-    width: 30px;
-    height: 30px;
-  }
-
-  .stat-card .text h4{
-    font-size: clamp(16px, 2vw, 20px);
-    line-height: 1.25;
-  }
-  .stat-card .text p{
-    font-size: clamp(11px, 1.6vw, 12px);
-    line-height: 1.35;
-  }
-
-  /* تصغير مرن لصورة النص */
-  .center-image{
-    width: clamp(160px, 22vw, 220px);
-  }
-}
-
-/* 📱 Mobile */
-@media (max-width: 576px){
-  .stats-section{
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-
-  .stats-scale{
-    max-width: 390px;
-  }
-
-  .stats-grid{
-    column-gap: 10px;
-    row-gap: 22px;
-  }
-
-  /* هنا أهم جزء عشان مايتاكلش */
-  .stat-card{
-    width: clamp(150px, 40vw, 185px); /* يقلل العرض تلقائي */
-    padding: 6px 10px;
-    border-radius: 14px;
-  }
-
-  .stat-card .icon{
-    width: 44px;
-    height: 44px;
-  }
-  .stat-card .icon img{
-    width: 22px;
-    height: 22px;
-  }
-
-  .stat-card .text h4{
-    font-size: 14px;
-  }
-  .stat-card .text p{
-    font-size: 10.5px;
-  }
-
-  .center-image{
-    width: 95px;
-  }
-}
-
-/* ✅ STATS: منع القص + نفس التوزيعة (يمين/شمال + صورة في النص) */
-
-@media (max-width: 991px){
-
-  .stats-section{
-    padding-inline: 14px;
-    overflow-x: visible; /* متقصيش */
-  }
-
-  /* خلي الجريد نفسه أصغر ومتمركز */
-  .stats-grid{
-    width: min(100%, 560px);
-    margin-inline: auto;
-
-    /* أهم سطر: أعمدة الشمال/اليمين لها عرض قريب من الكروت */
-    grid-template-columns: clamp(190px, 34vw, 250px) auto clamp(190px, 34vw, 250px);
-    column-gap: 10px;
-    row-gap: 22px;
-    align-items: center;
-  }
-
-  /* Override قوي لمقاسات الكروت */
-  .stats-grid .stat-card{
-    width: 100% !important;        /* ياخد عرض العمود */
-    max-width: none !important;    /* يلغي 280 */
-    min-height: auto;
-    padding: 8px 12px;
-    gap: 10px;
-    border-radius: 16px;
-  }
-
-  .stats-grid .stat-card .text h4{ font-size: 16px; line-height: 1.25; }
-  .stats-grid .stat-card .text p{ font-size: 11px; line-height: 1.35; }
-
-  .stats-grid .stat-card .icon{ width: 52px; height: 52px; }
-  .stats-grid .stat-card .icon img{ width: 26px; height: 26px; }
-
-  .stats-grid .center-image{ width: clamp(150px, 18vw, 180px); }
-}
-
-
-/* 📱 موبايل صغير */
-@media (max-width: 576px){
-
-  .stats-section{ padding-inline: 10px; }
-
-  .stats-grid{
-    width: 100%;
-    grid-template-columns: clamp(150px, 42vw, 180px) auto clamp(150px, 42vw, 180px);
-    column-gap: 8px;
-    row-gap: 18px;
-  }
-
-  .stats-grid .stat-card{
-    padding: 6px 10px;
-    border-radius: 14px;
-  }
-
-  .stats-grid .stat-card .text h4{ font-size: 13px; }
-  .stats-grid .stat-card .text p{ font-size: 10px; }
-
-  .stats-grid .stat-card .icon{ width: 44px; height: 44px; }
-  .stats-grid .stat-card .icon img{ width: 22px; height: 22px; }
-
-  .stats-grid .center-image{ width:110px; }
-}
-
-/* توحيد حجم كروت الـ stats */
-.stats-grid .stat-card{
-  height: 88px;              /* ثابته لكل الكروت */
-  align-items: center;
-}
-
-/* نخلي النص مايزودش الطول */
-.stats-grid .stat-card .text{
-  justify-content: center;
-}
-
-/* نخلي الوصف سطرين بالكتير */
-.stats-grid .stat-card .text p{
-  display: -webkit-box;
-   /* أقصى سطرين */
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-/* موبايل أصغر */
-@media (max-width: 576px){
-  .stats-grid .stat-card{
-    height: 78px;
   }
 
   .stats-grid .stat-card .text h4{
@@ -1103,24 +787,8 @@ transform: translateY(50px);
     font-size: 10px;
   }
 }
-/* مسافات بين الكروت */
-.stats-grid{
-  column-gap: 18px !important;
-  row-gap: 20px !important;
-}
 
-/* احتياطي: لو فيه أي margin/padding متداخل */
-.stats-grid .stat-card{
-  margin: 0 !important;
-}
 
-/* موبايل: نزود المسافة شوية (لو لسه لازق) */
-@media (max-width: 576px){
-  .stats-grid{
-    column-gap: 24px !important;
-    row-gap: 24px !important;
-  }
-}
 
 /* ====== SECTION ====== */
 #who{
