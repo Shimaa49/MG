@@ -291,7 +291,7 @@ body.menu-open .nav-overlay{
     width: min(360px, 88vw);
     height: 100dvh;
     padding: 16px;
-   
+   overflow-x: hidden;
     backdrop-filter: blur(8px);
 background-color: red;
     transform: translateX(110%);
@@ -340,7 +340,7 @@ background-color: red;
     border-radius: 12px;
     border: 1px solid rgba(255,255,255,.18);
     background: rgba(255,255,255,.1);
-    color: #fff;
+    /* color: #fff; */
     cursor: pointer;
     color: #7b1111;
   }
@@ -620,6 +620,7 @@ background-color: red;
   background:#fff;
   position:relative;
   z-index:1;
+  overflow-x: hidden;
 
   /* خليها بسيطة ومتتحكمش في الفيديو هنا */
   margin-top: 30px;
@@ -686,7 +687,7 @@ padding: 120px 0 50px;
   /* أهم سطرين لمنع الـ scroll */
   width: 100%;
   max-width: 100%;
-
+min-width: 0;
   background: rgba(243, 244, 246, 0.96);
   border-radius: 18px;
   border: 1.5px solid rgba(225, 228, 233, 1);
@@ -789,35 +790,71 @@ padding: 120px 0 50px;
     font-size: 10px;
   }
 }
+/* ✅ MOBILE ONLY: fix horizontal scroll from stats */
+@media (max-width: 576px){
 
+  /* امنعي أي خروج برا العرض من السكشن ده */
+  .stats-section{
+    overflow-x: hidden;        /* لو مش شغال استخدمي hidden */
+    padding-inline: 10px;
+  }
 
+  /* خلي الجريد يتقفل جوا الشاشة */
+  .stats-grid{
+    width: 100%;
+    margin: 0 auto;
+    grid-template-columns: minmax(0,1fr) auto minmax(0,1fr);
+    column-gap: 12px;
+    row-gap: 18px;
+  }
 
-/* ====== SECTION ====== */
-#who{
-  padding: 70px 0;
+  /* أهم سطرين: شيلّي أي width ثابت للكروت */
+  .stats-grid .stat-card{
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+  }
+
+  /* الصورة اللي في النص متكبرش */
+  .center-image{
+    max-width: 100%;
+    width: 95px;
+  }
 }
 
-/* ====== MAIN BOX ====== */
+/* ====== WHO SECTION ====== */
+#who{
+  padding: 70px 70px;
+  margin: 0 50px;
+}
+
 .who-box{
   background: rgba(243, 244, 246, 0.96);
-  border-radius: 32px;
-  border: 1.8px solid rgba(225, 228, 233, 1);
+  border-radius: 64px;
+  border: 1.8px solid transparent;
   padding: 45px 50px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+
+  display: flex;
+  gap: 40px;
+  align-items: center;
 }
 
-/* ====== IMAGE ====== */
+/* الصورة */
+.who-image{
+  flex: 0 0 46%;
+}
 .who-image img{
   width: 100%;
   border-radius: 28px;
   display: block;
 }
 
-/* ====== TEXT ====== */
-/* الكونتينر بتاع النص كله */
+/* النص */
 .who-text{
+  flex: 1;
+  direction: rtl;
   text-align: right;
-  padding-right: 32px;   /* هنا بنحدد بداية كل الحاجة (العنوان + النقط) */
 }
 
 /* العنوان */
@@ -825,32 +862,97 @@ padding: 120px 0 50px;
   color: #8a1d25;
   font-size: 54px;
   font-weight: 700;
-  line-height: 120%;
-  margin-bottom: 20px;
-
-  padding: 0;            /* مهم جداً مايبقاش عليه padding */
+  line-height: 1.2;
+  margin: 0 0 18px;
 }
 
-/* الليست */
-.who-text ul{
-  padding: 0;
+/* ✅ الليست: تبدأ من نفس بداية الكلام (مش من النص) */
+.who-list{
   margin: 0;
+  padding: 0;
+  list-style: none; /* هنرسم البولت بنفسنا */
 }
 
-/* عناصر الليست */
-.who-text ul li{
-  list-style-position: inside;  /* تخلي البولت جوه نفس الخط */
-  list-style-type: disc;
-  padding: 0;
-  margin-bottom: 16px;
+.who-list li{
+  position: relative;
+  padding-right: 26px;   /* مسافة للبولت */
+  margin-bottom: 30px;
+margin-top: 30px;
   font-size: 30px;
-  line-height: 1.75;
-  color: rgba(98, 100, 103, 1);
-  direction: rtl;
   line-height: 160%;
+  color: rgba(98, 100, 103, 1);
   font-weight: 500;
-  font-family: "cairo", sans-serif;
+  font-family: "Cairo", sans-serif;
 }
+
+/* البولت */
+.who-list li::before{
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 14px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(98, 100, 103, 1);
+}
+
+/* ====== RESPONSIVE ====== */
+
+/* تابلت */
+@media (max-width: 991px){
+  .who-box{
+    flex-direction: column;
+    padding: 28px 22px;
+    gap: 18px;
+  }
+
+  .who-image{
+    flex: 0 0 auto;
+    width: 100%;
+  }
+
+  .who-text h2{
+    font-size: 36px;
+  }
+
+  .who-list li{
+    font-size: 18px;
+    padding-right: 22px;
+  }
+
+  .who-list li::before{
+    top: 11px;
+  }
+}
+
+/* موبايل */
+@media (max-width: 576px){
+  #who{ padding: 45px 0; }
+
+  .who-box{
+    border-radius: 22px;
+    padding: 20px 16px;
+  }
+
+  .who-image img{
+    border-radius: 18px;
+  }
+
+  .who-text h2{
+    font-size: 28px;
+  }
+
+  .who-list li{
+    font-size: 15px;
+    line-height: 1.7;
+  }
+}
+
+
+
+
+
 
 
 /* خلفية السيكشن كله */
