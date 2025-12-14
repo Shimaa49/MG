@@ -87,14 +87,14 @@ header{
   cursor:pointer;
    padding:22px 16px;
 }
-.nav-link:hover{
+/* .nav-link:hover{
   background-color: rgba(253, 253, 253, 1);
    border-radius: 20px;
    color: rgba(156, 40, 45, 1);
    padding: 10px 16px;
 
 
-}
+} */
 .top-nav ul .nav-divider{
   width:1px;
   height:79px; 
