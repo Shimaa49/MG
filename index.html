@@ -168,19 +168,21 @@
     </div>
 </div>
 </section>
-<section class="who-message">
+
+<section class="who-message" id="who-message">
   <div class="container">
 
-    <div class="row gy-4">
+    <!-- صف الرسالة + الرؤية -->
+    <div class="row gy-4 who-top">
 
-      <!-- الرؤية -->
-      <div class="col-md-6">
+      <!-- الرسالة -->
+      <div class="col-md-6 d-flex">
         <div class="one-box equal-box">
           <div class="box-icon">
-            <img src="./image/row-icon.png" alt="icon">
+            <img src="./image/message.png" alt="icon">
           </div>
-         
-             <div class="box-text">
+
+          <div class="box-text">
             <h3>الرسالة</h3>
             <p>
               نسعى لبناء علامة موثوقة وشخصية قوية مع عملائنا،
@@ -190,13 +192,14 @@
         </div>
       </div>
 
-      <!-- الرسالة -->
-      <div class="col-md-6">
+      <!-- الرؤية -->
+      <div class="col-md-6 d-flex">
         <div class="one-box equal-box">
           <div class="box-icon">
-            <img src="./image/message.png" alt="icon">
+            <img src="./image/dereem-icon.png" alt="icon">
           </div>
-           <div class="box-text">
+
+          <div class="box-text">
             <h3>الرؤية</h3>
             <p>
               أن تكون مجموعة ممدوح جازي الوسوس من أفضل المجموعات العربية
@@ -211,20 +214,42 @@
 
     <!-- الاستراتيجية -->
     <div class="row mt-4">
-      <div class="col-md-12">
-        <div class="one-box">
+      <div class="col-12">
+        <div class="one-box strategy-box">
           <div class="box-icon">
             <img src="./image/row-icon.png" alt="icon">
           </div>
+
           <div class="box-text">
             <h3>الاستراتيجية</h3>
-            <ul>
-              <li>الالتزام بأعلى مستويات الجودة والأمانة في تقديم خدماتنا.</li>
-              <li>لا ندخر جهداً في تلبية احتياجات عملائنا، وأن نكون فوق مستوى توقعاتهم.</li>
-              <li>نستخدم أفضل الكفاءات المهنية والأساليب العلمية الحديثة في تقديم خدماتنا.</li>
-              <li>التطور المستمر والبحث عن كل جديد ملائم لطبيعة أعمالنا.</li>
-              <li>الاستعانة بأفضل الكفاءات وأحدث الأساليب والأدوات والخبرات.</li>
+
+            <ul class="strategy-list">
+              <li>
+                <img src="./image/tick-circle.png" alt="check" class="tick">
+                <span>الالتزام بأعلى مستويات الجودة والأمانة في تقديم خدماتنا.</span>
+              </li>
+
+              <li>
+                <img src="./image/tick-circle.png" alt="check" class="tick">
+                <span>لا ندخر جهداً في تلبية احتياجات عملائنا، وأن نكون فوق مستوى توقعاتهم.</span>
+              </li>
+
+              <li>
+                <img src="./image/tick-circle.png" alt="check" class="tick">
+                <span>نستخدم أفضل الكفاءات المهنية والأساليب العلمية الحديثة في تقديم خدماتنا.</span>
+              </li>
+
+              <li>
+                <img src="./image/tick-circle.png" alt="check" class="tick">
+                <span>التطور المستمر والبحث عن كل جديد ملائم لطبيعة أعمالنا.</span>
+              </li>
+
+              <li>
+                <img src="./image/tick-circle.png" alt="check" class="tick">
+                <span>الاستعانة بأفضل الكفاءات وأحدث الأساليب والأدوات والخبرات.</span>
+              </li>
             </ul>
+
           </div>
         </div>
       </div>
@@ -232,75 +257,209 @@
 
   </div>
 </section>
+<section class="services-section">
+    <div class="services-header">
+<h2 class="gradient-text">
+ 
+  مجالات عملنا
+  
+  <img src="image/bag-icon.png" alt="">
+</h2>
+
+      <p>نخدم العديد من القطاعات الحيوية في المملكة.</p>
+    </div>
+
+    <div class="services-slider">
+      <!-- سهم يمين (رجوع) -->
+      <button class="slider-arrow prev">&#10094;</button>
+
+      <!-- نافذة السلايدر -->
+      <div class="slider-window">
+        <div class="slider-track">
+
+          <!-- كارت 1 -->
+          <div class="service-card maintenance">
+            <div class="service-content">
+              <h3>الصيانة والتشغيل</h3>
+              <p>صيانة وتشغيل المرافق والمباني</p>
+            </div>
+            <div class="service-icon"></div>
+          </div>
+          
+            <div class="service-card tourism">
+            <div class="service-content">
+              <h3>السفر والسياحة</h3>
+              <p>خدمات سياحية متكاملة</p>
+            </div>
+            <div class="service-icon"></div>
+          </div>
+          <div class="service-card technology">
+            <div class="service-content ">
+              <h3>التقنية والاتصالات</h3>
+              <p>حلول تقنية وأنظمة متكاملة</p>
+            </div>
+            <div class="service-icon"></div>
+          </div>
+
+          <!-- كارت 2 -->
+          <div class="service-card contracting">
+            <div class="service-content">
+              <h3>المقاولات العامة</h3>
+              <p>تنفيذ مشاريع البناء والإنشاءات</p>
+            </div>
+            <div class="service-icon"></div>
+          </div>
+
+          <!-- كارت 3 -->
+          <div class="service-card import-export">
+            <div class="service-content">
+              <h3>الاستيراد والتصدير</h3>
+              <p>حلول تجارية عالمية</p>
+            </div>
+            <div class="service-icon"></div>
+          </div>
+
+          <!-- كارت 4 -->
+          <div class="service-card cars">
+            <div class="service-content">
+              <h3>تأجير السيارات</h3>
+              <p>أسطول متنوع من المركبات</p>
+            </div>
+            <div class="service-icon"></div>
+          </div>
+
+          <!-- كارت 5 -->
+          <div class="service-card decoration">
+            <div class="service-content">
+              <h3>الديكور</h3>
+              <p>تصميم وتنفيذ ديكورات عصرية</p>
+            </div>
+            <div class="service-icon"></div>
+          </div>
+
+           <div class="service-card bakery">
+            <div class="service-content">
+              <h3>تطوير المخابز</h3>
+              <p>حلول متكاملة للمخابز</p>
+            </div>
+            <div class="service-icon"></div>
+          </div>
+ <div class="service-card real-estate">
+            <div class="service-content">
+              <h3>العقارات</h3>
+              <p>خدمات عقارية شاملة</p>
+            </div>
+            <div class="service-icon"></div>
+          </div>
+          
+        </div>
+      </div>
+
+      <!-- سهم شمال (قدّام) -->
+      <button class="slider-arrow next">&#10095;</button>
+    </div>
+  </section>
 
 <section class="services-images-section">
+  <div class="slider-track">
 
-  <div class="images-grid">
+    <!-- المجموعة الأولى -->
+    <img src="image/service1.png" alt="">
+    <img src="image/service2.png" alt="">
+    <img src="image/service3.png" alt="">
+    <img src="image/service16.png" alt="">
+    <img src="image/service5.png" alt="">
+    <img src="image/service6.png" alt="">
+    <img src="image/service17.png" alt="">
+    <img src="image/service8.png" alt="">
+    <img src="image/service9.png" alt="">
+    <img src="image/service10.png" alt="">
+    <img src="image/service11.png" alt="">
+    <img src="image/service12.png" alt="">
+    <img src="image/service13.png" alt="">
+    <img src="image/service14.png" alt="">
+    <img src="image/service15.png" alt="">
+    <img src="image/service16.png" alt="">
 
-    <img src="image/service1.png" class="service-photo" alt="">
-    <img src="image/service2.png" class="service-photo" alt="">
-    <img src="image/service3.png" class="service-photo" alt="">
-    <img src="image/service16.png" class="service-photo" alt="">
-    <img src="image/service5.png" class="service-photo" alt="">
-    <img src="image/service6.png" class="service-photo" alt="">
-    <img src="image/service17.png" class="service-photo" alt="">
-    <img src="image/service8.png" class="service-photo" alt="">
-
-    <img src="image/service9.png" class="service-photo" alt="">
-    <img src="image/service10.png" class="service-photo" alt="">
-    <img src="image/service11.png" class="service-photo" alt="">
-    <img src="image/service12.png" class="service-photo" alt="">
-    <img src="image/service13.png" class="service-photo" alt="">
-    <img src="image/service14.png" class="service-photo" alt="">
-    <img src="image/service15.png" class="service-photo" alt="">
-    <img src="image/service16.png" class="service-photo" alt="">
+    <!-- نفس الصور تاني (مهم) -->
+    <img src="image/service1.png" alt="">
+    <img src="image/service2.png" alt="">
+    <img src="image/service3.png" alt="">
+    <img src="image/service16.png" alt="">
+    <img src="image/service5.png" alt="">
+    <img src="image/update-server.png" alt="">
+    <img src="image/service17.png" alt="">
+    <img src="image/service8.png" alt="">
+    <img src="image/service9.png" alt="">
+    <img src="image/service10.png" alt="">
+    <img src="image/service11.png" alt="">
+    <img src="image/service12.png" alt="">
+    <img src="image/service13.png" alt="">
+    <img src="image/service14.png" alt="">
+    <img src="image/service15.png" alt="">
+    <img src="image/service16.png" alt="">
 
   </div>
-
 </section>
 
-
-<!-- /////////end who////////// -->
-<section class="companies-section">
+<section class="companies-sec">
   <div class="container">
 
-    <!-- العنوان -->
-    <div class="section-header">
-      <h2>الشركات التابعة للمجموعة</h2>
+    <div class="companies-head">
+      <h2 class="gradient-text">
+        الشركات التابعة للمجموعة
+        <img src="image/com-icon.png" alt="">
+        
+      </h2>
       <p>تدعم المجموعة خلال اتاحتها لمختلف القطاعات</p>
     </div>
 
-    <!-- اللوجو + الكروت -->
     <div class="companies-layout">
 
-      <!-- الكروت الشمال -->
-      <div class="companies-col left">
-        <div class="company-card">
-          <h3>مؤسسة ليث للاتصالات وتوزيع المعلومات</h3>
-          <a href="#" class="more-link">عرض المزيد +</a>
+      <!-- LEFT SIDE -->
+      <div class="companies-col companies-left">
+        <div class="comp-card">
+          <div class="comp-gray"></div>
+
+          <div class="comp-text">
+            <h3>مؤسسة لين للاتصالات وتقنية المعلومات</h3>
+            <a href="#" class="comp-link gradient-text">عرض المزيد <span>←</span></a>
+          </div>
         </div>
 
-        <div class="company-card">
-          <h3>شركة ممدوح جازي الوسوس التي وذكـرات</h3>
-          <a href="#" class="more-link">عرض المزيد +</a>
+        <div class="comp-card">
+          <div class="comp-gray"></div>
+
+          <div class="comp-text">
+            <h3>شركة ركن المواد العقارية</h3>
+            <a href="#" class="comp-link gradient-text">عرض المزيد <span>←</span></a>
+          </div>
         </div>
       </div>
 
-      <!-- اللوجو في النص -->
+      <!-- CENTER IMAGE (arrows) -->
       <div class="companies-center">
-        <img src="/image/state.png" alt="MG Logo">
+        <img src="image/state.png" alt="MG Center">
       </div>
 
-      <!-- الكروت اليمين -->
-      <div class="companies-col right">
-        <div class="company-card">
-          <h3>شركة ركن المواد العقارية</h3>
-          <a href="#" class="more-link">عرض المزيد +</a>
+      <!-- RIGHT SIDE -->
+      <div class="companies-col companies-right">
+        <div class="comp-card">
+          <div class="comp-gray"></div>
+
+          <div class="comp-text">
+            <h3>شركة ممدوح جازي الوسوس الحربي وشركاه</h3>
+            <a href="#" class="comp-link gradient-text">عرض المزيد <span>←</span></a>
+          </div>
         </div>
 
-        <div class="company-card">
-          <h3>مؤسسة محكمة العوجة للمقاولات العامة</h3>
-          <a href="#" class="more-link">عرض المزيد +</a>
+        <div class="comp-card">
+          <div class="comp-gray"></div>
+
+          <div class="comp-text">
+            <h3>مؤسسة مملكة العروبة للمقاولات العامة</h3>
+            <a href="#" class="comp-link gradient-text">عرض المزيد <span>←</span></a>
+          </div>
         </div>
       </div>
 
@@ -308,44 +467,48 @@
 
   </div>
 </section>
-
 
 
 <section class="why-us">
-  <div class="container">
 
-    <!-- Left Image -->
-    <div class="why-image">
-      <img src="image/why.png" alt="why us image">
-    </div>
-
-    <!-- Right Content -->
+  <div class="why-wrap">
+    
+  <!-- المحتوى (يمين) -->
     <div class="why-content">
       <h2>لماذا نحن؟</h2>
-
-      <ul>
-        <li>نلتزم بتقديم أعلى معايير الجودة والاحترافية في جميع خدماتنا</li>
-        <li>جودة عالية في التنفيذ</li>
-        <li>خبرة طويلة في السوق السعودي</li>
-        <li>فريق عمل محترف</li>
-        <li>التزام تام بالوقت والجودة</li>
-        <li>معتمدون بشهادات رسمية وتصنيف درجة أولى</li>
-        <li>حلول متكاملة ومبتكرة</li>
+<ul class="why-list">
+        <li>
+          <img class="tick2" src="image/tick-circle.png" alt=""> نلتزم بتقديم أعلى معايير الجودة والاحترافية في جميع خدماتنا</li>
+        <li><img class="tick2" src="image/tick-circle.png" alt=""> جودة عالية في التنفيذ</li>
+        <li><img class="tick2" src="image/tick-circle.png" alt=""> خبرة طويلة في السوق السعودي</li>
+        <li><img class="tick2" src="image/tick-circle.png" alt=""> فريق عمل محترف</li>
+        <li><img class="tick2" src="image/tick-circle.png" alt=""> التزام تام بالوقت والجودة</li>
+        <li><img class="tick2" src="image/tick-circle.png" alt=""> معتمدون بشهادات رسمية وتصنيف درجة أولى</li>
+        <li><img class="tick2" src="image/tick-circle.png" alt=""> حلول متكاملة ومبتكرة</li>
       </ul>
 
       <div class="btns">
+        <a href="#" class="hire"> تأجير عمالة ←</a>
+
         <a href="#" class="contact">تواصل معنا</a>
-
-        <a href="#" class="hire">
- <span class="arrows">←</span>
- تاجير عمالة
-
-        </a>
+      
       </div>
     </div>
 
+    <!-- الصورة (شمال) -->
+    <div class="why-image">
+      <div class="why-img-bg"></div>
+    </div>
+
+  
+
   </div>
+
 </section>
+
+
+
+
 
 <section class="projects-section">
   <div class="container">
@@ -432,57 +595,64 @@
 
   </div>
 </section>
-
 <section class="certificates-section">
-  <div class="container">
+  <div class="cert-box">
 
     <!-- العنوان -->
     <div class="cert-head">
-      <h2>
-شهاداتنا واعتماداتنا
- <img src="image/cert-logo.png" alt="">
-            <p>نفخر بتنفيذ العديد من المشاريع الحكومية والخاصة في مختلف مناطق المملكة</p>
+      <h2 class="gradient-text ">
+        <img src="image/cert-logo.png" alt="">
+        شهاداتنا واعتماداتنا
+      </h2>
+      <p>نفخر بتنفيذ العديد من المشاريع الحكومية والخاصة في مختلف مناطق المملكة</p>
     </div>
-  <div class="cert-box">
+
+    <!-- المحتوى -->
     <div class="cert-content">
 
-      <!-- يسار: 4 شهادات -->
-      <div class="cert-left">
-        <div class="cert-grid">
-          <img src="image/degree.png" alt="">
-          <img src="image/degree2.png" alt="">
-          <img src="image/degree3.png" alt="">
-          <img src="image/degree4.png" alt="">
-        </div>
+      <!-- الشهادات -->
+      <div class="cert-grid">
+        <img src="image/degree2.png" alt="">
+        <img src="image/degree2.png" alt="">
+        <img src="image/degree3.png" alt="">
+        <img src="image/degree4.png" alt="">
       </div>
 
-      <!-- يمين: بوكس اللوجو + شهادة عريضة -->
+      <!-- اليمين -->
       <div class="cert-right">
-
-        <!-- البوكس الأسود -->
         <div class="black-box">
-          <div class="ribbon"></div>
-
-          <img src="image/logo-cert.png" class="mg-logo" alt="MG Logo">
-
-      <h3>
-            شهادة تصنيف درجة أولى
-      </h3>
-          <p>نحمل جميع الرخص والشهادات اللازمة لمزاولة نشاطنا بكفاءة عالية</p>
-       
+          <img src="image/Content-section.png" alt="">
         </div>
 
-        <!-- شهادة عريضة -->
-        <div class="wide-cert">
-          <img src="image/mg-degree2.png" alt="">
+        <div class="green-box">
+          <img src="image/new.png" alt="">
         </div>
-
       </div>
 
     </div>
-</div>
   </div>
-</section >
+</section>
+
+<section class="partners-section">
+  <div class="partners-head">
+    <h2>شركاء النجاح</h2>
+    <p>نفخر بثقة العديد من الجهات الحكومية والخاصة</p>
+  </div>
+
+  <div class="partners-slider" id="partnersSliderJS">
+    <div class="partners-track" id="partnersTrackJS">
+      <div class="partner-card"><img src="image/part1.jpeg" alt=""></div>
+      <div class="partner-card"><img src="image/part1.jpeg" alt=""></div>
+      <div class="partner-card"><img src="image/part1.jpeg" alt=""></div>
+      <div class="partner-card"><img src="image/part1.jpeg" alt=""></div>
+      <div class="partner-card"><img src="image/part1.jpeg" alt=""></div>
+      <div class="partner-card"><img src="image/part1.jpeg" alt=""></div>
+    </div>
+  </div>
+</section>
+
+
+
 
 <section class="contact-section">
   <div class="container">
@@ -635,11 +805,11 @@
           <h6 class="social-title">وسائل التواصل الاجتماعي</h6>
 
           <div class="social-icons">
-            <a href="#"><img src="image/in-icon.png" alt="LinkedIn"></a>
-            <a href="#"><img src="image/yt-icon.png" alt="YouTube"></a>
-            <a href="#"><img src="image/ig-icon.png" alt="Instagram"></a>
-            <a href="#"><img src="image/x-icon.png" alt="X"></a>
-            <a href="#"><img src="image/fb-icon.png" alt="Facebook"></a>
+            <a href="#"><img src="image/linkedin.png" alt="LinkedIn"></a>
+            <a href="#"><img src="image/you.png" alt="YouTube"></a>
+            <a href="#"><img src="image/insta.png" alt="Instagram"></a>
+            <a href="#"><img src="image/twt.png" alt="X"></a>
+            <a href="#"><img src="image/fac.png" alt="Facebook"></a>
           </div>
         </div>
 
@@ -657,7 +827,7 @@
           <div class="contact-item justify-content-md-start justify-content-center">
             <span class="icon">
               <!-- حطي أي أيقونة فون عندك هنا -->
-              <!-- <img src="image/phone-icon.png" alt=""> -->
+              <img src="image/last4.png" alt="">
             </span>
             <div class="text">
               <div class="label">الهاتف</div>
@@ -670,7 +840,7 @@
         <div class="col-md-3">
           <div class="contact-item justify-content-center">
             <span class="icon">
-              <!-- <img src="image/location-icon.png" alt=""> -->
+              <img src="image/last2.png" alt="">
             </span>
             <div class="text">
               <div class="label">العنوان</div>
@@ -683,7 +853,7 @@
         <div class="col-md-3">
           <div class="contact-item justify-content-md-end justify-content-center">
             <span class="icon">
-              <!-- <img src="image/mail-icon.png" alt=""> -->
+              <img src="image/last3.png" alt="">
             </span>
             <div class="text">
               <div class="label">البريد الإلكتروني</div>
@@ -695,7 +865,7 @@
         <div class="col-md-3">
           <div class="contact-item justify-content-md-end justify-content-center">
             <span class="icon">
-              <!-- <img src="image/mail-icon.png" alt=""> -->
+              <img src="image/last1.png" alt="">
             </span>
             <div class="text">
               <div class="label">الفاكس</div>
@@ -715,7 +885,7 @@
 </footer>
 
     <script src="js/bootstrap.js"></script>
-    <script src="main.js"></script>
+    <script src="main.js" defer></script>
    
     <div id="videoModal" class="modal">
   <div class="modal-content">
@@ -726,5 +896,6 @@
     </video>
   </div>
 </div>
+
 </body>
 </html>
