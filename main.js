@@ -115,8 +115,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /* =========================
-     3) SERVICES SLIDER (Prev/Next)
-  ========================= */
+   3) SERVICES SLIDER (Scroll-based) - NO BLANK SPACE
+========================= */
 (function () {
   const section = document.querySelector(".services-section");
   if (!section) return;
@@ -129,43 +129,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (!windowEl || !track || !cards.length || !prevBtn || !nextBtn) return;
 
-  // امنعي أي animation جاية من CSS
-  track.style.animation = "none";
-
-  let currentOffset = 0;
-
+  // احسب step = عرض الكارت + gap الحقيقي
   function getStep() {
-    if (cards.length < 2) return cards[0].offsetWidth;
-    return cards[1].offsetLeft - cards[0].offsetLeft;
-  }
-
-  function getMaxOffset() {
-    return Math.max(0, track.scrollWidth - windowEl.clientWidth);
-  }
-
-  function update() {
-    const maxOffset = getMaxOffset();
-
-    if (currentOffset < 0) currentOffset = 0;
-    if (currentOffset > maxOffset) currentOffset = maxOffset;
-
-    track.style.transform = `translateX(-${currentOffset}px)`;
+    const cardW = cards[0].getBoundingClientRect().width;
+    const styles = window.getComputedStyle(track);
+    const gap = parseFloat(styles.gap || styles.columnGap || "0") || 0;
+    return cardW + gap;
   }
 
   nextBtn.addEventListener("click", () => {
-    const step = getStep();
-    currentOffset += step;
-    update();
+    windowEl.scrollBy({ left: getStep(), behavior: "smooth" });
   });
 
   prevBtn.addEventListener("click", () => {
-    const step = getStep();
-    currentOffset -= step;
-    update();
+    windowEl.scrollBy({ left: -getStep(), behavior: "smooth" });
   });
-
-  window.addEventListener("resize", update);
-  update();
 })();
   /* =========================
      4) VIDEO BTN (Navbar)
