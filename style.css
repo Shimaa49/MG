@@ -1313,44 +1313,7 @@ margin-top: 30px;
   padding: 40px 0 60px;
 }
 
-.slider-track {
-  display: flex;
-  gap: 16px;
-  width: max-content;
-  animation: slide 40s linear infinite;
-}
 
-.slider-track img {
-  width: 180px;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 18px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
-  flex-shrink: 0;
-  transition: transform .3s ease;
-}
-
-.slider-track img:hover {
-  transform: translateY(-6px);
-}
-
-/* الحركة */
-@keyframes slide {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-/* 📱 موبايل */
-@media (max-width: 768px) {
-  .slider-track img {
-    width: 130px;
-    height: 130px;
-  }
-}
 /* =============================
    WHY US SECTION (FULL CSS)
    ============================= */
@@ -2744,3 +2707,76 @@ footer ul li a:hover {
   color: transparent;
   -webkit-text-fill-color: transparent;
 }
+
+
+/* سلايدر الصور (لوحده) */
+.services-images-section{
+  padding: 40px 0 60px;
+  overflow: hidden;
+  direction: ltr;
+  text-align: left; /* مهم عشان الماركي تشتغل صح حتى لو الصفحة RTL */
+}
+
+.services-marquee{
+  overflow: hidden;
+  margin: 14px 0;
+}
+
+.services-marquee-track{
+  display: flex;
+  gap: 16px;
+  width: max-content;
+  will-change: transform;
+  margin: 0;
+  padding: 0;
+  transform: translateX(0);
+  justify-content: flex-start;
+
+}
+
+/* شكل الصور */
+.services-marquee-track img{
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 18px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+  flex-shrink: 0;
+  transition: transform .3s ease;
+}
+
+.services-marquee-track img:hover{
+  transform: translateY(-6px);
+}
+
+/* الحركة: صف يمين + صف شمال */
+.services-marquee.row-left .services-marquee-track{
+  animation: marquee-left 70s linear infinite;
+}
+
+.services-marquee.row-right .services-marquee-track{
+  animation: marquee-right 70s linear infinite;
+}
+/* ✅ يمنع الـ track يتسنتر ويعمل فراغ في البداية */
+
+/* من اليمين للشمال */
+@keyframes marquee-left{
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* من الشمال لليمين */
+@keyframes marquee-right{
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
+
+/* موبايل */
+@media (max-width: 768px){
+  .services-marquee-track img{
+    width: 130px;
+    height: 130px;
+  }
+}
+
+

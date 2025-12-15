@@ -117,57 +117,56 @@ document.addEventListener("DOMContentLoaded", () => {
   /* =========================
      3) SERVICES SLIDER (Prev/Next)
   ========================= */
-  (function initServicesSlider() {
-    const track = document.querySelector(".slider-track");
-    const cards = document.querySelectorAll(".service-card");
-    const prevBtn = document.querySelector(".slider-arrow.prev");
-    const nextBtn = document.querySelector(".slider-arrow.next");
+(function () {
+  const section = document.querySelector(".services-section");
+  if (!section) return;
 
-    // ✅ لو أي عنصر ناقص، متشتغلش
-    if (!track || !cards.length || !prevBtn || !nextBtn) return;
+  const windowEl = section.querySelector(".slider-window");
+  const track = section.querySelector(".slider-track");
+  const cards = section.querySelectorAll(".service-card");
+  const prevBtn = section.querySelector(".slider-arrow.prev");
+  const nextBtn = section.querySelector(".slider-arrow.next");
 
-    let currentIndex = 0;
-    let cardsPerView = 3;
+  if (!windowEl || !track || !cards.length || !prevBtn || !nextBtn) return;
 
-    function updateCardsPerView() {
-      const width = window.innerWidth;
-      if (width < 600) cardsPerView = 1;
-      else if (width < 900) cardsPerView = 2;
-      else cardsPerView = 3;
-    }
+  // امنعي أي animation جاية من CSS
+  track.style.animation = "none";
 
-    function updateSlider() {
-      updateCardsPerView();
-      const gap = 12;
-      const cardWidth = cards[0].offsetWidth + gap;
-      const maxIndex = Math.max(0, cards.length - cardsPerView);
+  let currentOffset = 0;
 
-      if (currentIndex > maxIndex) currentIndex = maxIndex;
+  function getStep() {
+    if (cards.length < 2) return cards[0].offsetWidth;
+    return cards[1].offsetLeft - cards[0].offsetLeft;
+  }
 
-      const offset = currentIndex * cardWidth;
-      track.style.transform = `translateX(-${offset}px)`;
-    }
+  function getMaxOffset() {
+    return Math.max(0, track.scrollWidth - windowEl.clientWidth);
+  }
 
-    nextBtn.addEventListener("click", () => {
-      const maxIndex = Math.max(0, cards.length - cardsPerView);
-      if (currentIndex < maxIndex) {
-        currentIndex++;
-        updateSlider();
-      }
-    });
+  function update() {
+    const maxOffset = getMaxOffset();
 
-    prevBtn.addEventListener("click", () => {
-      if (currentIndex > 0) {
-        currentIndex--;
-        updateSlider();
-      }
-    });
+    if (currentOffset < 0) currentOffset = 0;
+    if (currentOffset > maxOffset) currentOffset = maxOffset;
 
-    window.addEventListener("resize", updateSlider);
-    updateSlider();
-  })();
+    track.style.transform = `translateX(-${currentOffset}px)`;
+  }
 
+  nextBtn.addEventListener("click", () => {
+    const step = getStep();
+    currentOffset += step;
+    update();
+  });
 
+  prevBtn.addEventListener("click", () => {
+    const step = getStep();
+    currentOffset -= step;
+    update();
+  });
+
+  window.addEventListener("resize", update);
+  update();
+})();
   /* =========================
      4) VIDEO BTN (Navbar)
   ========================= */
@@ -212,36 +211,6 @@ document.addEventListener("DOMContentLoaded", () => {
   })();
 });
 
-///////too slider//////document.addEventListener("DOMContentLoaded", () => {
- document.addEventListener("DOMContentLoaded", () => {
-  const viewport = document.querySelector(".images-viewport");
-  const track = document.querySelector(".images-track");
-
-  if (!viewport || !track) return;
-
-  let x = 0;
-  const step = 2;       // سرعة الحركة (زوديها/قلليها)
-  const interval = 20;  // سلاسة الحركة
-
-  function tick() {
-    const maxOffset = track.scrollWidth - viewport.clientWidth;
-
-    // لو مفيش سكرول أصلاً
-    if (maxOffset <= 0) return;
-
-    x += step;
-
-    // ✅ هنا الحل: لما نوصل للآخر… نرجع لأول
-    if (x >= maxOffset) x = 0;
-
-    // ✅ Clamping (احتياطي ضد الفراغ)
-    if (x > maxOffset) x = maxOffset;
-
-    track.style.transform = `translateX(-${x}px)`;
-  }
-
-  setInterval(tick, interval);
-});
 
 ////////////////PARTERRRR///////////////////////
 
@@ -287,3 +256,40 @@ document.addEventListener("DOMContentLoaded", () => {
   movePartners();
 
 })();
+
+
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const tracks = document.querySelectorAll(".services-marquee-track");
+  if (!tracks.length) return;
+
+  function fillTrack(track) {
+    // خدي النسخة الأصلية مرة واحدة بس
+    if (!track.dataset.baseHtml) {
+      track.dataset.baseHtml = track.innerHTML;
+    } else {
+      track.innerHTML = track.dataset.baseHtml;
+    }
+
+    const target = window.innerWidth * 2; // غطي 2x عرض الشاشة (مهم)
+    let safety = 0;
+
+    // كرري الصور الموجودة لحد ما العرض يكفي
+    while (track.scrollWidth < target && safety < 10) {
+      track.innerHTML += track.dataset.baseHtml;
+      safety++;
+    }
+  }
+
+  function init() {
+    tracks.forEach(fillTrack);
+  }
+
+  init();
+  window.addEventListener("resize", init);
+});
