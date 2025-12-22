@@ -799,7 +799,16 @@ min-width: 0;
   .stats-grid{
     column-gap: 8px;
   }
+   .stats-grid .stat-card .text h4{
+    font-size: 5px;
+   
+  }
+
+  .stats-grid .stat-card .text p{
+    font-size: 5px;
+  }
 }
+
 
 @media (max-width: 576px){
 
@@ -3377,4 +3386,213 @@ html, body {
 .services-marquee-track img{
   width: clamp(110px, 22vw, 180px);
   height: clamp(110px, 22vw, 180px);
+}
+
+
+/* =========================
+   STATS — Mobile keep SAME layout (3 columns)
+   Put this at END of CSS
+========================= */
+
+/* ✅ قاعدة عامة تمنع أي تمدد عرض */
+.stats-section,
+.stats-scale,
+.stats-grid,
+.stats-grid *{
+  max-width: 100%;
+}
+
+/* ✅ امنعي سكرول أفقي */
+.stats-section{
+  overflow-x: hidden;
+}
+
+/* ✅ مهم: خلي الكروت مرنة (شيل الارتفاع الثابت) */
+.stats-grid .stat-card{
+  height: auto !important;
+  min-height: 72px;
+  min-width: 0;
+}
+
+/* ✅ clamp للعنوان + الوصف (عشان مفيش خروج) */
+.stat-card .text{ min-width: 0; overflow: hidden; }
+
+.stat-card .text h4{
+  display: -webkit-box;
+  -webkit-line-clamp: 2;     /* سطرين بس */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.stat-card .text p{
+  display: -webkit-box;
+  -webkit-line-clamp: 2;     /* سطرين بس */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  word-break: break-word;
+}
+
+/* =========================
+   ✅ 420px وأصغر: نفس التقسيمة 3 أعمدة (L - Center - R)
+========================= */
+@media (max-width: 420px){
+
+  .stats-section{
+    padding: 70px 0 40px;   /* اختياري: خففي البادنج */
+  }
+
+  .stats-grid{
+    width: 100%;
+    padding-inline: 8px;
+
+    /* تثبيت 3 أعمدة زي الديسكتوب */
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    column-gap: 8px;
+    row-gap: 12px;
+  }
+
+  /* شيلّي أي translate بيبوّظ الشكل على الصغير */
+  .left.top,
+  .right.top{
+    transform: none !important;
+  }
+
+  /* اللوجو */
+  .center-image{
+    width: 72px;
+    max-width: 100%;
+  }
+
+  /* الكروت */
+  .stats-grid .stat-card{
+    padding: 8px;
+    gap: 7px;
+    border-radius: 14px;
+    min-height: 62px;
+  }
+
+  /* الأيقونات */
+  .stats-grid .stat-card .icon{
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+  }
+
+  .stats-grid .stat-card .icon img{
+    width: 18px;
+    height: 18px;
+  }
+
+  /* الخطوط */
+  .stats-grid .stat-card .text h4{
+    font-size: 12px;
+    line-height: 1.15;
+    margin: 0 0 2px;
+  }
+
+  .stats-grid .stat-card .text p{
+    font-size: 9.5px;
+    line-height: 1.2;
+    margin: 0;
+  }
+}
+
+/* =========================
+   ✅ 360px وأصغر: نفس التقسيمة برضو بس أصغر شوية
+========================= */
+@media (max-width: 360px){
+
+  .stats-grid{
+    padding-inline: 6px;
+    column-gap: 6px;
+    row-gap: 10px;
+  }
+
+  .center-image{ width: 66px; }
+
+  .stats-grid .stat-card{
+    padding: 7px;
+    min-height: 58px;
+  }
+
+  .stats-grid .stat-card .icon{
+    width: 34px;
+    height: 34px;
+  }
+
+  .stats-grid .stat-card .icon img{
+    width: 17px;
+    height: 17px;
+  }
+
+  .stats-grid .stat-card .text h4{ font-size: 11px; }
+  .stats-grid .stat-card .text p{  font-size: 9px; }
+}
+
+@media (max-width: 600px){
+
+  .service-card{
+    min-width: auto;
+    width: auto;
+    padding: 8px 12px;
+
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 8px;
+
+    border-radius: 14px;
+    background: transparent;
+    border: 1px solid #eee;
+    box-shadow: none;
+  }
+
+  /* نخلي المحتوى عمودي صغير */
+  .service-content{
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  /* العنوان */
+  .service-content h3{
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.2;
+    white-space: nowrap;
+  }
+
+  /* 👇 الوصف يظهر لكن خفيف */
+  .service-content p{
+    display: block;
+    font-size: 11px;
+    color: #888;
+    line-height: 1.2;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 120px;   /* مهم عشان ما يكبرش */
+  }
+
+  /* الأيقونة */
+  .service-icon{
+    width: 20px;
+    height: 20px;
+    background-size: 14px;
+    background-color: transparent;
+  }
+}
+/* موبايل: سحب بالإيد + بدون أسهم */
+@media (max-width: 768px){
+  .services-slider .slider-arrow{ display:none; }
+
+  .services-section .slider-window{
+    cursor: grab;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+  .services-section .slider-window:active{ cursor: grabbing; }
+
+  .service-card{ scroll-snap-align: center; }
 }
