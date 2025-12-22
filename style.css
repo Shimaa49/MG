@@ -3309,3 +3309,72 @@ footer ul li a:hover {
     margin: 0 !important;
   }
 }
+
+
+
+/* =========================
+   GLOBAL HORIZONTAL SCROLL FIX
+   ========================= */
+
+/* امنعي أي عنصر يطلع برا الشاشة */
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* أي سكشن فيه حركة أو سلايدر */
+.services-images-section,
+.services-marquee,
+.services-marquee-track,
+.slider-window,
+.partners-slider-wrap,
+.partners-slider,
+.partners-track,
+.companies-sec,
+.stats-section,
+.contact-section,
+.contact-images {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* أي عنصر flex أو animated ما يكبرش */
+* {
+  min-width: 0;
+}
+
+
+/* ✅ Services Marquee Fix */
+.services-images-section{
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;        /* نخفي الزيادة بس */
+  padding: 40px 0 60px;
+}
+
+/* المهم: متحطيش overflow على الـ track نفسه */
+.services-marquee-track{
+  overflow: visible !important;
+  max-width: none;
+}
+
+.services-marquee{
+  overflow: hidden;        /* هنا نخفي الزيادة */
+}
+
+/* خليه Full-bleed زي اللاب (يملا الشاشة) */
+.services-images-section{
+  position: relative;
+  left: 50%;
+  right: 50%;
+  width: 100vw;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+/* المقاس يبقى شبه اللاب بس على الموبايل أصغر */
+.services-marquee-track img{
+  width: clamp(110px, 22vw, 180px);
+  height: clamp(110px, 22vw, 180px);
+}
