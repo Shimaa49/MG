@@ -196,27 +196,95 @@ font-weight: 700;
   color: #fff;
 }
 /* VIDEO */
+
+/* ================= VIDEO THUMB ================= */
+
 .home-video-wrapper{
   position:absolute;
   left:50%;
   transform:translateX(-50%);
+  bottom:-110px;
   width:50%;
   max-width:1300px;
+  height:490px;
   border-radius:14px;
   overflow:hidden;
-  box-shadow:0 10px 30px rgba(0,0,0,0.35);
-  bottom:-110px;
+  cursor:pointer;
   z-index:2;
-  height: 490px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.35);
 }
 
-.home-video-wrapper iframe{
+.home-video-thumb{
   width:100%;
-
+  height:100%;
+  object-fit:cover;
   border:20px solid rgba(255,255,255,0.1);
-  display:block;
-    height: 490px;
 }
+
+/* PLAY BUTTON */
+.play-btn{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:80px;
+  color:#fff;
+  background:rgba(0,0,0,0.25);
+  transition:.3s;
+}
+
+.home-video-wrapper:hover .play-btn{
+  background:rgba(0,0,0,0.4);
+  transform:scale(1.05);
+}
+
+/* ================= MODAL ================= */
+
+.video-modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.7);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+}
+
+.video-modal-content{
+  position:relative;
+  width:80%;
+  max-width:900px;
+}
+
+.video-modal-content video{
+  width:100%;
+  border-radius:12px;
+}
+
+/* CLOSE BTN */
+.close-video{
+  position:absolute;
+  top:-45px;
+  right:0;
+  font-size:40px;
+  color:#fff;
+  cursor:pointer;
+}
+.home-video-wrapper video{
+  width:100%;
+  height:490px;
+  object-fit:cover;
+  border-radius:14px;
+}
+.home-video-wrapper video{
+  width: 100%;
+  height: 490px;
+  border: 20px solid rgba(255,255,255,0.1);
+  display:block;
+  object-fit: cover;
+}
+
 /* Overlay */
 .nav-overlay{
   position: fixed;
@@ -243,14 +311,7 @@ body.menu-open .nav-overlay{
     gap: 24px;
   }
 
-  .home-video-wrapper {
-    width: 60%;
-    height: 490px;
-    bottom: -5px;
-  }
-.home-video-wrapper iframe{
-  height: 490px;
-}
+ 
   header {
     padding-bottom: 560px;
   }
@@ -395,16 +456,9 @@ background-color: red;
     padding-bottom: 480px;
   }
 
-  .home-video-wrapper {
-    width: 92%;
-    bottom: -100px;
-    height: 260px;
-  }
+  
 
-  .home-video-wrapper iframe {
-    height: 260px;
-    border-width: 14px;
-  }
+  
 }
 
 /* =========================
@@ -424,10 +478,7 @@ background-color: red;
     padding-bottom: 500px;
   }
 
-  .home-video-wrapper iframe {
-    height: 230px;
-    border-width: 12px;
-  }
+ 
 }
 
 /* =========================
@@ -441,22 +492,9 @@ background-color: red;
     padding-bottom: 40px;
   }
 
-  /* الفيديو يبقى عنصر عادي */
-  .home-video-wrapper{
-    position: static;        /* 👈 أهم سطر */
-    transform: none;
-    width: 92%;
-    max-width: 92%;
-    margin: 20px auto 0;     /* مسافة من الزرار */
-    height: auto;
-  }
+  
 
-  .home-video-wrapper iframe{
-    width: 100%;
-    height: 240px;
-    border-width: 12px;
-    border-radius: 14px;
-  }
+  
 }
 @media (max-width: 420px){
   .home-video-wrapper iframe{
@@ -2113,7 +2151,7 @@ padding-right: 50px;
   background: #f7f7f7;
   border: 1px solid #ddd;
   border-radius: 12px;
-  font-size: 15px;
+  font-size: 20px;
   outline: none;
 }
 
@@ -2142,14 +2180,15 @@ padding-right: 50px;
     rgba(156, 40, 45, 1),
     rgba(219, 34, 41, 1)
   );
-  color: #fff;
+  color: white;
   border: none;
-  border-radius: 12px;
+  border-radius: none;
   font-size: 18px;
   cursor: pointer;
   margin-top: 10px;
   transition: 0.3s;
   border-radius: 32px ;
+
 }
 
 .send-btn:hover {
@@ -2528,7 +2567,7 @@ footer ul li a:hover {
 }
 
 /* الكارت الأبيض (لو عندِك نفس الكلاس سيبيه زي ما هو) */
-.footer-box {
+/* .footer-box {
   background-color: #fff;
   width: 70%;
   padding: 10px 50px;
@@ -2538,7 +2577,7 @@ footer ul li a:hover {
   text-align: center;
   margin-bottom: 50px;
 
-}
+} */
 
 /* بلوك السوشيال تحت الكارت */
 .footer-social {
@@ -2978,7 +3017,7 @@ footer ul li a:hover {
 ========================= */
 .partners-section{
   padding: 70px 0;
-  
+  background-color: transparent;
   font-family: "Cairo", sans-serif;
   direction: rtl;
 }
@@ -3068,4 +3107,181 @@ footer ul li a:hover {
   .partners-title{ font-size: 28px; }
   .partner-card img{ height: 36px; }
   .partners-track{ gap: 22px; }
+}
+/* /////////////form-massage/////////////////////////////// */
+
+.form-msg{
+  margin-top: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  display: none;
+  transition: opacity .3s ease;
+}
+
+.form-msg.success{
+  display: block;
+  color: #1b7a1b;
+}
+
+.form-msg.error{
+  display: block;
+  color: #b00020;
+}
+
+
+
+
+/* ///////////////video response/////////////////////////////// */
+/* =========================
+   Responsive Video (VIDEO tag)
+   ضعي هذا في آخر الملف
+   ========================= */
+
+/* <= 1200px */
+@media (max-width: 1200px) {
+  .home-video-wrapper{
+    width: 60%;
+    height: 490px;
+    bottom: -5px;
+  }
+
+  .home-video-wrapper video{
+    width: 100%;
+    height: 490px;
+    border-width: 20px;
+    object-fit: cover;
+    display: block;
+  }
+
+  header{
+    padding-bottom: 560px;
+  }
+}
+
+/* <= 1024px (Tablet) */
+@media (max-width: 1024px) {
+  .home-video-wrapper{
+    width: 80%;
+    height: 420px;
+    bottom: -60px;
+  }
+
+  .home-video-wrapper video{
+    width: 100%;
+    height: 420px;
+    border-width: 16px;
+    object-fit: cover;
+  }
+
+  header{
+    padding-bottom: 520px;
+  }
+}
+
+/* <= 767px (Mobile) - الفيديو يبقى عنصر عادي تحت الهيرو */
+@media (max-width: 767px) {
+  header{
+    min-height: auto;
+    padding-bottom: 40px;
+  }
+
+  .home-video-wrapper{
+    position: static;     /* أهم سطر */
+    left: auto;
+    bottom: auto;
+    transform: none;
+
+    width: 92%;
+    max-width: 92%;
+    height: auto;
+    margin: 20px auto 0;
+  }
+
+  .home-video-wrapper video{
+    width: 100%;
+    height: 240px;
+    border-width: 12px;
+    border-radius: 14px;
+    object-fit: cover;
+    display: block;
+  }
+}
+
+/* <= 420px (Small Mobile) */
+@media (max-width: 420px) {
+  .home-video-wrapper video{
+    height: 210px;
+    border-width: 10px;
+  }
+}
+
+/* /////////fixed content////////////////////// */
+/* =========================
+   Contact Images - Tablet Fix (no overlap)
+   ضعيه في آخر الملف
+   ========================= */
+
+@media (max-width: 1024px){
+
+  .contact-wrapper{
+    grid-template-columns: 1fr;
+    gap: 26px;
+    align-items: start;
+  }
+
+  /* هنا السر: نحجز مساحة ثابتة */
+  .contact-images{
+    width: 100%;
+    max-width: 520px;
+    margin: 0 auto;
+    position: relative;
+    height: auto;             /* مهم */
+    aspect-ratio: 4 / 3;      /* يحجز ارتفاع */
+  }
+
+  /* الخلفية */
+  .bg-img{
+    width: 78%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* الكارد الأمامي */
+  .front-card{
+    position: absolute;
+    left: 56%;
+    top: 60%;
+    width: 88%;
+    transform: translate(-50%, -60%);
+    border-radius: 22px;
+    overflow: hidden;
+  }
+
+  /* نصوص الفورم تقل شوية */
+  .contact-form h2{ font-size: 26px; }
+  .contact-form p{ font-size: 18px; margin-bottom: 16px; }
+  .field input, .field textarea{ font-size: 16px; }
+}
+
+@media (max-width: 767px){
+  .contact-images{
+    max-width: 92%;
+    aspect-ratio: 4 / 3;
+  }
+
+  .bg-img{ width: 82%; }
+
+  .front-card{
+    width: 92%;
+    left: 55%;
+    top: 60%;
+    transform: translate(-50%, -60%);
+  }
+}
+
+@media (max-width: 420px){
+  .contact-images{
+    aspect-ratio: 1 / 1;   /* عشان مايبقاش طويل زيادة على موبايل صغير */
+  }
 }

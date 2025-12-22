@@ -271,3 +271,117 @@ document.addEventListener("DOMContentLoaded", () => {
   init();
   window.addEventListener("resize", init);
 });
+//////////////form user/////////////////////
+emailjs.init("ry5Xypor7M3014GGT"); // Public Key
+
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("contactForm");
+  const msg = document.getElementById("formMsg");
+  let hideTimer;
+
+  if (!form || !msg) return;
+
+  function showMsg(text, type) {
+    clearTimeout(hideTimer);
+    msg.className = "form-msg"; // reset
+    msg.textContent = text;
+    msg.style.display = "block";
+
+    if (type) msg.classList.add(type);
+
+    hideTimer = setTimeout(() => {
+      msg.style.opacity = "0";
+      setTimeout(() => {
+        msg.style.display = "none";
+        msg.style.opacity = "1";
+      }, 300);
+    }, 4000);
+  }
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    showMsg("جاري إرسال الرسالة...", "");
+
+    emailjs.sendForm(
+      "service_lfzs7a5",
+      "template_9knh7c3",
+      form
+    ).then(
+      () => {
+        showMsg("✅ تم إرسال الرسالة بنجاح", "success");
+        form.reset();
+      },
+      (err) => {
+        console.error("EmailJS Error:", err);
+        showMsg("❌ حصل خطأ في الإرسال، جرّبي تاني", "error");
+      }
+    );
+  });
+});
+
+
+
+
+
+
+
+
+
+
+
+////////////////video///////////////////////
+
+document.addEventListener("DOMContentLoaded", () => {
+  const videoBtn = document.getElementById("videoNavBtn");
+  const videoSection = document.getElementById("introVideo");
+  const videoPlayer = document.getElementById("introVideoPlayer");
+
+  if (!videoBtn || !videoSection || !videoPlayer) {
+    console.warn("Video JS: تأكدي من IDs: videoNavBtn / introVideo / introVideoPlayer");
+    return;
+  }
+
+  // (اختياري) اقفلي أي فيديوهات تانية في الصفحة
+  function pauseOtherVideos() {
+    document.querySelectorAll("video").forEach((v) => {
+      if (v !== videoPlayer) {
+        v.pause();
+      }
+    });
+  }
+
+  videoBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    // انزلي لمكان الفيديو
+    videoSection.scrollIntoView({
+      behavior: "smooth",
+      block: "center",
+    });
+
+    // شغّلي الفيديو بعد ما الاسكرول يقرب يخلص
+    // لو autoplay بالصوت، لازم يكون من click event (وده بيحصل هنا)
+    pauseOtherVideos();
+
+    const tryPlay = () => {
+      const playPromise = videoPlayer.play();
+      if (playPromise && typeof playPromise.catch === "function") {
+        playPromise.catch(() => {
+          // لو المتصفح منع التشغيل لأي سبب، خلي المستخدم يضغط Play من الكنترولز
+          videoPlayer.muted = false;
+        });
+      }
+    };
+
+    // بديل setTimeout: ننتظر شوية بسيطة عشان الاسكرول
+    setTimeout(tryPlay, 500);
+  });
+
+  // (اختياري) زرار Esc يوقف الفيديو
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      videoPlayer.pause();
+    }
+  });
+});

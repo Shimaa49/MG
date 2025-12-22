@@ -43,7 +43,7 @@
     <li class="nav-divider" aria-hidden="true"></li>
 
     <li>
-      <button type="button" class="nav-link video-link">🎥 فيديو تعريفي</button>
+      <button type="button" class="nav-link video-link" id="videoNavBtn">🎥 فيديو تعريفي</button>
     </li>
   </ul>
 </nav>
@@ -71,16 +71,16 @@
       <button class="btn-2"><span class="arrows">←</span> تأجير عمالة</button>
     </div>
   </div>
+<!-- VIDEO THUMBNAIL -->
+<!-- VIDEO SECTION -->
+<div class="home-video-wrapper" id="introVideo">
+  <video id="introVideoPlayer" controls>
+    <source src="video/mg1.mp4" type="video/mp4">
+  </video>
+</div>
 
-  <div class="home-video-wrapper">
-    <iframe
-      src="https://www.youtube.com/embed/QsY8fnvMn6c?si=cEKbXL02-04P7rya"
-      title="YouTube video player"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      allowfullscreen>
-    </iframe>
-  </div>
+
+
 </header>
 
 <!-- Overlay لازم يبقى برا الـ header -->
@@ -654,10 +654,10 @@
   <div class="partners-slider-wrap">
     <div class="partners-slider" id="partnersSliderJS">
       <div class="partners-track" id="partnersTrackJS">
-        <div class="partner-card"><img src="image/part1.jpeg" alt=""></div>
+        <div class="partner-card"><img src="image/aaaaaaaaa.jpeg" alt=""></div>
         <div class="partner-card"><img src="image/about1jpeg.jpeg" alt=""></div>
-        <div class="partner-card"><img src="image/about2PM.jpeg" alt=""></div>
-        <div class="partner-card"><img src="image/about3.jpeg" alt=""></div>
+        <div class="partner-card"><img src="image/back.jpeg" alt=""></div>
+        <div class="partner-card"><img src="image/aaaaaaaaa.jpeg" alt=""></div>
         <div class="partner-card"><img src="image/about4.jpeg" alt=""></div>
         <div class="partner-card"><img src="image/about5.jpeg" alt=""></div>
       </div>
@@ -697,31 +697,30 @@
           فريقنا جاهز لدعمك وتقديم أفضل الحلول والخدمات في أسرع وقت ممكن.
         </p>
 
-        <form>
+      <form id="contactForm">
 
-          <div class="field">
-            <input type="text" placeholder="الاسم">
-            <span class="icon">👤</span>
-          </div>
+  <div class="field">
+    <input type="text" name="name" placeholder="الاسم" required>
+    <span class="icon">👤</span>
+  </div>
 
-          <div class="field">
-            <input type="text" placeholder="الهاتف">
-            <span class="icon">📞</span>
-          </div>
+  <div class="field">
+    <input type="text" name="phone" placeholder="الهاتف" required>
+    <span class="icon">📞</span>
+  </div>
 
-          <div class="field">
-            <input type="email" placeholder="البريد الإلكتروني">
-            <span class="icon">📧</span>
-          </div>
+  <div class="field">
+    <input type="email" name="email" placeholder="البريد الإلكتروني" required>
+    <span class="icon">📧</span>
+  </div>
 
-          <div class="field">
-            <textarea placeholder="محتوى الرسالة"></textarea>
-          </div>
+  <div class="field">
+    <textarea name="message" placeholder="محتوى الرسالة" required></textarea>
+  </div>
 
-          <button class="send-btn">إرسال ▷</button>
-
-        </form>
-
+  <button type="submit" class="send-btn">إرسال ▷</button>
+<p id="formMsg" class="form-msg" aria-live="polite"></p>
+</form>
       </div>
 
     </div>
@@ -808,12 +807,12 @@
         <!-- الكارت الأبيض -->
         <div class="footer-box">
           <div class="imag-footer">
-            <img src="image/footer-logo.png" alt="MG" class="w-100">
+            <img src="image/Introduction.png" alt="MGim" class="w-100">
           </div>
-          <p>
+          <!-- <p>
             نقدّم خدمات احترافية في مختلف المجالات التجارية والصناعية
             بما يتوافق مع رؤية المملكة 2030
-          </p>
+          </p> -->
         </div>
 
         <!-- بلوك السوشيال اللي تحت الكارت -->
@@ -901,18 +900,14 @@
 
 </footer>
 
-    <script src="js/bootstrap.js"></script>
+    <!-- <script src="js/bootstrap.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="main.js" defer></script>
+    -->
+
+ <script src="js/bootstrap.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="main.js" defer></script>
    
-    <div id="videoModal" class="modal">
-  <div class="modal-content">
-    <span id="closeModal" class="close">&times;</span>
-
-    <video controls autoplay>
-      <source src="./video.mp4" type="video/mp4">
-    </video>
-  </div>
-</div>
-
 </body>
 </html>
