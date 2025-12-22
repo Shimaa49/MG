@@ -3281,11 +3281,31 @@ footer ul li a:hover {
     aspect-ratio: 1 / 1;   /* عشان مايبقاش طويل زيادة على موبايل صغير */
   }
 }
+/* WHO section - fix layout + prevent horizontal scroll */
+#who{
+  padding: 70px 70px;
+  margin: 0;              /* ❌ شيلنا الـ margin اللي بيعمل overflow */
+}
 
-/* FIX horizontal scroll on mobile */
+/* لو عايزة مسافة خارجية على الديسكتوب فقط */
+@media (min-width: 992px){
+  #who{
+    margin: 0 50px;        /* هنا فقط */
+  }
+}
+
+/* Tablet */
+@media (max-width: 991px){
+  #who{
+    padding: 45px 16px;
+    margin: 0;
+  }
+}
+
+/* Mobile */
 @media (max-width: 576px){
   #who{
-    margin: 0 !important;            /* <-- أهم سطر */
-    padding: 45px 16px !important;   /* بدل 0 عشان ميكتمش المحتوى */
+    padding: 45px 16px !important;
+    margin: 0 !important;
   }
 }
