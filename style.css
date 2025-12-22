@@ -1,7 +1,3 @@
-/* ====== GENERAL ====== */
-/* =========================
-   BASE
-   ========================= */
 
 *{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth;font-family:"Cairo",sans-serif;}
 body{overflow-x:hidden !important;}
@@ -3283,5 +3279,13 @@ footer ul li a:hover {
 @media (max-width: 420px){
   .contact-images{
     aspect-ratio: 1 / 1;   /* عشان مايبقاش طويل زيادة على موبايل صغير */
+  }
+}
+
+/* FIX horizontal scroll on mobile */
+@media (max-width: 576px){
+  #who{
+    margin: 0 !important;            /* <-- أهم سطر */
+    padding: 45px 16px !important;   /* بدل 0 عشان ميكتمش المحتوى */
   }
 }
