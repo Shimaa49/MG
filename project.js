@@ -1,7 +1,7 @@
 /////////////slider-project////////////////
 document.addEventListener('DOMContentLoaded', function () {
 
-  // ============ SLIDER 1 – صور الإنشاء ============
+
   const slides = {
     1: {
       leftTop: "image/const4.png",
@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const prevBtn = document.getElementById("prev");
   const nextBtn = document.getElementById("next");
 
-  // لو مفيش العناصر دي (مثلاً صفحة تانية) نخرج
+
   if (!imgLeftTop || !dots.length) return;
 
   function updateSlide(num) {
@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // أرقام الـ slider
+
   dots.forEach(btn => {
     btn.addEventListener("click", () => {
       const num = Number(btn.dataset.slide);
@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // السهم اليمين
+
   if (nextBtn) {
     nextBtn.addEventListener("click", () => {
       currentSlide = currentSlide === 4 ? 1 : currentSlide + 1;
@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // السهم الشمال
+
   if (prevBtn) {
     prevBtn.addEventListener("click", () => {
       currentSlide = currentSlide === 1 ? 4 : currentSlide - 1;
@@ -95,18 +95,13 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // أول Slide
+
   updateSlide(1);
 
 
 
-  // ============ SLIDER 2 – الصيانة والتشغيل ============
-  // الكود بتاع ops-slider هيفضل زي ما هو،
-  // بس اتأكدي إن عندك في الـ HTML:
-  // .ops-slider > .ops-track > .ops-slide ... و .ops-dot / .ops-prev / .ops-next
-  // ولو لسة ماعملتيش الهيكل ده، سيبي الكود ده دلوقتي أو امسحيه لحد ما نجهزه.
 
-  // OPS slider
+
 const opsTrack  = document.querySelector('.ops-track');
 const opsSlides = document.querySelectorAll('.ops-slide');
 const opsDots   = document.querySelectorAll('.ops-dot');
@@ -136,13 +131,12 @@ if (opsTrack && opsSlides.length && opsDots.length && opsPrev && opsNext) {
 
   opsDots.forEach(dot => {
     dot.addEventListener('click', () => {
-      const slideTo = parseInt(dot.dataset.slide, 10); // حسب الـ data-slide اللي حاطاه
+      const slideTo = parseInt(dot.dataset.slide, 10); 
       opsIndex = slideTo;
       updateOpsSlider(opsIndex);
     });
   });
 
-  // أول مرة
   updateOpsSlider(0);
 }
 

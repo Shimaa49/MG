@@ -1,6 +1,4 @@
-/* =========================
-   RESET & GLOBAL
-========================= */
+
 *{
   margin: 0;
   padding: 0;
@@ -18,9 +16,6 @@ a{
   text-decoration: none;
 }
 
-/* =========================
-   HEADER + NAV (سابقة الأعمال)
-========================= */
 
 .header-projects{
   position: relative;
@@ -32,7 +27,6 @@ a{
   color: #fff;
 }
 
-/* شريط الهيدر */
 .header-bar{
   padding: 14px 20px;
   display: flex;
@@ -48,7 +42,7 @@ a{
   object-fit: contain;
 }
 
-/* الكبسولة بتاعة الناف */
+
 .top-nav{
   border-radius: 14px;
   border: 1px solid rgba(255,255,255,0.6);
@@ -86,9 +80,7 @@ a{
   padding-right: 20px;
 }
 
-/* =========================
-   HERO – سابقة أعمالنا
-========================= */
+
 
 .projects-hero{
   position: relative;
@@ -113,7 +105,6 @@ a{
   text-align: right;
 }
 
-/* العنوان */
 .projects-hero-content h1{
   font-size: 36px;
   font-weight: 800;
@@ -121,7 +112,6 @@ a{
   color: #fff;
 }
 
-/* الليست الطويلة */
 .projects-hero-list{
   list-style: disc;
   padding-right: 22px;
@@ -137,7 +127,6 @@ a{
   margin-top: 10px;
 }
 
-/* الأزرار */
 .projects-hero-actions{
   display: flex;
   gap: 16px;
@@ -174,9 +163,7 @@ a{
   color: #86252D;
 }
 
-/* =========================
-   شريط الخدمات – الخدمات العلوية
-========================= */
+
 
 .services2-wrapper{
   padding: 40px 20px;
@@ -234,9 +221,6 @@ a{
   color: #86252D;
 }
 
-/* =========================
-   SECTION: سابقة الأعمال – الصيانة والإنشاء والترميم
-========================= */
 
 .projects-section{
   padding: 70px 0 60px;
@@ -250,11 +234,10 @@ a{
   gap: 60px;
   align-items: center;
   justify-content: space-between;
-  direction: ltr; /* علشان العمودين يمين/شمال */
+  direction: ltr; 
   padding-inline: 40px;
 }
 
-/* النص */
 .projects-text{
   flex: 1.1;
 }
@@ -296,7 +279,7 @@ a{
   margin-left: 40px;
 }
 
-/* الصور – الكولاج */
+
 .images-layout{
   position: relative;
   width: 480px;
@@ -324,7 +307,6 @@ a{
   box-shadow: 0 8px 25px rgba(0,0,0,0.12);
 }
 
-/* شمال فوق */
 .img-left-top{
   width: 160px;
   height: 200px;
@@ -332,7 +314,6 @@ a{
   top: 70px;
 }
 
-/* شمال تحت */
 .img-left-bottom{
   width: 170px;
   height: 200px;
@@ -340,7 +321,6 @@ a{
   bottom: 40px;
 }
 
-/* النص الكبيرة */
 .img-center{
   width: 250px;
   height: 340px;
@@ -349,7 +329,6 @@ a{
   transform: translate(-50%, -50%);
 }
 
-/* يمين فوق الكبيرة */
 .img-right-big{
   width: 180px;
   height: 220px;
@@ -357,7 +336,7 @@ a{
   top: 0;
 }
 
-/* يمين فوق الصغيرة */
+
 .img-right-small{
   width: 150px;
   height: 180px;
@@ -365,7 +344,7 @@ a{
   top: 240px;
 }
 
-/* يمين تحت */
+
 .img-right-bottom{
   width: 170px;
   height: 190px;
@@ -373,7 +352,7 @@ a{
   bottom: 20px;
 }
 
-/* الـ Slider اللي تحت */
+
 .projects-slider{
   margin-top: 25px;
   display: flex;
@@ -410,7 +389,7 @@ a{
   line-height: 1;
 }
 
-/* ===== سكشن سابقة الأعمال: الصيانة والنظافة ===== */
+
 
 .cleaning-projects {
   padding: 60px 0;
@@ -419,17 +398,17 @@ a{
   font-family: "Cairo", sans-serif;
 }
 
-/* الكونتينر بتاع السكشن ده بس */
+
 .cleaning-projects .container {
   max-width: 1440px;
   margin: 0 auto;
-  /* padding: 0 40px;        مسافة بسيطة من يمين وشمال (أقل من 160 كتير) */
-}
+      }
 
-/* ===== الجزء الخاص بالنص (العنوان + الوصف + الليست) ===== */
+
+
 
 .clean-info {
-  margin-bottom: 16px;    /* مسافة صغيرة بين النص والصور زي الفيجما */
+  margin-bottom: 16px;    
 }
 
 .sectionnn-header h2 {
@@ -469,11 +448,7 @@ color: rgba(98, 100, 103, 1);
 }
 
 
-/* ===== سكشن سابقة الأعمال: الصيانة والنظافة ===== */
 
-/* =====================================
-   سكشن سابقة الأعمال (الصيانة والنظافة)
-   ===================================== */
 
 .cleaning-projects {
   padding: 50px 0;
@@ -482,9 +457,6 @@ color: rgba(98, 100, 103, 1);
   background: #fff;
 }
 
-/* ============================
-      النص (العنوان + الوصف + الليست)
-   ============================ */
 
 .cleaning-projects .container {
   max-width: 1400px;
@@ -528,9 +500,7 @@ color: rgba(98, 100, 103, 1);
 
 
 
-/* ============================
-         صف الصور (6 صور)
-   ============================ */
+
 
 .projectss-gallery {
   display: flex;
@@ -540,7 +510,7 @@ color: rgba(98, 100, 103, 1);
   flex-wrap: nowrap;
 }
 
-/* --- الصور الكبيرة 458 × 360 --- */
+
 .imgee-box1,
 .imgee-box3,
 .imgee-box6 {
@@ -551,7 +521,7 @@ color: rgba(98, 100, 103, 1);
   overflow: hidden;
 }
 
-/* --- الصور المتوسطة 345 × 360 --- */
+
 .imgee-box2,
 .imgee-box5 {
   width: 345px;
@@ -562,7 +532,7 @@ color: rgba(98, 100, 103, 1);
   overflow: hidden;
 }
 
-/* --- الصورة الصغيرة 220 × 360 --- */
+
 .imgee-box4 {
   width: 220px;
   height: 360px;
@@ -572,7 +542,7 @@ color: rgba(98, 100, 103, 1);
   overflow: hidden;
 }
 
-/* الصور داخل أي بوكس */
+
 .projectss-gallery img {
   width: 100%;
   height: 100%;
@@ -581,11 +551,6 @@ color: rgba(98, 100, 103, 1);
 
 
 
-/* ====================================================
-       🌙 الريسبونسف — موبايل + تابلت + ديسكتوب كبير
-   ==================================================== */
-
-/* ====== موبايل ====== */
 @media (max-width: 768px) {
 
   .sectionn-header h2 {
@@ -605,7 +570,7 @@ color: rgba(98, 100, 103, 1);
     gap: 10px;
   }
 
-  /* خلي كل صورة تأخذ 48% */
+  
   .imgee-box1,
   .imgee-box2,
   .imgee-box3,
@@ -617,7 +582,6 @@ color: rgba(98, 100, 103, 1);
   }
 }
 
-/* ====== تابلت ====== */
 @media (min-width: 769px) and (max-width: 1199px) {
 
   .cleaning-projects .container {
@@ -639,21 +603,21 @@ color: rgba(98, 100, 103, 1);
   }
 }
 
-/* ====== ديسكتوب كبير (زي الفيجما 1920px) ====== */
+
 @media (min-width: 1200px) {
 
   .cleaning-projects .container {
     max-width: 1920px;
-    padding: 0 160px; /* زي الفيجما */
+    padding: 0 160px; 
   }
 
-  /* خلي الصف 6 صور في خط واحد بدون لف */
+ 
   .projectss-gallery {
     flex-wrap: nowrap;
     justify-content: center;
   }
 
-  /* ارتفاع الصور يرجع 360px */
+
   .imgee-box1,
   .imgee-box2,
   .imgee-box3,
@@ -670,58 +634,53 @@ color: rgba(98, 100, 103, 1);
 
 
 
-
-
-
-/* ========== سابقة الأعمال : الصيانة والتشغيل ========== */
-
 .ops-section{
   background: #F5F6FA;
   padding: 60px 0;
   direction: ltr;
 }
 
-/* الفريم كله – زي الفيجما: عرض كبير + padding يمين */
+
 .ops-wrapper{
   max-width: 1920px;
   margin: 0 auto;
   display: flex;
   gap: 60px;
-  padding: 60px 160px 60px 0; /* top / right / bottom / left */
+  padding: 60px 160px 60px 0; 
   align-items: flex-start;
 }
 
-/* العمود الشمال (السلايدر) */
+
 .ops-slider{
   flex: 1;
 }
 
-/* نافذة السلايدر */
+
 .ops-window{
   width: 100%;
   overflow: hidden;
   border-radius: 18px;
 }
 
-/* التراك اللي بيتحرك */
+
 .ops-track{
   display: flex;
   transition: transform .6s ease;
 }
 
-/* كل سلايد تاخد عرض الفريم بالكامل */
+
 .ops-slide{
   min-width: 100%;
 }
 
-/* صف الصور جوه السلايد */
+
 .ops-images-row{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
 }
 
-/* الصور نفسها */
+
 .ops-images-row img{
   width: 100%;
   height: 734px;
@@ -729,7 +688,7 @@ color: rgba(98, 100, 103, 1);
   border-radius: 18px;
 }
 
-/* الكنترولز تحت السلايدر */
+
 .ops-controls{
   margin-top: 22px;
   display: flex;
@@ -738,7 +697,7 @@ color: rgba(98, 100, 103, 1);
   gap: 8px;
 }
 
-/* الأسهم */
+
 .ops-arrow{
   width: 38px;
   height: 38px;
@@ -750,7 +709,7 @@ color: rgba(98, 100, 103, 1);
   line-height: 1;
 }
 
-/* الدواير */
+
 .ops-dot{
   width: 42px;
   height: 42px;
@@ -768,7 +727,7 @@ color: rgba(98, 100, 103, 1);
   border-color: #b42424;
 }
 
-/* العمود اليمين – النص */
+
 .ops-text{
   flex: 1;
    direction: rtl;
@@ -812,7 +771,7 @@ color: rgba(98, 100, 103, 1);
 
 /* ========== Responsive ========== */
 
-/* تابلت وتحت */
+
 @media (max-width: 992px){
   .ops-wrapper{
     flex-direction: column;
@@ -832,7 +791,6 @@ color: rgba(98, 100, 103, 1);
   }
 }
 
-/* موبايل صغير */
 @media (max-width: 576px){
   .ops-wrapper{
     padding: 30px 16px;
@@ -1006,7 +964,6 @@ color: rgba(98, 100, 103, 1);
 }
 
 
-/* ========== سابقة الأعمال (سكشن كامل) ========== */
 
 .projects-all-section {
   padding: 60px 0;
@@ -1014,14 +971,8 @@ color: rgba(98, 100, 103, 1);
   font-family: "Cairo", sans-serif;
 }
 
-/* الفريم المنقّط */
-/* .projects-all-box {
-  border: 1px dashed #c9c9c9;
-  padding: 32px 40px 40px;
-  background-color: #fff;
-} */
 
-/* ---------- الجزء العلوي (النص) ---------- */
+
 
 .projects-all-top {
   display: flex;
@@ -1081,13 +1032,11 @@ font-weight: 700;
 font-size: 32px;
 }
 
-/* ---------- الجزء السفلي (الصور) ---------- */
 
 .projects-all-gallery {
   margin-top: 24px;
 }
 
-/* جريد بسيط: من 3–5 أعمدة حسب عرض الشاشة */
 .projects-all-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -1108,7 +1057,6 @@ font-size: 32px;
   object-fit: cover;
 }
 
-/* ---------- ريسبونسيف بسيط ---------- */
 
 @media (max-width: 992px) {
   .projects-all-top {
@@ -1131,10 +1079,10 @@ font-size: 32px;
 
 .projects-gallery .container {
   max-width: 1920px;
-  padding: 0 160px;   /* === مسافات يمين وشمال زي الفيجما === */
+  padding: 0 160px;  
 }
 
-/* العنوان */
+
 .gallery-info h2 {
   font-size: 32px;
   font-weight: 700;
@@ -1147,7 +1095,6 @@ font-size: 32px;
   margin-bottom: 40px;
 }
 
-/* الصف الأول */
 .gallery-big img {
   width: 100%;
   height: 320px;
@@ -1162,7 +1109,7 @@ font-size: 32px;
   border-radius: 18px;
 }
 
-/* الصف الثاني */
+
 .gallery-box img {
   width: 100%;
   height:466.626953125px;
@@ -1170,10 +1117,10 @@ font-size: 32px;
   border-radius: 36px;
 }
 
-/* رسبونسيف */
+
 @media (max-width: 992px) {
   .projects-gallery .container {
-    padding: 0 40px; /* تقل مع الشاشات الصغيرة */
+    padding: 0 40px;
   }
 
   .gallery-big img,

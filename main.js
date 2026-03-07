@@ -1,11 +1,8 @@
-console.log("✅ main.js اتحمّل");
+
 
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("✅ DOM جاهز");
+ 
 
-  /* =========================
-     1) MOBILE MENU (Drawer)
-  ========================= */
   (function initMenu() {
     const body = document.body;
     const menuBtn = document.querySelector(".menu-btn");
@@ -13,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!menuBtn || !nav) return;
 
-    // Overlay
+ 
     let overlay = document.querySelector(".nav-overlay");
     if (!overlay) {
       overlay = document.createElement("div");
@@ -21,7 +18,6 @@ document.addEventListener("DOMContentLoaded", () => {
       document.body.appendChild(overlay);
     }
 
-    // Close button
     let closeBtn = nav.querySelector(".menu-close");
     if (!closeBtn) {
       closeBtn = document.createElement("button");
@@ -31,8 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
       closeBtn.textContent = "×";
       nav.prepend(closeBtn);
     }
-
-    // A11y
+ 
     menuBtn.setAttribute("aria-expanded", "false");
     nav.setAttribute("aria-hidden", "true");
 
@@ -75,12 +70,10 @@ document.addEventListener("DOMContentLoaded", () => {
   })();
 
 
-  /* =========================
-     2) COUNTERS
-  ========================= */
+
   (function initCounters() {
     const counters = document.querySelectorAll(".counter");
-    if (!counters.length) return; // ✅ مهم جدًا
+    if (!counters.length) return;
 
     const options = { root: null, threshold: 0.4 };
 
@@ -106,17 +99,13 @@ document.addEventListener("DOMContentLoaded", () => {
         }, speed);
       });
 
-      observer.disconnect(); // ✅ عشان مايعيدش العد كل شوية
+      observer.disconnect(); 
     };
 
     const observer = new IntersectionObserver(startCounting, options);
     observer.observe(counters[0]);
   })();
 
-
-  /* =========================
-   3) SERVICES SLIDER (Scroll-based) - NO BLANK SPACE
-========================= */
 (function () {
   const section = document.querySelector(".services-section");
   if (!section) return;
@@ -129,7 +118,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (!windowEl || !track || !cards.length || !prevBtn || !nextBtn) return;
 
-  // احسب step = عرض الكارت + gap الحقيقي
+ 
   function getStep() {
     const cardW = cards[0].getBoundingClientRect().width;
     const styles = window.getComputedStyle(track);
@@ -145,9 +134,7 @@ document.addEventListener("DOMContentLoaded", () => {
     windowEl.scrollBy({ left: -getStep(), behavior: "smooth" });
   });
 })();
-  /* =========================
-     4) VIDEO BTN (Navbar)
-  ========================= */
+
   (function initVideoBtn() {
     const videoBtn = document.getElementById("videoNavBtn");
     const videoBox = document.getElementById("homeVideoBox");
@@ -164,9 +151,8 @@ document.addEventListener("DOMContentLoaded", () => {
   })();
 
 
-  /* =========================
-     5) IMAGES GRID SHUFFLE (تبديل أماكن الصور)
-  ========================= */
+
+
   (function initImagesShuffle() {
     const grid = document.querySelector(".images-grid");
     if (!grid) return;
@@ -192,15 +178,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
 ////////////////PARTERRRR///////////////////////
 
-// ===============================
-// Partners Infinite Slider (SAFE)
-// ===============================
 (function partnersSlider() {
 
   const slider = document.getElementById("partnersSliderJS");
   const track  = document.getElementById("partnersTrackJS");
 
-  if (!slider || !track) return; // أمان لو الصفحة مفيهاش السكشن
+  if (!slider || !track) return; 
 
   // duplicate cards
   track.innerHTML += track.innerHTML;
@@ -236,28 +219,21 @@ document.addEventListener("DOMContentLoaded", () => {
 })();
 
 
-
-
-
-
-
-
 document.addEventListener("DOMContentLoaded", () => {
   const tracks = document.querySelectorAll(".services-marquee-track");
   if (!tracks.length) return;
 
   function fillTrack(track) {
-    // خدي النسخة الأصلية مرة واحدة بس
     if (!track.dataset.baseHtml) {
       track.dataset.baseHtml = track.innerHTML;
     } else {
       track.innerHTML = track.dataset.baseHtml;
     }
 
-    const target = window.innerWidth * 2; // غطي 2x عرض الشاشة (مهم)
+    const target = window.innerWidth * 2; 
     let safety = 0;
 
-    // كرري الصور الموجودة لحد ما العرض يكفي
+  
     while (track.scrollWidth < target && safety < 10) {
       track.innerHTML += track.dataset.baseHtml;
       safety++;
@@ -272,7 +248,7 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("resize", init);
 });
 //////////////form user/////////////////////
-emailjs.init("ry5Xypor7M3014GGT"); // Public Key
+emailjs.init("ry5Xypor7M3014GGT"); 
 
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("contactForm");
@@ -324,12 +300,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-
-
-
-
-
-
 ////////////////video///////////////////////
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -342,7 +312,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
-  // (اختياري) اقفلي أي فيديوهات تانية في الصفحة
+ 
   function pauseOtherVideos() {
     document.querySelectorAll("video").forEach((v) => {
       if (v !== videoPlayer) {
@@ -354,34 +324,138 @@ document.addEventListener("DOMContentLoaded", () => {
   videoBtn.addEventListener("click", (e) => {
     e.preventDefault();
 
-    // انزلي لمكان الفيديو
+    
     videoSection.scrollIntoView({
       behavior: "smooth",
       block: "center",
     });
 
-    // شغّلي الفيديو بعد ما الاسكرول يقرب يخلص
-    // لو autoplay بالصوت، لازم يكون من click event (وده بيحصل هنا)
+  
     pauseOtherVideos();
 
     const tryPlay = () => {
       const playPromise = videoPlayer.play();
       if (playPromise && typeof playPromise.catch === "function") {
         playPromise.catch(() => {
-          // لو المتصفح منع التشغيل لأي سبب، خلي المستخدم يضغط Play من الكنترولز
+       
           videoPlayer.muted = false;
         });
       }
     };
 
-    // بديل setTimeout: ننتظر شوية بسيطة عشان الاسكرول
+
     setTimeout(tryPlay, 500);
   });
 
-  // (اختياري) زرار Esc يوقف الفيديو
+
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
       videoPlayer.pause();
     }
   });
+});
+
+
+
+//////////////////////////who-animation///////////////////////////////
+document.addEventListener("DOMContentLoaded", () => {
+  const section = document.querySelector("#who-message");
+  if (!section) return;
+
+  const topBoxes = section.querySelectorAll(".who-top .one-box");
+  const strategyBox = section.querySelector(".strategy-box");
+  const items = section.querySelectorAll(".strategy-list li");
+
+
+  let timers = [];
+
+  const clearTimers = () => {
+    timers.forEach(t => clearTimeout(t));
+    timers = [];
+  };
+
+  const reset = () => {
+    clearTimers();
+    topBoxes.forEach(b => b.classList.remove("is-visible"));
+    if (strategyBox) strategyBox.classList.remove("is-visible");
+    items.forEach(li => li.classList.remove("is-visible"));
+  };
+
+  const play = () => {
+    clearTimers();
+
+
+    topBoxes.forEach((box, i) => {
+      timers.push(setTimeout(() => box.classList.add("is-visible"), i * 150));
+    });
+
+ 
+    if (strategyBox) {
+      timers.push(setTimeout(() => strategyBox.classList.add("is-visible"), 250));
+    }
+
+
+    items.forEach((li, i) => {
+      timers.push(setTimeout(() => li.classList.add("is-visible"), 450 + i * 160));
+    });
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        play();    
+      } else {
+        reset();    
+      }
+    });
+  }, {
+    threshold: 0.25
+  });
+
+  observer.observe(section);
+});
+
+/////////////////////////////////animation-why-us////////////////////////////////////
+document.addEventListener("DOMContentLoaded", () => {
+  const section = document.querySelector(".why-us");
+  if (!section) return;
+
+  const listItems = section.querySelectorAll(".why-list li");
+  const btns = section.querySelectorAll(".btns a");
+
+  let timers = [];
+
+  const clearTimers = () => {
+    timers.forEach(t => clearTimeout(t));
+    timers = [];
+  };
+
+  const reset = () => {
+    clearTimers();
+    listItems.forEach(li => li.classList.remove("is-visible"));
+    btns.forEach(a => a.classList.remove("is-visible"));
+  };
+
+  const play = () => {
+    clearTimers();
+
+
+    listItems.forEach((li, i) => {
+      timers.push(setTimeout(() => li.classList.add("is-visible"), i * 140));
+    });
+
+  
+    btns.forEach((a, i) => {
+      timers.push(setTimeout(() => a.classList.add("is-visible"), 140 * listItems.length + 120 + i * 120));
+    });
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) play();
+      else reset();
+    });
+  }, { threshold: 0.25 });
+
+  observer.observe(section);
 });

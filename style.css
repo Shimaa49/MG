@@ -4,20 +4,17 @@ body{overflow-x:hidden !important;}
 html{scroll-padding-top:50px;}
 .arrows{font-size:20px;font-weight:700;padding:10px;}
 
-/* =========================
-   HEADER (Desktop default)
-   ========================= */
 header{
   background-image:url(./image/header.png);
   background-position:center;
   background-size:cover;
   min-height:80vh;
   padding-top:20px;
-  padding-bottom:560px; /* مساحة ثابتة للفيديو تحت */
+  padding-bottom:560px; 
   position:relative;
 }
 
-/* top bar */
+
 .header-bar{
   padding:15px 80px;
   display:flex;
@@ -43,7 +40,6 @@ header{
   display:block;
 }
 
-/* NAV (desktop capsule) */
 .top-nav{
   flex:1;
   display:flex;
@@ -101,7 +97,7 @@ header{
   margin: 0;
 }
 
-.menu-btn, .menu-close{display:none;} /* يظهروا في الموبايل */
+.menu-btn, .menu-close{display:none;}
 
 /* HERO */
 .MG-info{
@@ -193,7 +189,7 @@ font-weight: 700;
 }
 /* VIDEO */
 
-/* ================= VIDEO THUMB ================= */
+
 
 .home-video-wrapper{
   position:absolute;
@@ -217,7 +213,7 @@ font-weight: 700;
   border:20px solid rgba(255,255,255,0.1);
 }
 
-/* PLAY BUTTON */
+
 .play-btn{
   position:absolute;
   inset:0;
@@ -258,7 +254,7 @@ font-weight: 700;
   border-radius:12px;
 }
 
-/* CLOSE BTN */
+
 .close-video{
   position:absolute;
   top:-45px;
@@ -287,20 +283,18 @@ font-weight: 700;
   inset: 0;
   background: rgba(0,0,0,0.45);
   opacity: 0;
-  pointer-events: none; /* ❗ لا تتفاعل */
+  pointer-events: none; 
   transition: opacity .25s ease;
   z-index: 1000;
 }
 
 body.menu-open .nav-overlay{
   opacity: 1;
-  pointer-events: auto; /* تتفاعل بس وقت الفتح */
+  pointer-events: auto; 
 }
 
 
-/* =========================
-   <= 1200px (Laptop صغير)
-   ========================= */
+
 @media (max-width: 1200px) {
   .header-bar {
     padding: 14px 40px;
@@ -317,12 +311,10 @@ body.menu-open .nav-overlay{
 
 }
 
-/* =========================
-   <= 1024px (Tablet + Mobile Drawer)
-   ========================= */
+
 @media (max-width: 767px) {
 
-  /* زر المنيو */
+
   .menu-btn {
     display: inline-flex;
     align-items: center;
@@ -341,7 +333,7 @@ body.menu-open .nav-overlay{
     display: flex;
   } 
 
-  /* Drawer */
+
   .top-nav {
     position: fixed;
     top: 0;
@@ -367,7 +359,7 @@ background-color: red;
     pointer-events: auto;
   }
 
-  /* Drawer head */
+
   .drawer-head {
     display: flex;
     align-items: center;
@@ -403,7 +395,7 @@ background-color: red;
     color: #7b1111;
   }
 
-  /* القائمة */
+
   .top-nav ul {
     display: flex;
     flex-direction: column;
@@ -436,7 +428,7 @@ background-color: red;
     background: rgba(255,255,255,.14);
   }
 
-  /* أزرار الهيرو */
+
   .MG-btn {
     flex-direction: column;
     width: 100%;
@@ -447,7 +439,6 @@ background-color: red;
     width: 100%;
   }
 
-  /* فيديو */
   header {
     padding-bottom: 480px;
   }
@@ -457,9 +448,7 @@ background-color: red;
   
 }
 
-/* =========================
-   <= 420px (موبايل صغير)
-   ========================= */
+
 @media (max-width: 420px) {
   .MG-p h1 {
     font-size: 22px;
@@ -477,12 +466,10 @@ background-color: red;
  
 }
 
-/* =========================
-   Mobile Video Fix
-   ========================= */
+
 @media (max-width: 767px){
 
-  /* الهيدر يرجع طبيعي */
+  
   header{
     min-height: auto;
     padding-bottom: 40px;
@@ -498,22 +485,20 @@ background-color: red;
   }
 }
 
-/* =========================
-   Mobile + Tablet => Drawer (<=1024px)
-   ========================= */
+
 @media (max-width: 1024px){
 
-  /* زرار المنيو يظهر */
+ 
   .menu-btn{
     display: inline-flex;
     align-items: center;
     justify-content: center;
   }
 
-  /* Vision برا لو بتلخبطيه في التابلت */
+ 
   .vision{ display:flex; }
 
-  /* الـ NAV يبقى Drawer */
+
   .top-nav{
     position: fixed;
     top: 0;
@@ -551,7 +536,7 @@ background-color: red;
     pointer-events: auto;
   }
 
-  /* قائمة الدروار */
+  
   .top-nav ul{
     display: flex;
     flex-direction: column;
@@ -563,14 +548,14 @@ background-color: red;
     overflow: visible;
   }
 
-  /* خلي الفاصل يبان جوه الدروار */
+
   .nav-divider{
     display: none;
     
     margin:  0;
   } 
 
-  /* شكل اللينكات */
+
   .top-nav .nav-link,
   .top-nav ul li{
     padding: 14px 14px;
@@ -581,7 +566,7 @@ background-color: red;
   }
 }
 
-/* ✅ Mobile + Tablet Drawer Controls */
+
 @media (max-width: 1024px){
 
   .menu-btn{
@@ -604,13 +589,13 @@ background-color: red;
     cursor: pointer;
   }
 }
-/* إخفاء الـ nav divider في الموبايل والتابلت */
+
 @media (max-width: 1024px){
   .nav-divider{
     display: none !important;
   }
 }
-/* Tablet + Mobile: ظبط مكان زر المنيو (الـ list) */
+
 @media (max-width: 1024px){
 
   .header-bar{
@@ -620,14 +605,13 @@ background-color: red;
     align-items: center;
   }
 
-  /* خلي العناصر بترتيب واضح */
   .vision{ order: 1; }
   .menu-btn{ order: 2; }
   .logo{  order: 1; }
 
-  /* زر المنيو */
+
   .menu-btn{
-    display:flex;      /* مهم */
+    display:flex;   
     width: 44px;
     height: 44px;
     border-radius: 12px;
@@ -637,19 +621,16 @@ background-color: red;
     align-items: center;
     justify-content: center;
 
-    margin-inline-start: 8px;  /* مسافة عن اللي قبله */
-    flex: 0 0 auto;            /* ما يتضغطش */
+    margin-inline-start: 8px;  
+    flex: 0 0 auto;            
   }
 
-  /* اللوجوهات ما تكبرش قوي */
+
   .logo img, .vision img{
     height: 56px;
   }
 }
-/* =========================
-   STATS (One clean version)
-   نفس الشكل على كل الشاشات + بدون scroll بالعرض
-   ========================= */
+
 
 .stats-section{
   background:#fff;
@@ -657,20 +638,20 @@ background-color: red;
   z-index:1;
   overflow-x: hidden;
 
-  /* خليها بسيطة ومتتحكمش في الفيديو هنا */
+ 
   margin-top: 30px;
 padding: 120px 0 50px;
-  overflow-x: clip; /* يمنع أي تمدد بالعرض */
+  overflow-x: clip; 
 }
 
-/* wrapper optional (stats-scale) */
+
 .stats-scale{
   width: 100%;
 }
 
-/* الجريد نفسه */
+
 .stats-grid{
-  /* عشان يبقى في النص ومش يلمس الحواف */
+
   width: min(100%, 900px);
   margin: 0 auto;
   padding-inline: 12px;
@@ -678,7 +659,7 @@ padding: 120px 0 50px;
   display: grid;
   align-items: center;
 
-  /* نفس الشكل دايمًا: 3 أعمدة (شمال - وسط - يمين) */
+
   grid-template-columns:
     minmax(0, clamp(150px, 36vw, 280px))
     auto
@@ -688,7 +669,6 @@ padding: 120px 0 50px;
   row-gap: clamp(14px, 2.5vw, 28px);
 }
 
-/* مكان اللوجو */
 .center-image-wrap{
   grid-column: 2;
   grid-row: 1 / span 2;
@@ -701,7 +681,7 @@ padding: 120px 0 50px;
   width: clamp(90px, 14vw, 300px);
 }
 
-/* أماكن الكروت */
+
 .left.top{
   grid-column: 1; grid-row: 1; justify-self: end;
   transform: translateY(clamp(0px, 2.5vw, 50px));
@@ -717,9 +697,9 @@ padding: 120px 0 50px;
   grid-column: 3; grid-row: 2; justify-self: start;
 }
 
-/* شكل الكارت */
+
 .stat-card{
-  /* أهم سطرين لمنع الـ scroll */
+
   width: 100%;
   max-width: 100%;
 min-width: 0;
@@ -736,16 +716,16 @@ min-width: 0;
   gap: clamp(8px, 1.6vw, 12px);
   padding: clamp(8px, 1.6vw, 12px);
 
-  /* توحيد المقاسات */
+  
   min-height: clamp(66px, 9vw, 100px);
 }
 
-/* خلي كل الكروت قد بعض حتى لو النص أطول */
+
 .stat-card .text{
   display:flex;
   flex-direction: column;
   justify-content:center;
-  min-width: 0; /* مهم عشان القص/اللف */
+  min-width: 0; 
 }
 
 .stat-card .text h4{
@@ -762,20 +742,20 @@ min-width: 0;
   line-height: 1.35;
   margin:0;
 
-  /* سطرين بس عشان كارت 11 شركة مايكبرش */
+ 
   display: -webkit-box;
   -webkit-line-clamp: 2;
   line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
-/* توحيد ارتفاع كروت الـ stats */
+
 .stats-grid .stat-card{
-  height: 88px;            /* ثابته لكل الكروت */
+  height: 88px;           
   align-items: center;
 }
 
-/* الأيقونة */
+
 .stat-card .icon{
   flex: 0 0 auto;
   width: clamp(44px, 6vw, 70px);
@@ -794,7 +774,7 @@ min-width: 0;
   height: clamp(22px, 3.4vw, 40px);
 }
 
-/* لمسة صغيرة للموبايلات الضيقة قوي */
+
 @media (max-width: 360px){
   .stats-grid{
     column-gap: 8px;
@@ -813,7 +793,7 @@ min-width: 0;
 @media (max-width: 576px){
 
   .stats-grid .stat-card{
-    height: 78px;          /* أصغر شوية */
+    height: 78px;          
   }
 
   .stats-grid .stat-card .icon{
@@ -834,16 +814,16 @@ min-width: 0;
     font-size: 10px;
   }
 }
-/* ✅ MOBILE ONLY: fix horizontal scroll from stats */
+
 @media (max-width: 576px){
 
-  /* امنعي أي خروج برا العرض من السكشن ده */
+ 
   .stats-section{
-    overflow-x: hidden;        /* لو مش شغال استخدمي hidden */
+    overflow-x: hidden;        
     padding-inline: 10px;
   }
 
-  /* خلي الجريد يتقفل جوا الشاشة */
+
   .stats-grid{
     width: 100%;
     margin: 0 auto;
@@ -852,14 +832,14 @@ min-width: 0;
     row-gap: 18px;
   }
 
-  /* أهم سطرين: شيلّي أي width ثابت للكروت */
+  
   .stats-grid .stat-card{
     width: 100% !important;
     max-width: none !important;
     min-width: 0 !important;
   }
 
-  /* الصورة اللي في النص متكبرش */
+ 
   .center-image{
     max-width: 100%;
     width: 95px;
@@ -885,7 +865,7 @@ min-width: 0;
   align-items: center;
 }
 
-/* الصورة */
+
 .who-image{
   flex: 0 0 46%;
 }
@@ -895,14 +875,14 @@ min-width: 0;
   display: block;
 }
 
-/* النص */
+
 .who-text{
   flex: 1;
   direction: rtl;
   text-align: right;
 }
 
-/* العنوان */
+
 .who-text h2{
   color: #8a1d25;
   font-size: 54px;
@@ -911,16 +891,16 @@ min-width: 0;
   margin: 0 0 18px;
 }
 
-/* ✅ الليست: تبدأ من نفس بداية الكلام (مش من النص) */
+
 .who-list{
   margin: 0;
   padding: 0;
-  list-style: none; /* هنرسم البولت بنفسنا */
+  list-style: none; 
 }
 
 .who-list li{
   position: relative;
-  padding-right: 26px;   /* مسافة للبولت */
+  padding-right: 26px;   
   margin-bottom: 30px;
 margin-top: 30px;
   font-size: 30px;
@@ -930,7 +910,7 @@ margin-top: 30px;
   font-family: "Cairo", sans-serif;
 }
 
-/* البولت */
+
 .who-list li::before{
   content: "";
   position: absolute;
@@ -1002,12 +982,11 @@ margin-top: 30px;
   margin-top: 40px;
 }
 
-/* خلي أعمدة البوكسين فوق تتمدد تلقائيًا (حتى لو نسيت d-flex في HTML) */
 .who-message .who-top > div{
   display: flex;
 }
 
-/* ===== Card Base ===== */
+
 .one-box{
   width: 100%;
   background: #f3f4f7;
@@ -1016,17 +995,17 @@ margin-top: 30px;
   padding: 22px 24px;
   box-shadow: 0 5px 18px rgba(0,0,0,0.05);
   display: flex;
-  flex-direction: row;     /* RTL يخلي الأيقونة يمين */
+  flex-direction: row;     
   align-items: flex-start;
   gap: 18px;
 }
 
-/* البوكسين فوق: نفس الارتفاع تلقائيًا */
+
 .equal-box{
   height: auto;
 }
 
-/* ===== Icon Box ===== */
+
 .box-icon{
   width: 80px;
   height: 80px;
@@ -1080,7 +1059,7 @@ margin-top: 30px;
   padding-bottom: 30px;
 }
 
-/* ===== Strategy List (with image in HTML) ===== */
+
 .strategy-list{
   list-style: none;
   padding: 0;
@@ -1088,17 +1067,16 @@ margin-top: 30px;
 }
 
 .strategy-list li{
-  position: relative;      /* مهم جدًا */
-  padding-right: 50px;     /* مساحة للأيقونة */
+  position: relative;     
+  padding-right: 50px;   
   margin-bottom: 18px;
   direction: rtl;
 }
 
 .strategy-list li .tick{
-  position: absolute;      /* يثبتها في أول سطر */
+  position: absolute;     
   right: 0;
-  top: 4px;                /* اتحكمي فيها لو حابة */
-  width: 34px;             /* كبّري براحتك */
+  top: 4px;                
   height: 34px;
 }
 
@@ -1181,16 +1159,53 @@ margin-top: 30px;
 }
 
 
-/* =========================
-   Services Section (From Scratch)
-   ========================= */
-/* =========================
-   Services Cards (KEEP HTML SAME)
-   ========================= */
+/* ////////////////who-animation//////////////////////////////// */
 
-/* ===============================
-   Services Section – FULL CSS
-   =============================== */
+.who-message .one-box,
+.who-message .strategy-list li{
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity .7s ease, transform .7s ease;
+  will-change: opacity, transform;
+}
+
+.who-message .who-top .one-box{
+  transform: translateY(20px) scale(.98);
+  transition: opacity .7s ease, transform .7s ease;
+}
+
+
+.who-message .one-box.is-visible,
+.who-message .strategy-list li.is-visible{
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+
+.who-message .who-top .col-md-6:first-child .one-box{
+  transform: translateX(18px);
+}
+.who-message .who-top .col-md-6:last-child .one-box{
+  transform: translateX(-18px);
+}
+.who-message .who-top .col-md-6:first-child .one-box.is-visible,
+.who-message .who-top .col-md-6:last-child .one-box.is-visible{
+  transform: translateX(0);
+}
+
+
+@media (prefers-reduced-motion: reduce){
+  .who-message .one-box,
+  .who-message .strategy-list li{
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}
+
+
+
+
 
 .services-section{
   width: 100%;
@@ -1272,17 +1287,16 @@ margin-top: 30px;
   background: #f9f2f2;
 }
 
-/* Slider Window: خليها scrollable */
+
 .services-section .slider-window{
   width: 100%;
-  overflow-x: auto;     /* ✅ بدل hidden */
+  overflow-x: auto;    
   overflow-y: hidden;
   scroll-behavior: smooth;
   padding: 6px 4px;
 
-  /* اخفاء الاسكرول */
   scrollbar-width: none;
-  direction: rtl;       /* ✅ مهم علشان scrollLeft يبقى طبيعي */
+  direction: rtl;       
 }
 .services-section .slider-window::-webkit-scrollbar{
   display: none;
@@ -1293,15 +1307,12 @@ margin-top: 30px;
   display: flex;
   align-items: center;
   gap: 12px;
-  width: max-content;   /* ✅ */
-  transform: none !important; /* ✅ مهم */
-  transition: none !important; /* ✅ */
+  width: max-content;  
+  transform: none !important; 
+  transition: none !important; 
 }
-/* ===============================
-   Service Card
-   =============================== */
 
-/* الكارت */
+
 .service-card{
   flex: 0 0 auto;
   width: 260px;
@@ -1309,7 +1320,7 @@ margin-top: 30px;
   padding: 10px 14px;
 
   display: flex;
-  flex-direction: row-reverse;  /* الأيقونة يمين */
+  flex-direction: row-reverse;  
   align-items: center;
   gap: 12px;
 
@@ -1319,7 +1330,7 @@ margin-top: 30px;
   box-shadow: 0 6px 14px rgba(0,0,0,0.04);
 }
 
-/* الأيقونة */
+
 .service-icon{
   width: 56px;
   height: 56px;
@@ -1332,16 +1343,15 @@ margin-top: 30px;
   background-size: 26px;
 }
 
-/* ✅ النص يبدأ من نفس الخط بعد الأيقونة */
 .service-content{
   flex: 1;
   min-width: 0;
   text-align: right;
-  margin: 0;              /* مهم */
-  padding: 0;             /* مهم */
+  margin: 0;            
+  padding: 0;           
 }
 
-/* ✅ نخلي العنوان والوصف aligned */
+
 .service-content h3{
   margin: 0 0 4px;
   padding: 0;
@@ -1366,12 +1376,7 @@ margin-top: 30px;
 
 
 
-/* الأيقونة فوق الشريط */
 
-
-/* ===============================
-   Icons per card
-   =============================== */
 .service-card.maintenance .service-icon {
   background-image:
     url("image/service-main.png");
@@ -1429,9 +1434,7 @@ color: #7b1111;
  color: #7b1111;
 }
 
-/* ===============================
-   Responsive
-   =============================== */
+
 @media (max-width: 768px){
   .services-header .gradient-text{
     font-size: 28px;
@@ -1477,59 +1480,54 @@ color: #7b1111;
 }
 }
 .services-images-section {
-  overflow: hidden;        /* يمنع أي سكرول */
+  overflow: hidden;      
   padding: 40px 0 60px;
 }
 
 
-/* =============================
-   WHY US SECTION (FULL CSS)
-   ============================= */
+
 
 .why-us{
   width: 100%;
   padding: 90px 0;
   font-family: "Cairo", sans-serif;
-  direction: rtl; /* علشان النص عربي */
+  direction: rtl; 
 }
 
-/* اللفافة اللي بتظبط عرض السكشن والمسافات */
+
 .why-wrap{
-  max-width: 1520px;     /* قللي/زودي حسب موقعك */
-  margin:  auto;        /* يخلي اليمين = الشمال */
-  padding: 0 16px;       /* مسافة داخلية ثابتة */
+  max-width: 1520px;  
+  margin:  auto;      
+  padding: 0 16px;       
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 4px;
 }
 
-/* =============================
-   LEFT IMAGE
-   ============================= */
+
+
 .why-image{
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  min-height: 600px;      /* ارتفاع ثابت عشان يبقى زي التصميم */
+  min-height: 600px;      
   position: relative;
 }
 
-/* استخدمي الصورة اللي بعتّيها كخلفية هنا */
+
 .why-img-bg{
   width: 100%;
 
   height: 600px;
-  background-image: url("image/groups.png"); /* عدلي المسار */
+  background-image: url("image/groups.png");
   background-repeat: no-repeat;
   background-position: center bottom;
   background-size: cover;
 }
 
-/* =============================
-   RIGHT CONTENT
-   ============================= */
+
 .why-content{
   flex: 1;
 
@@ -1560,19 +1558,16 @@ color: #7b1111;
   line-height: 160%;
 align-items: flex-start;
   white-space: normal; 
-    /* زي التصميم (سطر واحد غالبًا) */
+   
     position: relative;
-    padding-right: 50px;     /* مساحة للأيقونة */
+    padding-right: 50px;   
   margin-bottom: 18px;
   font-weight: 500;
 }
 
 
 .why-content ul li .tick2{
- /* position: absolute;      يثبتها في أول سطر */
-  right: 0px;
-  top: 0px;                /* اتحكمي فيها لو حابة */
-  width: 34px;             /* كبّري براحتك */
+         
   height: 34px;
   flex: 0 0 28px;
   display: block;
@@ -1580,7 +1575,7 @@ align-items: flex-start;
 }
 
 
-/* أيقونة الصح (صورة مش CSS) */
+
 .why-content ul li img{
   width: 26px;
   height: 26px;
@@ -1588,9 +1583,7 @@ align-items: flex-start;
   margin-top: 6px;
 }
 
-/* =============================
-   BUTTONS
-   ============================= */
+
 .btns{
   margin-top: 30px;
   display: flex;
@@ -1615,14 +1608,14 @@ padding-right: 50px;
   line-height: 1;
 }
 
-/* زر تواصل */
+
 .btns .contact{
   border: 2px solid rgba(156, 40, 45, 1);
   color: rgba(134, 37, 45, 1);
   background: transparent;
 }
 
-/* زر تأجير عمالة */
+
 .btns .hire{
   color: #fff;
   background: linear-gradient(
@@ -1632,13 +1625,7 @@ padding-right: 50px;
     rgba(219, 34, 41, 1)
   );
 }
-/* =============================
-   RESPONSIVE (Tablet + Mobile)
-   ============================= */
 
-/* =========================
-   Tablet (<= 992px)
-========================= */
 @media (max-width: 992px){
 
   .why-us{
@@ -1673,10 +1660,10 @@ padding-right: 50px;
     font-size: 30px;
     margin: 0 0 14px;
     padding: 0;
-    text-align: center; /* ✅ زي الصورة */
+    text-align: center; 
   }
 
-  /* الليست */
+
   .why-content ul{
     margin-top: 8px;
   }
@@ -1690,8 +1677,8 @@ padding-right: 50px;
     align-items: flex-start;
     gap: 12px;
 
-    padding-right: 0;       /* ✅ مفيش absolute */
-    white-space: normal;    /* ✅ يسمح باللف */
+    padding-right: 0;       
+    white-space: normal;   
     text-align: right;
   }
 
@@ -1706,7 +1693,7 @@ padding-right: 50px;
   /* buttons */
   .btns{
     margin-top: 20px;
-    justify-content: center; /* ✅ في النص */
+    justify-content: center;
     gap: 12px;
   }
 
@@ -1718,9 +1705,7 @@ padding-right: 50px;
 }
 
 
-/* =========================
-   Mobile (<= 576px)
-========================= */
+
 @media (max-width: 576px){
 
   .why-us{
@@ -1739,10 +1724,10 @@ padding-right: 50px;
 
   .why-content h2{
     font-size: 26px;
-    text-align: center; /* ✅ */
+    text-align: center;
   }
 
-  /* ✅ خلي الليست عرض أقل عشان تبقى زي التصميم */
+ 
   .why-content ul{
     max-width: 360px;
     margin: 0 auto;
@@ -1767,14 +1752,14 @@ padding-right: 50px;
     margin-top: 4px;
   }
 
-  /* ✅ الزرارين تحت بعض full width زي الصورة */
+ 
   .btns{
     max-width: 360px;
     margin: 18px auto 0;
     flex-direction: column;
     align-items: stretch;
     gap: 12px;
-    padding-right: 0; /* لو كنتي عاملها محاذاة للصح */
+    padding-right: 0; 
   }
 
   .btns a{
@@ -1783,11 +1768,35 @@ padding-right: 50px;
     font-size: 16px;
   }
 }
+/* ////////////////////why-us///////////////////////////////// */
 
+.why-us .why-list li,
+.why-us .btns a{
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity .6s ease, transform .6s ease;
+  will-change: opacity, transform;
+}
+
+.why-us .why-list li.is-visible,
+.why-us .btns a.is-visible{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+@media (prefers-reduced-motion: reduce){
+  .why-us .why-list li,
+  .why-us .btns a{
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}
 
 .projects-section {
   padding: 60px 0;
-  background-color: white;  /* زي اللي في الصورة */
+  background-color: white; 
   direction: rtl;
   font-family: "Cairo", sans-serif;
   
@@ -1814,7 +1823,7 @@ padding-right: 50px;
   font-size: 16px;
 }
 
-/* الجريد بتاعة الكروت */
+
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -1822,7 +1831,7 @@ padding-right: 50px;
 
 }
 
-/* الكارت */
+
 .project-card {
   background: #fff;
   border-radius: 16px;
@@ -1836,12 +1845,12 @@ padding-right: 50px;
  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-/* البادج */
+
 .project-card .badge {
   position: absolute;
   top: 14px;
   right: 14px;
-  background: white;       /* الأحمر */
+  background: white;     
   color: rgba(134, 37, 45, 1);
   padding: 4px 14px;
   /* border-radius: 999px; */
@@ -1849,14 +1858,14 @@ padding-right: 50px;
 
 }
 
-/* صورة الكارت */
+
 .project-img img {
   width: 100%;
   height: 190px;
   object-fit: cover;
 }
 
-/* النص */
+
 .project-body {
   padding: 14px 18px 16px;
   display: flex;
@@ -1875,7 +1884,6 @@ padding-right: 50px;
   color: rgba(71, 85, 105, 1);
 }
 
-/* زرار عرض المزيد */
 .more-btn {
   /* margin-top: 12px; */
   display: inline-block;
@@ -1896,7 +1904,7 @@ padding-right: 50px;
   color: #fff;
 }
 
-/* زرار كل المشاريع */
+
 .projects-footer {
   text-align: center;
   margin-top: 30px;
@@ -1943,7 +1951,7 @@ padding-right: 50px;
   direction: rtl;
 }
 
-/* ===== White Box ===== */
+
 .cert-box{
   max-width: 1400px;
   margin: auto;
@@ -1952,7 +1960,7 @@ padding-right: 50px;
   border-radius: 32px;
 }
 
-/* ===== Header ===== */
+
 .cert-head{
   text-align: center;
   margin-bottom: 40px;
@@ -1978,25 +1986,25 @@ padding-right: 50px;
   line-height: 160%;
 }
 
-/* ===== Layout ===== */
+
 .cert-content{
   display: grid;
-  grid-template-columns: 1fr 590px; /* اليمين أصغر */
+  grid-template-columns: 1fr 590px; 
   gap: 10px;
   direction: ltr;
 }
 
-/* ===== Certificates Grid ===== */
+
 .cert-grid{
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 12px; /* مفيش فراغات */
+  gap: 12px; 
 }
 
 .cert-grid img{
   width: 100%;
   aspect-ratio: 4 / 5;
-  object-fit: contain;     /* الإطار الأحمر يبان */
+  object-fit: contain;    
   background: #fff;
   /* border: 1px solid #ddd; */
   border-radius: 14px;
@@ -2006,11 +2014,11 @@ padding-right: 50px;
 /* ===== Right Side ===== */
 .cert-right{
   display: grid;
-  grid-template-rows: 420px 320px; /* أصغر من الشهادات */
+  grid-template-rows: 420px 320px; 
   gap: 1px;
 }
 
-/* Black */
+
 .black-box{
   border-radius: 32px;
   overflow: hidden;
@@ -2067,7 +2075,7 @@ padding-right: 50px;
   height: 30px;
 }
 
-      /* SECTION BASE */
+  
 
 .contact-section {
   padding: 80px 0;
@@ -2076,9 +2084,7 @@ padding-right: 50px;
  
 }
 }
-/*---------------------------
-        LAYOUT
-----------------------------*/
+
 .contact-wrapper {
   display: grid;
   grid-template-columns: 1.1fr 1fr;
@@ -2086,9 +2092,7 @@ padding-right: 50px;
   align-items: center;
 }
 
-/*---------------------------
-        IMAGES
-----------------------------*/
+
 .contact-images {
   position: relative;
   width: 100%;
@@ -2099,7 +2103,7 @@ padding-right: 50px;
 .contact-form{
   direction: rtl;
 }
-/* الخلفية */
+
 .bg-img {
   width: 50%;
 
@@ -2108,12 +2112,12 @@ padding-right: 50px;
 
 }
 
-/* الكارد اللي قدام */
+
 .front-card {
   position: absolute;
   left: 55%;
   top: 60%;
-  width: 75%;               /* حجم الكارد */
+  width: 75%;              
   transform: translate(-50%, -65%); 
   border-radius: 28px;
   overflow: hidden;
@@ -2126,9 +2130,7 @@ padding-right: 50px;
   object-fit: cover;
 }
 
-/*---------------------------
-        FORM
-----------------------------*/
+
 .contact-form h2 {
   font-size: 32px;
   margin-bottom: 10px;
@@ -2143,7 +2145,7 @@ padding-right: 50px;
   font-weight: 500;
 }
 
-/* INPUTS */
+
 .field {
   position: relative;
   margin-bottom: 18px;
@@ -2165,7 +2167,7 @@ padding-right: 50px;
   resize: none;
 }
 
-/* ICONS */
+
  .field .icon {
   position: absolute;
   right: 14px;
@@ -2175,7 +2177,6 @@ padding-right: 50px;
   color: #777;
 }
 
-/* SEND BUTTON */
 .send-btn {
   width: 100%;
   padding: 16px;
@@ -2224,14 +2225,14 @@ padding-right: 50px;
 }
 
 
-/* السكشن كله */
+
 .top-contact-bar {
   direction: rtl;
   font-family: "Cairo", sans-serif;
   margin-top: 30px;
 }
 
-/* المستطيل الأحمر الكبير */
+
 .top-contact-inner {
   background: linear-gradient(
     90deg,
@@ -2249,7 +2250,7 @@ padding-right: 50px;
   gap: 30px;
 }
 
-/* النص */
+
 .top-contact-text h3 {
   font-size: 20px;
   margin-bottom: 5px;
@@ -2262,7 +2263,7 @@ line-height: 160%;
 
 }
 
-/* الفورم الأبيض اللي في النص */
+
 .top-contact-form {
   background: #fff;
   border-radius: 12px;
@@ -2273,7 +2274,7 @@ line-height: 160%;
   min-width: 280px;
 }
 
-/* input */
+
 .top-contact-form input {
   border: none;
   outline: none;
@@ -2282,7 +2283,7 @@ line-height: 160%;
   flex: 1;
 }
 
-/* الزرار جوه الفورم */
+
 .top-contact-form button {
   border: none;
   border-radius: 12px;
@@ -2317,22 +2318,11 @@ line-height: 160%;
 
 
 
-/* ////////////// *//*----------------------*
-  /*===============================
-   الشركات التابعة للمجموعة
-===============================*/
 
-/* ===== Companies Section ===== */
-/* قربّي الأعمدة من النص */
-
-
-/* ===============================
-   COMPANIES SECTION
-================================ */
 /* ====== Companies Section ====== */
 .companies-sec{
   padding: 80px 0;
-  background-image: url("image/backgraund.png"); /* خلفية المربعات */
+  background-image: url("image/backgraund.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -2346,7 +2336,7 @@ width: 100%;
   padding: 0 20px;
 }
 
-/* Title */
+
 .companies-head{
   text-align: center;
   margin-bottom: 45px;
@@ -2371,22 +2361,21 @@ width: 100%;
   color:rgba(149, 151, 154, 1);
 }
 
-/* Layout: 3 columns (Left cards - Center image - Right cards) */
+
 .companies-layout{
   display: grid;
   grid-template-columns: 1fr 360px 1fr;
   align-items: center;
-  gap: 18px;                 /* 👈 خليها قليلة عشان تقرب من السهم */
+  gap: 18px;                
 }
 
-/* Columns */
+
 .companies-col{
   display: flex;
   flex-direction: column;
   gap: 22px;
 }
 
-/* Center image */
 .companies-center{
   display: flex;
   justify-content: center;
@@ -2399,35 +2388,35 @@ width: 100%;
   height: auto;
   display: block;
 }
-/* ===== Card EXACT like screenshot ===== */
+
 .comp-card{
-  height: 130px;                 /* أطول */
+  height: 130px;                 
   border-radius: 26px;
   background: white;
 
-  border: 2px solid rgba(220, 223, 227, 1); /* الإطار الخارجي */
+  border: 2px solid rgba(220, 223, 227, 1); 
 
   position: relative;
   display: flex;
   align-items: center;
   gap: 22px;
 
-  padding: 18px 22px 18px 24px;  /* خلي اليمين أريح */
+  padding: 18px 22px 18px 24px;  
 
   direction: rtl;
 }
 
-/* الإطار الداخلي (Double border) */
+
 .comp-card::after{
   content: "";
   position: absolute;
-  inset: 10px;                   /* مسافة من كل ناحية */
+  inset: 10px;                 
   border-radius: 16px;
   border: 1.4px solid rgba(232, 234, 238, 1);
   pointer-events: none;
 }
 
-/* Gray box on RIGHT - bigger */
+
 .comp-gray{
   width: 86px;
   height: 86px;
@@ -2435,11 +2424,11 @@ width: 100%;
   border-radius: 14px;
   flex: 0 0 auto;
 
-  /* يخليه مقرب ليمين الكارت زي الصورة */
+
   margin-right: 4px;
 }
 
-/* Text starts right after gray box */
+
 .comp-text{
   flex: 1;
   min-width: 0;
@@ -2451,7 +2440,7 @@ width: 100%;
 
 .comp-text h3{
   margin: 0;
-  font-size: 16px;      /* أكبر زي الصورة */
+  font-size: 16px;     
   font-weight: 500;
   color:rgba(37, 37, 39, 1);
   line-height: 160%;
@@ -2471,7 +2460,7 @@ width: 100%;
   gap: 10px;
 }
 
-/* السهم */
+
 .comp-link span{
   font-weight: 900;
   transform: translateY(-1px);
@@ -2536,7 +2525,7 @@ footer {
   direction: rtl;
 }
 
-/* العناوين */
+
 footer h2 {
   color: rgba(25, 29, 35, 1);
   font-size: 16px;
@@ -2545,7 +2534,7 @@ footer h2 {
   font-weight: 700;
 }
 
-/* ليست الشركات + الروابط */
+
 footer ul {
   list-style: none;
   padding: 0;
@@ -2571,27 +2560,14 @@ footer ul li a:hover {
   color: rgba(134, 37, 45, 1);
 }
 
-/* الكارت الأبيض (لو عندِك نفس الكلاس سيبيه زي ما هو) */
-/* .footer-box {
-  background-color: #fff;
-  width: 70%;
-  padding: 10px 50px;
-  border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-  margin: 0 auto;
-  text-align: center;
-  margin-bottom: 50px;
 
-} */
-
-/* بلوك السوشيال تحت الكارت */
 .footer-social {
-  margin-top: 40px;              /* المسافة الطبيعية تحت الكارت */
+  margin-top: 40px;             
   text-align: center;
-  position: relative;            /* علشان نزوّق الأيقونات جوه/بره */
+  position: relative;          
 }
 
-/* عنوان وسائل التواصل */
+
 .footer-social .social-title {
   font-size: 16px;
   font-weight: 700;
@@ -2599,16 +2575,16 @@ footer ul li a:hover {
   color: rgba(25, 29, 35, 1);
 }
 
-/* الأيقونات طالعة لفوق شوية */
+
 .footer-social .social-icons {
   display: flex;
   justify-content: center;
   gap: 10px;
   position: relative;
-  top: -15px;                    /* هنا بنطلّع الأيقونات لفوق */
+  top: -15px;                  
 }
 
-/* شكل كل أيقونة */
+
 .footer-social .social-icons a {
   width: 40px;
   height: 40px;
@@ -2638,7 +2614,7 @@ footer ul li a:hover {
   color: rgba(134, 37, 45, 1);
 }
 
-/* أيقونات السوشيال */
+
 .social-icons {
   display: flex;
   gap: 10px;
@@ -2658,7 +2634,7 @@ footer ul li a:hover {
   max-width: 18px;
 }
 
-/* الجزء اللي تحت (الهاتف/العنوان/الإيميل) */
+
 .footer-bottom {
   border-top: 1px solid rgba(0, 0, 0, 0.06);
   font-size: 14px;
@@ -2695,7 +2671,7 @@ footer ul li a:hover {
 .contact-item .value {
   font-size: 14px;
   color: rgba(199, 47, 59, 1); 
-  /* نفس درجة الأحمر تقريبًا اللي في الصورة */
+
   line-height: 160%;
 }
 
@@ -2706,10 +2682,10 @@ footer ul li a:hover {
 .contact-item .text{
   display: flex;
   flex-direction: column;
-  align-items: flex-start;     /* النص يبدأ من نفس خط الأيقونة */
+  align-items: flex-start;     
   text-align: right;}
 
-/* موبايل */
+
 @media (max-width: 767.98px) {
   .footer-box {
     align-items: center;
@@ -2720,35 +2696,35 @@ footer ul li a:hover {
     justify-content: center !important;
   }
 }
-/* نخلي عمود روابط مهمة متوسّط جوّه المساحة بتاعته */
+
 .footer-links-col {
   display: flex;
   flex-direction: column;
-  align-items: center;   /* يوسّط العنوان والليست جوّه العمود */
+  align-items: center;  
 }
 
-/* نخلي الليست نفسها يمين عادي لكن عرضها قد الكلام بس */
+
 .footer-links {
   text-align: right;
-  width: max-content;    /* ما تبقاش واخدة عرض العمود كله */
+  width: max-content;    
 }
 
-/* موبايل وتابلت صغير */
+
 @media (max-width: 767.98px) {
 
-  /* نخلي الكونتينر أضيق شوية علشان الكارت يبقى في النص */
+
   footer .container {
     max-width: 100%;
     padding-inline: 16px;
   }
 
-  /* الأعمدة تبقى واحدة تحت التانية ومتركزة */
+
   footer .col-md-4 {
     margin-bottom: 24px;
     text-align: center;
   }
 
-  /* عمود الشركات: نخلي الليست يمين لكن الكل في النص */
+
   footer .col-md-4 h2 {
     text-align: center;
   }
@@ -2757,7 +2733,7 @@ footer ul li a:hover {
     text-align: right;
   }
 
-  /* عمود روابط مهمة يفضل اللي عملناه قبل كده */
+  
   .footer-links-col {
     align-items: center;
   }
@@ -2767,23 +2743,23 @@ footer ul li a:hover {
     max-width: 220px;
   }
 
-  /* الكارت الأبيض يبقى في النص */
+ 
   .footer-box {
     align-items: center;
     text-align: center;
   }
 
-  /* بلوك السوشيال تحت الكارت */
+ 
   .footer-social {
     margin-top: 24px;
   }
 
   .footer-social .social-icons {
-    top: 0;            /* على الموبايل نخليها تحت العنوان عادي */
+    top: 0;           
     margin-top: 10px;
   }
 
-  /* صف التليفون / العنوان / الإيميل تحت */
+  
   .footer-bottom .row > div {
     margin-bottom: 10px;
     text-align: center !important;
@@ -2804,9 +2780,7 @@ footer ul li a:hover {
 }
 
 
-/* =========================
-   Footer Bottom - Responsive
-========================= */
+
 
 /* Tablet */
 @media (max-width: 992px){
@@ -2815,34 +2789,32 @@ footer ul li a:hover {
   }
 
   .footer-bottom .contact-item{
-    justify-content: center !important;  /* يغلب bootstrap */
+    justify-content: center !important;  
   }
 }
 
-/* Mobile */
+
 @media (max-width: 576px){
 
-  /* خلي كل عنصر ياخد سطر كامل */
+ 
   .footer-bottom .row > div{
     width: 100%;
   }
 
-  /* ترتيب العنصر نفسه */
+ 
   .footer-bottom .contact-item{
     width: 100%;
-    justify-content: center !important;  /* في النص */
+    justify-content: center !important; 
     align-items: center;
     gap: 10px;
     margin-bottom: 16px;
   }
 
-  /* النص في النص */
   .footer-bottom .contact-item .text{
     text-align: center;
     align-items: center;
   }
 
-  /* الأيقونة يمين (عشان RTL) */
   .footer-bottom .contact-item{
     direction: rtl;
   }
@@ -2851,7 +2823,7 @@ footer ul li a:hover {
     margin-top: 2px;
   }
 
-  /* تصغير الخطوط للموبايل */
+  
   .footer-bottom .contact-item .label{
     font-size: 13px;
   }
@@ -2859,10 +2831,10 @@ footer ul li a:hover {
   .footer-bottom .contact-item .value{
     font-size: 14px;
     line-height: 1.4;
-    word-break: break-word; /* لو الإيميل/العنوان طويل */
+    word-break: break-word; 
   }
 
-  /* حقوق النشر */
+  
   .footer-copy{
     font-size: 12.5px;
     line-height: 1.6;
@@ -2893,7 +2865,7 @@ footer ul li a:hover {
     padding: 0 10px;
   }
 
-  /* خليها “كبسولة” زي الديسكتوب بس أصغر */
+  
   .top-nav ul{
     flex-wrap: nowrap;
   }
@@ -2915,17 +2887,6 @@ footer ul li a:hover {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 .gradient-text {
   background: linear-gradient(
     90deg,
@@ -2934,19 +2895,19 @@ footer ul li a:hover {
     rgb(219, 34, 41)
   );
 
-  background-clip: text;              /* Standard */
-  -webkit-background-clip: text;      /* Chrome / Safari */
+  background-clip: text;              
+  -webkit-background-clip: text;      
   color: transparent;
   -webkit-text-fill-color: transparent;
 }
 
 
-/* سلايدر الصور (لوحده) */
+
 .services-images-section{
   padding: 40px 0 60px;
   overflow: hidden;
   direction: ltr;
-  text-align: left; /* مهم عشان الماركي تشتغل صح حتى لو الصفحة RTL */
+  text-align: left; 
 }
 
 .services-marquee{
@@ -2966,7 +2927,7 @@ footer ul li a:hover {
 
 }
 
-/* شكل الصور */
+
 .services-marquee-track img{
   width: 180px;
   height: 180px;
@@ -2981,7 +2942,7 @@ footer ul li a:hover {
   transform: translateY(-6px);
 }
 
-/* الحركة: صف يمين + صف شمال */
+
 .services-marquee.row-left .services-marquee-track{
   animation: marquee-left 80s linear infinite;
 }
@@ -2989,21 +2950,19 @@ footer ul li a:hover {
 .services-marquee.row-right .services-marquee-track{
   animation: marquee-right 80s linear infinite;
 }
-/* ✅ يمنع الـ track يتسنتر ويعمل فراغ في البداية */
 
-/* من اليمين للشمال */
 @keyframes marquee-left{
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
 }
 
-/* من الشمال لليمين */
+
 @keyframes marquee-right{
   from { transform: translateX(-50%); }
   to   { transform: translateX(0); }
 }
 
-/* موبايل */
+
 @media (max-width: 768px){
   .services-marquee-track img{
     width: 130px;
@@ -3017,9 +2976,7 @@ footer ul li a:hover {
 
 
 
-/* =========================
-   Partners Section
-========================= */
+
 .partners-section{
   padding: 70px 0;
   background-color: transparent;
@@ -3061,7 +3018,7 @@ footer ul li a:hover {
   color:rgba(149, 151, 154, 1);
 }
 
-/* slider wrapper */
+
 .partners-slider-wrap{
   position: relative;
   max-width: 1200px;
@@ -3073,13 +3030,13 @@ footer ul li a:hover {
   height: 55px;
 }
 
-/* window */
+
 .partners-slider{
   overflow: hidden;
   border-radius: 16px;
 }
 
-/* track */
+
 .partners-track{
   display: flex;
   align-items: center;
@@ -3088,7 +3045,7 @@ footer ul li a:hover {
   transform: translateX(0);
 }
 
-/* logo card */
+
 .partner-card{
   flex: 0 0 auto;
   display: flex;
@@ -3099,7 +3056,7 @@ footer ul li a:hover {
 }
 
 .partner-card img{
-  height: 100px;       /* نفس حجم لوجوهات الصورة تقريبًا */
+  height: 100px;       
   width: 200px;
   object-fit: contain;
   filter: saturate(0.9);
@@ -3136,13 +3093,6 @@ footer ul li a:hover {
 
 
 
-/* ///////////////video response/////////////////////////////// */
-/* =========================
-   Responsive Video (VIDEO tag)
-   ضعي هذا في آخر الملف
-   ========================= */
-
-/* <= 1200px */
 @media (max-width: 1200px) {
   .home-video-wrapper{
     width: 60%;
@@ -3163,7 +3113,7 @@ footer ul li a:hover {
   }
 }
 
-/* <= 1024px (Tablet) */
+
 @media (max-width: 1024px) {
   .home-video-wrapper{
     width: 80%;
@@ -3183,7 +3133,7 @@ footer ul li a:hover {
   }
 }
 
-/* <= 767px (Mobile) - الفيديو يبقى عنصر عادي تحت الهيرو */
+
 @media (max-width: 767px) {
   header{
     min-height: auto;
@@ -3191,7 +3141,7 @@ footer ul li a:hover {
   }
 
   .home-video-wrapper{
-    position: static;     /* أهم سطر */
+    position: static;    
     left: auto;
     bottom: auto;
     transform: none;
@@ -3212,7 +3162,7 @@ footer ul li a:hover {
   }
 }
 
-/* <= 420px (Small Mobile) */
+
 @media (max-width: 420px) {
   .home-video-wrapper video{
     height: 210px;
@@ -3220,11 +3170,7 @@ footer ul li a:hover {
   }
 }
 
-/* /////////fixed content////////////////////// */
-/* =========================
-   Contact Images - Tablet Fix (no overlap)
-   ضعيه في آخر الملف
-   ========================= */
+
 
 @media (max-width: 1024px){
 
@@ -3234,17 +3180,15 @@ footer ul li a:hover {
     align-items: start;
   }
 
-  /* هنا السر: نحجز مساحة ثابتة */
   .contact-images{
     width: 100%;
     max-width: 520px;
     margin: 0 auto;
     position: relative;
-    height: auto;             /* مهم */
-    aspect-ratio: 4 / 3;      /* يحجز ارتفاع */
+    height: auto;            
+    aspect-ratio: 4 / 3;     
   }
 
-  /* الخلفية */
   .bg-img{
     width: 78%;
     height: 100%;
@@ -3252,7 +3196,7 @@ footer ul li a:hover {
     display: block;
   }
 
-  /* الكارد الأمامي */
+
   .front-card{
     position: absolute;
     left: 56%;
@@ -3263,7 +3207,7 @@ footer ul li a:hover {
     overflow: hidden;
   }
 
-  /* نصوص الفورم تقل شوية */
+
   .contact-form h2{ font-size: 26px; }
   .contact-form p{ font-size: 18px; margin-bottom: 16px; }
   .field input, .field textarea{ font-size: 16px; }
@@ -3287,19 +3231,19 @@ footer ul li a:hover {
 
 @media (max-width: 420px){
   .contact-images{
-    aspect-ratio: 1 / 1;   /* عشان مايبقاش طويل زيادة على موبايل صغير */
+    aspect-ratio: 1 / 1;  
   }
 }
-/* WHO section - fix layout + prevent horizontal scroll */
+
 #who{
   padding: 70px 70px;
-  margin: 0;              /* ❌ شيلنا الـ margin اللي بيعمل overflow */
+  margin: 0;             
 }
 
-/* لو عايزة مسافة خارجية على الديسكتوب فقط */
+
 @media (min-width: 992px){
   #who{
-    margin: 0 50px;        /* هنا فقط */
+    margin: 0 50px;        
   }
 }
 
@@ -3321,18 +3265,15 @@ footer ul li a:hover {
 
 
 
-/* =========================
-   GLOBAL HORIZONTAL SCROLL FIX
-   ========================= */
 
-/* امنعي أي عنصر يطلع برا الشاشة */
+
 html, body {
   width: 100%;
   max-width: 100%;
   overflow-x: hidden;
 }
 
-/* أي سكشن فيه حركة أو سلايدر */
+
 .services-images-section,
 .services-marquee,
 .services-marquee-track,
@@ -3348,31 +3289,30 @@ html, body {
   overflow-x: hidden;
 }
 
-/* أي عنصر flex أو animated ما يكبرش */
+
 * {
   min-width: 0;
 }
 
 
-/* ✅ Services Marquee Fix */
+
 .services-images-section{
   width: 100%;
   max-width: 100%;
-  overflow: hidden;        /* نخفي الزيادة بس */
+  overflow: hidden;        
   padding: 40px 0 60px;
 }
 
-/* المهم: متحطيش overflow على الـ track نفسه */
 .services-marquee-track{
   overflow: visible !important;
   max-width: none;
 }
 
 .services-marquee{
-  overflow: hidden;        /* هنا نخفي الزيادة */
+  overflow: hidden;        
 }
 
-/* خليه Full-bleed زي اللاب (يملا الشاشة) */
+
 .services-images-section{
   position: relative;
   left: 50%;
@@ -3382,19 +3322,15 @@ html, body {
   margin-right: -50vw;
 }
 
-/* المقاس يبقى شبه اللاب بس على الموبايل أصغر */
+
 .services-marquee-track img{
   width: clamp(110px, 22vw, 180px);
   height: clamp(110px, 22vw, 180px);
 }
 
 
-/* =========================
-   STATS — Mobile keep SAME layout (3 columns)
-   Put this at END of CSS
-========================= */
 
-/* ✅ قاعدة عامة تمنع أي تمدد عرض */
+
 .stats-section,
 .stats-scale,
 .stats-grid,
@@ -3402,68 +3338,64 @@ html, body {
   max-width: 100%;
 }
 
-/* ✅ امنعي سكرول أفقي */
+
 .stats-section{
   overflow-x: hidden;
 }
 
-/* ✅ مهم: خلي الكروت مرنة (شيل الارتفاع الثابت) */
 .stats-grid .stat-card{
   height: auto !important;
   min-height: 72px;
   min-width: 0;
 }
 
-/* ✅ clamp للعنوان + الوصف (عشان مفيش خروج) */
 .stat-card .text{ min-width: 0; overflow: hidden; }
 
 .stat-card .text h4{
   display: -webkit-box;
-  -webkit-line-clamp: 2;     /* سطرين بس */
+  -webkit-line-clamp: 2;    
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
 
 .stat-card .text p{
   display: -webkit-box;
-  -webkit-line-clamp: 2;     /* سطرين بس */
+  -webkit-line-clamp: 2;   
   -webkit-box-orient: vertical;
   overflow: hidden;
   word-break: break-word;
 }
 
-/* =========================
-   ✅ 420px وأصغر: نفس التقسيمة 3 أعمدة (L - Center - R)
-========================= */
+
 @media (max-width: 420px){
 
   .stats-section{
-    padding: 70px 0 40px;   /* اختياري: خففي البادنج */
+    padding: 70px 0 40px;   
   }
 
   .stats-grid{
     width: 100%;
     padding-inline: 8px;
 
-    /* تثبيت 3 أعمدة زي الديسكتوب */
+
     grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
     column-gap: 8px;
     row-gap: 12px;
   }
 
-  /* شيلّي أي translate بيبوّظ الشكل على الصغير */
+
   .left.top,
   .right.top{
     transform: none !important;
   }
 
-  /* اللوجو */
+
   .center-image{
     width: 72px;
     max-width: 100%;
   }
 
-  /* الكروت */
+
   .stats-grid .stat-card{
     padding: 8px;
     gap: 7px;
@@ -3471,7 +3403,6 @@ html, body {
     min-height: 62px;
   }
 
-  /* الأيقونات */
   .stats-grid .stat-card .icon{
     width: 36px;
     height: 36px;
@@ -3483,7 +3414,7 @@ html, body {
     height: 18px;
   }
 
-  /* الخطوط */
+
   .stats-grid .stat-card .text h4{
     font-size: 12px;
     line-height: 1.15;
@@ -3497,9 +3428,7 @@ html, body {
   }
 }
 
-/* =========================
-   ✅ 360px وأصغر: نفس التقسيمة برضو بس أصغر شوية
-========================= */
+
 @media (max-width: 360px){
 
   .stats-grid{
@@ -3547,14 +3476,14 @@ html, body {
     box-shadow: none;
   }
 
-  /* نخلي المحتوى عمودي صغير */
+ 
   .service-content{
     display: flex;
     flex-direction: column;
     gap: 2px;
   }
 
-  /* العنوان */
+ 
   .service-content h3{
     font-size: 13px;
     font-weight: 700;
@@ -3562,7 +3491,7 @@ html, body {
     white-space: nowrap;
   }
 
-  /* 👇 الوصف يظهر لكن خفيف */
+  
   .service-content p{
     display: block;
     font-size: 11px;
@@ -3572,10 +3501,10 @@ html, body {
     white-space: normal;
     overflow: hidden;
     text-overflow: ellipsis;
-    max-width: 120px;   /* مهم عشان ما يكبرش */
+    max-width: 120px;  
   }
 
-  /* الأيقونة */
+
   .service-icon{
     width: 20px;
     height: 20px;
@@ -3583,7 +3512,6 @@ html, body {
     background-color: transparent;
   }
 }
-/* موبايل: سحب بالإيد + بدون أسهم */
 @media (max-width: 768px){
   .services-slider .slider-arrow{ display:none; }
 
